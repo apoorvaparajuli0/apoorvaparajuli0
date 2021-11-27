@@ -1,0 +1,87 @@
+h2 { 
+    font-family: 'Comforter Brush', cursive;
+    font-size: 10em;
+    text-align: left;
+    margin-top: 0.3em;
+    margin-left: 1.5em;
+}
+
+#RUEDescription { 
+    text-align: center;
+    margin-bottom: 10em;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 1.5em;
+    margin-right: 50em;
+}
+
+#RUE_progress-1 { 
+    margin-left: 32em;
+    margin-top: -100em;
+    margin-bottom: 14em;
+}
+
+#RUE_progress-2 { 
+    margin-left: 32em;
+    margin-top: -100em;
+    margin-bottom: 1em;
+}
+
+#RuePDF { 
+   margin-left: 57em;
+   margin-top: -40em;
+   margin-bottom: 3.5em;
+}
+
+#Separator01 { 
+    margin-bottom: 10em;
+    margin-top: -15em;
+    height: 1em;
+    color: rgb(0, 0, 0);
+}
+
+h1 { 
+    font-family: 'Nosifer', cursive;
+    /* text-align: center; */
+    margin-left: 1.2em;
+    margin-top: 2em;
+}
+
+#KKDescription { 
+    text-align: center;
+    margin-top: 1em;
+    margin-right: 85em;
+    margin-left: 2.5em;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 1.05em;
+}
+
+#KK_progress-1 { 
+    margin-top: -35em;
+    margin-bottom: 19em;
+    margin-left: 30em;
+    
+}
+
+#KK_progress-2 { 
+    margin-top: -50em;
+    margin-bottom: 7.5em;
+    margin-left: 30em;
+}
+
+#KK_progress-3 { 
+    margin-top: -50em;
+    margin-bottom: -4em;
+    margin-left: 30em;
+}
+
+#KarenPDF { 
+    margin-top: -33em;
+    margin-left: 55em;
+}
+
+/* 
+font-family: 'Nosifer', cursive;
+font-family: 'ZCOOL KuaiLe', cursive;
+font-family: 'Comforter Brush', cursive;
+font-family: 'Nanum Brush Script', cursive;
+*/
