@@ -4,6 +4,11 @@ h1 {
     font-family: 'Playfair Display', serif;
 }
 
+#contactInfo { 
+    font-size: 1em;
+    margin-left: 46.5em;
+}
+
 h2 { 
     margin-top: 1.5em;
     font-size: 2.5em;
