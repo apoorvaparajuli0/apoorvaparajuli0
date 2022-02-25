@@ -1,1 +1,1 @@
-I still need to optimize this website for zooming in and for different devices, as of right now it should work on 100% zoom on most laptops/desktops.
+Responsiveness is yet to be implemented, in it's current state, it should work fine on 1920x1080 screens at 100% zoom.
