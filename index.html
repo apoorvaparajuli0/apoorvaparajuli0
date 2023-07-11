@@ -80,85 +80,6 @@
       </p>
     </div>
 
-    <div class="row p-5 m-5">
-      <div class="col-2"></div>
-      <div class="col">
-      <div class="cont">
-        <div class="row p-0 m-0">
-      <div class="col-4 p-0  my-0"></div>
-      <div class="col-3 p-0 my-0">
-        <img class="img-fluid" id="downArr" src="./Images/ArrowDown1.gif" alt="Image Not Loading..." />
-        <!---Down1 is Down Right-->
-      </div>
-      <div class="col-2 p-0  my-0">
-        <img class="img-fluid" id="downArr2" src="./Images/ArrowDown2.gif" alt="Image Not Loading..." />
-        <!---Down2 is Down Left-->
-      </div>
-      <div class="col-3 p-0  my-0"></div>
-    </div>
-
-    <div class="row p-0 m-0">
-      <div class="col-4 m-0 p-0">
-        <img class="ml-5" id="leftArr" src="./Images/ArrowRight1.gif" alt="Image Not Loading..." />
-      </div>
-      <div class="col-4 text-center py-0 m-0">
-        <div class="cont p-0 m-0">
-          <div class="row p-0 m-0">
-            <button id="abMe" class="btn btn-primary p-0 m-0" type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-              About Me
-            </button>
-          </div>
-          <div class="row">
-                <div class="row text-center my-0 py-0">
-                  <div class="col p-0 m-0">
-                    <img id="upArr" src="./Images/ArrowUp1.gif" alt="Image Not Loading..." />
-                  </div>
-                </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-4 py-0 my-0">
-        <p class="text-center mx-0 mt-5">
-          <img style="margin-top: -30%; margin-left: -20%;" id="rightArr" src="./Images/ArrowLeft1.gif" alt="Image Not Loading..." />
-        </p>
-      </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-2"></div>
-    </div>
-
-
-
-    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="slide-out-right">
-      <div class="offcanvas-header container">
-        <div class="row">
-          <div class="col-lg">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg">
-        </div>
-        </div>
-
-        <div class="row">
-            <img id="meImg" src="./Images/MECUT.png" alt="Image Not Loading..." />
-        </div>
-        <div class="row">
-        <div id="abMeTxt" class="offcanvas-body">
-          I am a Computer Science undergraduate student with a interest in video game design/programming and computer graphics.
-          My pre-existing knowledge of C++ and some Calculus/Linear Algebra along with my developing understanding of 3D
-          modeling has helped me understand game engines and how to work with them better.                                     
-
-          
-        </div>
-      </div>
-
-    </div>
-    </div>
-
     <style>
       #offcanvasTop {
         /*height: 45%;*/
@@ -225,7 +146,7 @@
       }
     </style>
 
-    <div class = "section container reveals">
+    <div style="margin-top: 25%;">
       <div class="section row reveal px-0 mx-0 fade-left">
         <h2 style="text-align: center;">
           My Portfolio
@@ -354,63 +275,7 @@
           flex-direction: column;
         }
       } 
-
-      .reveal {
-        position: relative;
-        opacity: 0;
-      }
-
-      .reveal.active {
-        opacity: 1;
-      }
-
-      .active.fade-bottom {
-        animation: fade-bottom 1s ease-in;
-      }
-
-      .active.fade-left {
-        animation: fade-left 1s ease-in;
-      }
-
-      .active.fade-right {
-        animation: fade-right 1s ease-in;
-      }
-
-      @keyframes fade-bottom {
-        0% {
-          transform: translateY(50px);
-          opacity: 0;
-        }
-
-        100% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
     </style>
-
-    <script>
-
-      function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-
-        for (var i = 0; i < reveals.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = reveals[i].getBoundingClientRect().top;
-          var elementVisible = 150;
-
-          if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-          }
-          else {
-            reveals[i].classList.remove("active");
-          }
-        }
-      }
-
-      window.addEventListener("scroll", reveal);
-
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -422,9 +287,5 @@
 
   </div>
 </body>
-
-<footer style="text-align: center; color: white; margin-top: 6.5%; font-family: 'Spartan', sans-serif; font-weight: 100;">
-    Last Updated 03-17-23 | Created Using the Bootstrap Web Framework
-</footer>
 
 </html>
