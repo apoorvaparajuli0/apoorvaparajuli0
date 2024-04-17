@@ -1,22 +1,103 @@
+/*APPLIES TO ALL ELEMENTS OF TYPE*/
+
 body::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
 
+a:any-link {
+  color: rgb(255, 255, 255);
+}
+
+/*ID-Based Styles*/
+#body {
+  background: #000;
+}
+
+#name_title {
+  color: rgb(201, 207, 210);
+}
+
+#self_image {
+  max-width: 85%;
+}
+
+#bio {
+  color: rgb(201, 207, 210);
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+}
+
+#profile_links {
+  color: aliceblue;
+  font-size: small;
+}
+
+#cursor {
+  color: gray;
+  font-weight: lighter;
+}
+
+#resume_bio_divider {
+  color: white;
+}
+
+#cage {
+  border-style: solid;
+  border-color: gray;
+  border-width: 2px;
+  border-radius: 10px;
+  min-height: 400px;
+  max-height: 400px;
+  cursor: url('/Images/Crosshairs64x64.svg') 32 32, url('/Images/Crosshairs32x32.svg') 16 16, auto;
+}
+
+#cage_canvas {
+  max-width: 100%;
+  min-width: 100%;
+  position: relative;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1500px) {
   #name_title {
-    color: rgb(201, 207, 210);
+    font-size: 2vw;
   }
-
-  #self_image {
-    max-width: 85%;
-  }
-
   #bio {
-    color: rgb(201, 207, 210);
-    font-family: "Sedan", serif;
-    font-weight: 400;
-    font-style: normal;
+    font-size: 1.5vw;
+  }
+  #profile_links {
+    font-size: 1vw;
+  }
+  #resume_bio_divider {
+    margin-top: 50px;
+    font-size: 1vw;
+  }
+  #cursor {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 2200px) {
+  #cage {
+    min-height: 200px;
+    max-height: 250px;
   }
 
-  #cursor {
-    color: gray;
+  #cage_canvas {
+    min-height: 200px;
+    max-height: 250px;
   }
+}
+
+@media screen and (min-width: 2200px) {  
+  #cage {
+    min-height: 400px;
+    max-height: 450px;
+  }
+  #cage_canvas {
+    min-height: 400px;
+    max-height: 450px;
+  }
+}
