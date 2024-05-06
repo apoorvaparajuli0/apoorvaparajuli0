@@ -50,7 +50,7 @@ a:any-link {
   border-radius: 10px;
   min-height: 400px;
   max-height: 400px;
-  cursor: url('/Images/Crosshairs64x64.svg') 32 32, url('/Images/Crosshairs32x32.svg') 16 16, auto;
+  cursor: url('/Images/crosshairs64.svg') 32 32, url('/Images/crosshairs32.svg') 16 16, auto;
 }
 
 #cage_canvas {

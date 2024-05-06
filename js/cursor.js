@@ -1,8 +1,16 @@
 function drawBulletHole(canvas, e) {
     let rect = canvas.getBoundingClientRect();      
 
-    scaleX = canvas.width / rect.width, 
-    scaleY = canvas.height / rect.height; 
+    cWidth = canvas.width;
+    cHeight = canvas.height;
+
+    let hdivisor = 6; 
+    let wdivisor = 6;
+
+    //remember that window.screen.width is how to get the screen width, not window.width
+
+    scaleX = cWidth / rect.width, 
+    scaleY = cHeight / rect.height; 
 
     let x = (e.clientX - rect.left) * scaleX;
     let y = (e.clientY - rect.top) * scaleY;
@@ -14,13 +22,20 @@ function drawBulletHole(canvas, e) {
     let ctx = canvas.getContext("2d");
     let img = new Image;
 
-    img.src = "../Images/CrossHairs32x32.svg";
+    img.src = "../images/crosshairs32.svg";
+
     img.onload = function() {
-        ctx.drawImage(img, x, y);
-        //make sure to redraw stick figures after clearing canvas of bullet holes
+        /*if(hdivisor !== 6 && wdivisor !== 6)*/ ctx.drawImage(img, x, y, cWidth/wdivisor, cHeight/hdivisor);
+        /*if(hdivisor === 6 && wdivisor === 6) ctx.drawImage(img, x, y);*/
+
+        /*
+        make sure to redraw stick figures after clearing canvas of bullet holes.
+        Also, consider just clearing out wherever the image was drawn, but then we'd
+        have to deal with overlapping images being half cleared.
+        */
         setTimeout(function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }, 1000)
+        }, 2000)
     }
 
 

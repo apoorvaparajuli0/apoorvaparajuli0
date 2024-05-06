@@ -4,8 +4,6 @@ var txt_dev = 'अपूर्व पराजूली'
 var complete = false;
 var paused = false;
 
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-
 /* Start writing in English if the Devanagari text has finished */
 window.setInterval(async function() {
     if (i < txt.length && !complete && !paused) {
