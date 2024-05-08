@@ -5,32 +5,32 @@ var complete = false;
 var paused = false;
 
 /* Start writing in English if the Devanagari text has finished */
-window.setInterval(async function() {
+window.setInterval(function() {
     if (i < txt.length && !complete && !paused) {
-      document.getElementById("name_title").innerHTML += txt.charAt(i);
+      document.getElementById("name-title").innerHTML += txt.charAt(i);
       i++;
     } else if(i >= txt.length && !complete && !paused) {
         paused = true;
         setTimeout(function() {
             paused = false;
             i = 0;
-            document.getElementById("name_title").innerHTML = "";
+            document.getElementById("name-title").innerHTML = "";
             complete = true;
         }, 5000);
     }
 }, 300)
 
 /* Start writing in Devanagari if the English text has finished */
-window.setInterval(async function() {
+window.setInterval(function() {
     if(i < txt_dev.length && complete && !paused) {
-        document.getElementById("name_title").innerHTML += txt_dev.charAt(i);
+        document.getElementById("name-title").innerHTML += txt_dev.charAt(i);
         i++;
     } else if(complete && i >= txt_dev.length && !paused) {
         paused = true;
         setTimeout(function() {
             paused = false;
             i = 0;
-            document.getElementById("name_title").innerHTML = "";
+            document.getElementById("name-title").innerHTML = "";
             complete = false;
         }, 5000);
     }

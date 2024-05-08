@@ -13,11 +13,11 @@ a:any-link {
   background: #000;
 }
 
-#name_title {
+#name-title {
   color: rgb(201, 207, 210);
 }
 
-#self_image {
+#self-image {
   max-width: 85%;
 }
 
@@ -29,7 +29,7 @@ a:any-link {
   font-size: large;
 }
 
-#profile_links {
+#profile-links {
   color: aliceblue;
   font-size: small;
 }
@@ -39,7 +39,7 @@ a:any-link {
   font-weight: lighter;
 }
 
-#resume_bio_divider {
+#resume-bio-divider {
   color: white;
 }
 
@@ -53,7 +53,7 @@ a:any-link {
   cursor: url('/Images/crosshairs64.svg') 32 32, url('/Images/crosshairs32.svg') 16 16, auto;
 }
 
-#cage_canvas {
+#cage-canvas {
   max-width: 100%;
   min-width: 100%;
   position: relative;
@@ -61,16 +61,16 @@ a:any-link {
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 1500px) {
-  #name_title {
+  #name-title {
     font-size: 2vw;
   }
   #bio {
     font-size: 1.5vw;
   }
-  #profile_links {
+  #profile-links {
     font-size: 1vw;
   }
-  #resume_bio_divider {
+  #resume-bio-divider {
     margin-top: 50px;
     font-size: 1vw;
   }
@@ -85,7 +85,7 @@ a:any-link {
     max-height: 250px;
   }
 
-  #cage_canvas {
+  #cage-canvas {
     min-height: 200px;
     max-height: 250px;
   }
@@ -96,7 +96,7 @@ a:any-link {
     min-height: 400px;
     max-height: 450px;
   }
-  #cage_canvas {
+  #cage-canvas {
     min-height: 400px;
     max-height: 450px;
   }

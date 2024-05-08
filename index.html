@@ -6,6 +6,15 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The portfolio website of Apoorva Parajuli, Full-Stack Web Developer currently employed at Polypinion Inc."/>
+  <meta property="og:title" content="Apoorva's Portfolio"/>
+  <meta property="og:description" content="The portfolio website of Apoorva Parajuli, Full-Stack Web Developer currently employed at Polypinion Inc."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://apoorvaparajuli.com"/>
+  <meta property="og:image" content="/images/me.JPG"/>
+  <meta property="og:image:type" content="image/jpg"/>
+  <meta property="og:image:alt" content="Failed to Load..." />
+
   <link rel="icon" href="./images/favicon.ico">
   <link rel="stylesheet" type="text/css" href="index.css" />
   <title>
@@ -21,46 +30,47 @@
 
 <body id="body">
   <div class="container-fluid">
-    <div class="row mt-5 text-center">
-      <div class="col-xxl-6 col-10 mx-auto">
-        <img src="/images/me.JPG" id="self_image" class="img-fluid img-thumbnail"/>
+    <div class="row mt-5 text-center" itemscope itemtype="https://schema.org/Person">
+      <div class="col-xxl-6 col-10 mx-auto" >
+        <img itemprop="image" src="/images/me.JPG" alt="Failed to Load..." id="self-image" class="img-fluid img-thumbnail"/>
       </div>
       <div class="col-xxl-6 text-center mt-4">
         <div class="container">
           <div class="row">
             <h1>
-              <strong id="name_title"></strong><strong id="cursor">|</strong>
+              <strong id="name-title"></strong><strong id="cursor">|</strong>
             </h1>
+            <div itemprop="name" class="d-none">Apoorva Parajuli</div>
           </div>
-          <div id="profile_links" class="row">
+          <div id="profile-links" class="row">
             <div class="col-1"></div>
             <div class="col-10">
-              apoorvaparajuli0@gmail.com |
-              <a href="https://github.com/apoorvaparajuli0" target="_blank">My GitHub</a> |
-              <a href="https://www.linkedin.com/in/apoorva-parajuli-66b994187/" target="_blank">My LinkedIn</a> |
-              (510)-374-9867
+              <span itemprop="email">apoorvaparajuli0@gmail.com</span> |
+              <a itemprop="sameAs" href="https://github.com/apoorvaparajuli0" target="_blank">My GitHub</a> |
+              <a itemprop="sameAs" href="https://www.linkedin.com/in/apoorva-parajuli-66b994187/" target="_blank">My LinkedIn</a> |
+              <span itemprop="telephone">(510)-374-9867</span>
             </div>
             <div class="col-1"></div>
           </div>
         </div>
         <div class="container">
           <div class="row">
-              <p class="mt-5" id="bio">
+              <p itemprop="description" class="mt-5" id="bio">
                 I am a recent Computer Science graduate with experience working 
                 as an independent software engineer developing and deploying custom 
                 web applications for clients using many tools and frameworks including 
-                Django, React.js, ASP.NET, Blazor, and more. I am 
-                looking for an opportunity to work as a Software Developer.
+                Django, React.js, ASP.NET, Blazor, and more. I am currently working as 
+                a full-stack web developer at Polypinion Inc.
               </p>
           </div>
           <div class="row mt-2 text-center">
-            <!--use horizontal rule instead-->
-            <div id="resume_bio_divider" class="col">
-              _________________
+            <div id="resume-bio-divider" class="col">
+              <hr class="text-light border-1 opacity-100 w-25 mx-auto"/>
             </div>
           </div>
           <div id="cage" class="row mt-5 mx-auto">
-            <canvas id="cage_canvas"></canvas>
+            <!--TODO: eventually, when we're done with canvas functionality, add buttons here for additional accessibility-->
+            <canvas id="cage-canvas">Your browser does not support HTML5 Canvas...</canvas>
           </div>
         </div>
       </div>
@@ -69,8 +79,9 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="/js/cursor.js"></script>
-  <script type="text/javascript" src="/js/name_text.js"></script>
+  <script type="module" src="/js/draw-cursor.js"></script>
+  <script type="text/javascript" src="/js/write-name.js"></script>
+  <script type="module" src="/js/draw-stickmen.js"></script>
   <!--Bootstrap Scripts-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
