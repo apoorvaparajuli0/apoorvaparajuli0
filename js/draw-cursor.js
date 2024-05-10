@@ -1,4 +1,5 @@
-import { drawStickmen } from "./draw-stickmen.js";
+import { drawProtag, drawStickmen } from "./draw-stickmen.js";
+import { drawBulletLine } from "./draw-line.js";
 
 function drawBulletHole(canvas, e) {
     let rect = canvas.getBoundingClientRect();      
@@ -21,7 +22,7 @@ function drawBulletHole(canvas, e) {
 
     let x = (e.clientX - rect.left) * scaleX;
     let y = (e.clientY - rect.top) * scaleY;
-
+    
     /* the resolution of *most* mobile devices */
     if(sWidth >= 350 && sWidth <= 500) {
         hdivisor += 6;
@@ -55,6 +56,8 @@ function drawBulletHole(canvas, e) {
         setTimeout(function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawStickmen(canvas, e);
+            drawBulletLine(canvas, e);
+            drawProtag(canvas, e);
         }, 2000)
     }
 }

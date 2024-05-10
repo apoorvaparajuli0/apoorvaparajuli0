@@ -15,6 +15,8 @@
  * where the user will shoot on first draw, also a restart button to 
  * reset the stage if they miss or want to go to another section
  * 
+ * add a little cloud to prompt users to click to start the game
+ * 
  * (remember to make this all work on all resolutions)
  * 
  * @param {HTMLCanvasElement} canvas 
@@ -22,47 +24,61 @@
  */
 export function drawStickmen(canvas, e) {
     let ctx = canvas.getContext("2d");   
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = "bisque"
+
+    //left side enemies
+    drawEnemyStickman(ctx, 25, 85, true);
+    drawEnemyStickman(ctx, 70, 85, true);
+
+    //right side enemies
+    drawEnemyStickman(ctx, 230, 85, false);
+    drawEnemyStickman(ctx, 275, 85, false);
+}
+
+export function drawProtag(canvas, e) {
+    let rect = canvas.getBoundingClientRect();      
+    let ctx = canvas.getContext("2d");   
     ctx.strokeStyle = "bisque"
 
     let cWidth = canvas.width;
-    let cHeight = canvas.height;
 
-    //left side enemies
-    drawEnemyStickman(ctx, 25, 50, true);
-    drawEnemyStickman(ctx, 70, 50, true);
+    let scaleX = cWidth / rect.width;
 
-    //right side enemies
-    drawEnemyStickman(ctx, 230, 50, false);
-    drawEnemyStickman(ctx, 275, 50, false);
-
+    let x = (e.clientX - rect.left) * scaleX;
     //player
-    drawEnemyStickman(ctx, 150, 50, false);
+    if(x <= 150) {
+        drawEnemyStickman(ctx, 150, 85, false);
+    } else {
+        drawEnemyStickman(ctx, 150, 85, true);
+    }
 }
 
 function drawEnemyStickman(ctx, headCenterX, headCenterY, lookingRight) {
     //head
+    ctx.setLineDash([0, 0]);
     ctx.beginPath();
-    ctx.arc(headCenterX, headCenterY, 15, 0, Math.PI * 2, true);
+    ctx.arc(headCenterX, headCenterY, 8, 0, Math.PI * 2, true);
     ctx.stroke();
 
     //body
     ctx.beginPath();
-    ctx.moveTo(headCenterX, headCenterY + 15);
-    ctx.lineTo(headCenterX, headCenterY + 50);
+    ctx.moveTo(headCenterX, headCenterY + 8);
+    ctx.lineTo(headCenterX, headCenterY + 40);
     ctx.stroke();
 
     if(lookingRight) {
         //legs
         //right leg
         ctx.beginPath();
-        ctx.moveTo(headCenterX, headCenterY + 50);
-        ctx.lineTo(headCenterX - 5, headCenterY + 85);
+        ctx.moveTo(headCenterX, headCenterY + 40);
+        ctx.lineTo(headCenterX - 5, headCenterY + 60);
         ctx.stroke();
 
         //left leg
         ctx.beginPath();
-        ctx.moveTo(headCenterX, headCenterY + 50);
-        ctx.quadraticCurveTo(headCenterX + 40, headCenterY + 50, headCenterX + 15, headCenterY + 85);
+        ctx.moveTo(headCenterX, headCenterY + 40);
+        ctx.quadraticCurveTo(headCenterX + 25, headCenterY + 50, headCenterX + 20, headCenterY + 60);
         ctx.stroke();
 
         //right arm
@@ -74,14 +90,14 @@ function drawEnemyStickman(ctx, headCenterX, headCenterY, lookingRight) {
         //legs
         //right leg
         ctx.beginPath();
-        ctx.moveTo(headCenterX, headCenterY + 50);
-        ctx.lineTo(headCenterX + 5, headCenterY + 85);
+        ctx.moveTo(headCenterX, headCenterY + 40);
+        ctx.lineTo(headCenterX + 5, headCenterY + 60);
         ctx.stroke();
 
         //left leg
         ctx.beginPath();
-        ctx.moveTo(headCenterX, headCenterY + 50);
-        ctx.quadraticCurveTo(headCenterX - 40, headCenterY + 50, headCenterX - 15, headCenterY + 85);
+        ctx.moveTo(headCenterX, headCenterY + 40);
+        ctx.quadraticCurveTo(headCenterX - 25, headCenterY + 50, headCenterX - 20, headCenterY + 60);
         ctx.stroke();
 
         //right arm
@@ -95,4 +111,5 @@ function drawEnemyStickman(ctx, headCenterX, headCenterY, lookingRight) {
 const canvas = document.getElementById("cage-canvas");
 document.addEventListener("DOMContentLoaded", function(e) {
     drawStickmen(canvas, e);
-})
+    drawProtag(canvas, e);
+});
