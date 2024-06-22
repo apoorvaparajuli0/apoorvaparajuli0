@@ -8,11 +8,28 @@ a:any-link {
   color: rgb(255, 255, 255);
 }
 
-/*ID-Based Styles*/
-#body {
-  background: #000;
+body {
+  background-color: #000 !important;
 }
 
+/*CLASS-Based Styles*/
+.clicked-nav {
+  border-bottom: 1px solid rgb(0, 94, 255) !important;
+}
+
+.clicked-nav > a {
+  color: rgb(0, 94, 255);
+}
+
+.section-row {
+  max-height: 500px !important;
+}
+
+.section-content {
+  max-height: 495px !important;
+}
+
+/*ID-Based Styles*/
 #name-title {
   color: rgb(201, 207, 210);
 }
@@ -43,22 +60,6 @@ a:any-link {
   color: white;
 }
 
-#cage {
-  border-style: solid;
-  border-color: gray;
-  border-width: 2px;
-  border-radius: 10px;
-  min-height: 400px;
-  max-height: 400px;
-  cursor: url('/Images/crosshairs64.svg') 32 32, url('/Images/crosshairs32.svg') 16 16, auto;
-}
-
-#cage-canvas {
-  max-width: 100%;
-  min-width: 100%;
-  position: relative;
-}
-
 /* MEDIA QUERIES */
 @media screen and (min-width: 1500px) {
   #name-title {
@@ -84,19 +85,10 @@ a:any-link {
     min-height: 200px;
     max-height: 250px;
   }
-
-  #cage-canvas {
-    min-height: 200px;
-    max-height: 250px;
-  }
 }
 
 @media screen and (min-width: 2200px) {  
   #cage {
-    min-height: 400px;
-    max-height: 450px;
-  }
-  #cage-canvas {
     min-height: 400px;
     max-height: 450px;
   }
