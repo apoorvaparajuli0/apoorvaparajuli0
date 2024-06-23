@@ -1,18 +1,42 @@
 let navTabs = document.querySelectorAll("li.nav-item");
-let profWork = document.getElementById("professional-work");
-let projects = document.getElementById("projects");
+
+async function getProfWork() {
+    let profWork = await fetch("http://127.0.0.1:5500/sections/professional-work.html", {
+        headers: {
+            Accept: 'text/html'
+        }
+    }).then((res => res.text()))
+
+    return profWork;
+}
+
+async function getProjectWork() {
+    let projects = await fetch("http://127.0.0.1:5500/sections/projects.html", {
+        headers: {
+            Accept: 'text/html'
+        }
+    }).then((res => res.text()))
+
+    return projects;
+}
 
 navTabs.forEach(function(navTab, index) {
-    navTab.addEventListener("click", function(e) {
+    navTab.addEventListener("click", async function(e) {
         if(!navTab.classList.contains("dropdown")) {
             navTab.classList.add("clicked-nav");
+
+            let projects = await getProjectWork();
+            let profWork = await getProfWork();
+
+            let rowToAppendTo = document.getElementById("scrollspy-row");
+            if(!rowToAppendTo.classList.contains("border")) rowToAppendTo.classList.add("border", "border-2", "border-light");
             
             if(navTab.id==="professional-work-button") {
-                profWork.classList.remove("d-none");
-                if(!projects.classList.contains("d-none")) projects.classList.add("d-none")
+                rowToAppendTo.innerHTML = "<div></div>";
+                rowToAppendTo.innerHTML = profWork;
             } else if(navTab.id==="projects-button") {
-                projects.classList.remove("d-none");
-                if(!profWork.classList.contains("d-none")) profWork.classList.add("d-none")
+                rowToAppendTo.innerHTML = "<div></div>";
+                rowToAppendTo.innerHTML = projects;
             }
         }
         navTabs.forEach(function(innerNavTab, index) {
