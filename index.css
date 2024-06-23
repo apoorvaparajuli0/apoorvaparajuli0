@@ -1,3 +1,95 @@
+/*APPLIES TO ALL ELEMENTS OF TYPE*/
+
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
+}
+
+a:any-link {
+  color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: #000 !important;
+}
+
+/*CLASS-Based Styles*/
+.clicked-nav {
+  border-bottom: 1px solid rgb(0, 94, 255) !important;
+}
+
+.clicked-nav > a {
+  color: rgb(0, 94, 255);
+}
+
+.section-row {
+  max-height: 500px !important;
+}
+
+.section-content {
+  max-height: 495px !important;
+}
+
+/*ID-Based Styles*/
+#name-title {
+  color: rgb(201, 207, 210);
+}
+
+#self-image {
+  max-width: 85%;
+}
+
+#bio {
+  color: rgb(201, 207, 210);
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+}
+
+#profile-links {
+  color: aliceblue;
+  font-size: small;
+}
+
+#cursor {
+  color: gray;
+  font-weight: lighter;
+}
+
+#resume-bio-divider {
+  color: white;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1500px) {
+  #name-title {
+    font-size: 2vw;
   }
+  #bio {
+    font-size: 1.5vw;
+  }
+  #profile-links {
+    font-size: 1vw;
+  }
+  #resume-bio-divider {
+    margin-top: 50px;
+    font-size: 1vw;
+  }
+  #cursor {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 2200px) {
+  #cage {
+    min-height: 200px;
+    max-height: 250px;
+  }
+}
+
+@media screen and (min-width: 2200px) {  
+  #cage {
+    min-height: 400px;
+    max-height: 450px;
+  }
+}
