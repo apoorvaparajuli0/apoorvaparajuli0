@@ -1,7 +1,7 @@
 let navTabs = document.querySelectorAll("li.nav-item");
 
 async function getProfWork() {
-    let profWork = await fetch("https://apoorvaparajuli.com/sections/professional-work.html", {
+    let profWork = await fetch("http://127.0.0.1:5500/sections/professional-work.html", {
         headers: {
             Accept: 'text/html'
         }
@@ -11,7 +11,7 @@ async function getProfWork() {
 }
 
 async function getProjectWork() {
-    let projects = await fetch("https://apoorvaparajuli.com/sections/projects.html", {
+    let projects = await fetch("http://127.0.0.1:5500/sections/projects.html", {
         headers: {
             Accept: 'text/html'
         }
@@ -28,7 +28,7 @@ navTabs.forEach(function(navTab, index) {
             let projects = await getProjectWork();
             let profWork = await getProfWork();
 
-            let rowToAppendTo = document.getElementById("scrollspy-row");
+            let rowToAppendTo = document.getElementById("work-row");
             if(!rowToAppendTo.classList.contains("border")) rowToAppendTo.classList.add("border", "border-2", "border-light");
             
             if(navTab.id==="professional-work-button") {

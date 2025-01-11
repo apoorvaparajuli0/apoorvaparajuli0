@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="The portfolio website of Apoorva Parajuli, Full-Stack Web Developer currently employed at Polypinion Inc."/>
+		<meta name="description" content="The portfolio website of Apoorva Parajuli, Full-Stack Web Developer."/>
 		<meta property="og:title" content="Apoorva's Portfolio"/>
-		<meta property="og:description" content="The portfolio website of Apoorva Parajuli, Full-Stack Web Developer currently employed at Polypinion Inc."/>
+		<meta property="og:description" content="The portfolio website of Apoorva Parajuli, Full-Stack Web Developer."/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:url" content="https://apoorvaparajuli.com"/>
 		<meta property="og:image" content="/images/me.JPG"/>
@@ -15,7 +15,7 @@
 		<meta property="og:site_name" content="Apoorva's Portfolio"/>
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="Apoorva's Portfolio">
-		<meta name="twitter:description" content="The portfolio website of Apoorva Parajuli, Full-Stack Web Developer currently employed at Polypinion Inc.">
+		<meta name="twitter:description" content="The portfolio website of Apoorva Parajuli, Full-Stack Web Developer.">
 		<meta name="twitter:image" content="/images/me.JPG">
 		<meta name="twitter:url" content="https://apoorvaparajuli.com">
 
@@ -30,10 +30,19 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+		<!--my scripts-->
+		<script type="module" src="/js/write-name.js" async></script>
+		<script type="module" src="/js/select-tab.js" async></script>
+		<!--Bootstrap Scripts-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	</head>
 
 	<body id="body">
-		<div class="container-fluid">
+		<noscript class="mt-2 text-light d-flex justify-content-center text-wrap">
+			You are seeing this because JavaScript is disabled. This site is accessible without JavaScript, 
+			however, enabling JavaScript will make your user experience better.
+		</noscript>
+		<div class="container-fluid" id="scripted-body">
 			<div id="primary-row" class="row mt-5 text-center" itemscope itemtype="https://schema.org/Person">
 				<div class="col-xxl-6 col-10 mx-auto" >
 					<img itemprop="image" src="/images/me.JPG" alt="Failed to Load..." id="self-image" class="img-fluid img-thumbnail"/>
@@ -64,8 +73,7 @@
 								I am a recent Computer Science graduate with experience working 
 								as an independent software engineer developing and deploying custom 
 								web applications for clients using many tools and frameworks including 
-								Django, React.js, ASP.NET, Blazor, and more. I am currently working as 
-								a full-stack web developer at Polypinion Inc.
+								Django, React.js, Flask, Next.js, and more.
 							</p>
 						</div>
 						<div class="row mt-2 text-center">
@@ -73,8 +81,40 @@
 								<hr class="text-light border-1 opacity-100 w-25 mx-auto"/>
 							</div>
 						</div>
-						<div id="cage" class="row mt-5 mx-auto">
-							<div class="col-12 d-md-flex align-items-end">
+						<div id="skills-title" class="row d-none d-xxl-flex">
+							<h2 class="fw-light text-white">Skills</h2>
+						</div>
+						<div id="skills-badges" class="row gy-2 d-none d-xxl-flex">
+							<span class="badge text-bg-secondary w-auto">Vue.js</span>
+							<span class="badge text-bg-secondary w-auto">Vite</span>
+							<span class="badge text-bg-secondary w-auto">React.js</span>
+							<span class="badge text-bg-secondary w-auto">Next.js</span>
+							<span class="badge text-bg-secondary w-auto">Django</span>
+							<span class="badge text-bg-secondary w-auto">Flask</span>
+							<span class="badge text-bg-secondary w-auto">SwiftUI</span>
+							<span class="badge text-bg-secondary w-auto">Node.js</span>
+							<span class="badge text-bg-secondary w-auto">Express.js</span>
+							<span class="badge text-bg-secondary w-auto">Bootstrap</span>
+							<span class="badge text-bg-secondary w-auto">C</span>
+							<span class="badge text-bg-secondary w-auto">C++</span>
+							<span class="badge text-bg-secondary w-auto">Java</span>
+							<span class="badge text-bg-secondary w-auto">Python</span>
+							<span class="badge text-bg-secondary w-auto">Swift</span>
+							<span class="badge text-bg-secondary w-auto">HTML</span>
+							<span class="badge text-bg-secondary w-auto">JavaScript</span>
+							<span class="badge text-bg-secondary w-auto">PostgreSQL</span>
+							<span class="badge text-bg-secondary w-auto">sqlite</span>
+							<span class="badge text-bg-secondary w-auto">MS SQL Server</span>
+							<span class="badge text-bg-secondary w-auto">Git</span>
+							<span class="badge text-bg-secondary w-auto">nginx</span>
+							<span class="badge text-bg-secondary w-auto">gunicorn</span>
+							<span class="badge text-bg-secondary w-auto">CMake</span>
+							<span class="badge text-bg-secondary w-auto">Heroku</span>
+							<span class="badge text-bg-secondary w-auto">AWS</span>
+							<span class="badge text-bg-secondary w-auto">Vercel</span>
+						</div>
+						<div id="cage" class="row mx-auto align-items-end">
+							<div class="col-12 d-md-flex">
 								<ul id="tablist" class="nav nav-underline">
 									<li class="nav-item dropdown">
 										<a class="nav-link dropdown-toggle active text-light" 
@@ -87,10 +127,10 @@
 										</ul>
 									</li>
 									<li id="professional-work-button" class="nav-item ms-3">
-										<a class="nav-link" href="#scrollspy-row">Professional Work</a>
+										<a class="nav-link" href="#work-row">Professional Work</a>
 									</li>
 									<li id="projects-button" class="nav-item ms-3">
-										<a class="nav-link" href="#scrollspy-row">Projects</a>
+										<a class="nav-link" href="#work-row">Projects</a>
 									</li>
 								</ul>
 							</div>
@@ -98,11 +138,235 @@
 					</div>
 				</div>
 			</div>
-			<div id="scrollspy-row" class="row mt-5 rounded-5 section-row"></div>
+			<div id="work-row" class="row mt-5 rounded-5 section-row"></div>
 		</div>
-		<script type="module" src="/js/write-name.js"></script>
-		<script type="module" src="/js/select-tab.js"></script>
-		<!--Bootstrap Scripts-->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<noscript>
+			<div class="container-fluid" id="noscripted-body">
+				<div id="primary-row" class="row mt-5 text-center" itemscope itemtype="https://schema.org/Person">
+					<div class="col-xxl-6 col-10 mx-auto" >
+						<img itemprop="image" src="/images/me.JPG" alt="Failed to Load..." id="self-image" class="img-fluid img-thumbnail"/>
+					</div>
+					<div class="col-xxl-6 text-center mt-4">
+						<div class="container">
+							<div class="row">
+								<h1>
+								<strong id="name-title"></strong><strong class="text-light fw-bolder" id="cursor">Apoorva Parajuli</strong>
+								</h1>
+								<!--TODO: this might need to be d-none-->
+								<div itemprop="name" class="visually-hidden">Apoorva Parajuli</div>
+							</div>
+							<div id="profile-links" class="row">
+								<div class="col-1"></div>
+								<div class="col-10">
+									<span itemprop="email">apoorvaparajuli0@gmail.com</span> |
+									<a itemprop="sameAs" href="https://github.com/apoorvaparajuli0" target="_blank">My GitHub</a> |
+									<a itemprop="sameAs" href="https://www.linkedin.com/in/apoorva-parajuli-66b994187/" target="_blank">My LinkedIn</a> |
+									<span itemprop="telephone">(510)-374-9867</span>
+								</div>
+								<div class="col-1"></div>
+							</div>
+						</div>
+						<div class="container">
+							<div class="row">
+								<p itemprop="description" class="mt-5" id="bio">
+									I am a recent Computer Science graduate with experience working 
+									as an independent software engineer developing and deploying custom 
+									web applications for clients using many tools and frameworks including 
+									Django, React.js, Flask, Next.js, and more.
+								</p>
+							</div>
+							<div class="row mt-2 text-center">
+								<div id="resume-bio-divider" class="col">
+									<hr class="text-light border-1 opacity-100 w-25 mx-auto"/>
+								</div>
+							</div>
+							<div id="skills-title" class="row d-none d-xxl-flex">
+								<h2 class="fw-light text-white">Skills</h2>
+							</div>
+							<div id="skills-badges" class="row gy-2 d-none d-xxl-flex">
+								<span class="badge text-bg-secondary w-auto">Vue.js</span>
+								<span class="badge text-bg-secondary w-auto">Vite</span>
+								<span class="badge text-bg-secondary w-auto">React.js</span>
+								<span class="badge text-bg-secondary w-auto">Next.js</span>
+								<span class="badge text-bg-secondary w-auto">Django</span>
+								<span class="badge text-bg-secondary w-auto">Flask</span>
+								<span class="badge text-bg-secondary w-auto">SwiftUI</span>
+								<span class="badge text-bg-secondary w-auto">Node.js</span>
+								<span class="badge text-bg-secondary w-auto">Express.js</span>
+								<span class="badge text-bg-secondary w-auto">Bootstrap</span>
+								<span class="badge text-bg-secondary w-auto">C</span>
+								<span class="badge text-bg-secondary w-auto">C++</span>
+								<span class="badge text-bg-secondary w-auto">Java</span>
+								<span class="badge text-bg-secondary w-auto">Python</span>
+								<span class="badge text-bg-secondary w-auto">Swift</span>
+								<span class="badge text-bg-secondary w-auto">HTML</span>
+								<span class="badge text-bg-secondary w-auto">JavaScript</span>
+								<span class="badge text-bg-secondary w-auto">PostgreSQL</span>
+								<span class="badge text-bg-secondary w-auto">sqlite</span>
+								<span class="badge text-bg-secondary w-auto">MS SQL Server</span>
+								<span class="badge text-bg-secondary w-auto">Git</span>
+								<span class="badge text-bg-secondary w-auto">nginx</span>
+								<span class="badge text-bg-secondary w-auto">gunicorn</span>
+								<span class="badge text-bg-secondary w-auto">CMake</span>
+								<span class="badge text-bg-secondary w-auto">Heroku</span>
+								<span class="badge text-bg-secondary w-auto">AWS</span>
+								<span class="badge text-bg-secondary w-auto">Vercel</span>
+							</div>
+							<div id="cage" class="row mx-auto align-items-end">
+								<div class="col-12 d-md-flex">
+									<ul id="tablist" class="nav nav-underline">
+										<li id="professional-work-button" class="nav-item ms-3">
+											<a class="nav-link" target="_blank" href="./documents/Apoorva_Parajuli_Resumé.docx.pdf">View Resumé</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="noscript-work-row" class="row mt-5 border border-2 border-light rounded-5 section-row">
+					<div class="col-4 col-md-2">
+						<nav id="navbar-example3" class="h-100 flex-column align-items-stretch pt-3 pe-4 border-end">
+							<nav class="nav nav-pills flex-column">
+								<a class="text-decoration-underline nav-link" href="#item-1-1">Polypinion</a>
+								<nav class="ms-sm-3 nav nav-pills flex-column">
+									<a class="nav-link" href="#item-1-1">Polypinion Web App</a>
+								</nav>
+								<a class="text-decoration-underline nav-link" href="#item-1-2">AAPI Coalition</a>
+								<nav class="ms-sm-3 nav nav-pills flex-column">
+									<a class="nav-link" href="#item-1-2">NCR Hub</a>
+								</nav>
+							</nav>
+						</nav> 
+					</div>
+					<div class="py-3 col-8 col-md-10 section-content overflow-scroll">
+						<div class="text-light" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+						<div class="mb-4" id="item-1-1">
+							<h4 class="fs-2 fw-bolder">Polypinion Web App</h4>
+							<h6 class="text-secondary">April 2024 - October 2024</h6>
+							<h6 class="text-secondary">
+								<a href="https://polypinion.com" target="_blank">Web App</a>
+							</h6>
+							<p>
+								From April of 2024 to October, I was working as a full-stack developer on this project.
+								I led development on the frontend and have also worked extensively on the backend 
+								of the application, as well as on deployment. This product is intended to be able to 
+								take and process news articles provided by a user and parse the article content into 
+								facts and opinions and generate analytics on the facts and opinions (such as the percentage 
+								of each present in the article). This product is in development and there are more features
+								planned.
+							</p>
+							<h6 class="fw-bolder text-decoration-underline">Tools Used:</h6>
+							<span class="badge text-bg-secondary">Flask</span>
+							<span class="badge text-bg-secondary">React</span>
+							<span class="badge text-bg-secondary">OpenAI API</span>
+							<span class="badge text-bg-secondary">Anthropic ClaudeAPI</span>
+							<span class="badge text-bg-secondary">Google Analytics</span>
+							<span class="badge text-bg-secondary">PostgreSQL</span>
+							<span class="badge text-bg-secondary">AWS RDS</span>
+							<span class="badge text-bg-secondary">AWS EC2</span>
+							<span class="badge text-bg-secondary">Vercel</span>
+							<span class="badge text-bg-secondary">Git</span>
+						</div>
+						<div id="item-1-2">
+							<h4 class="fs-2 fw-bolder">NCR Hub</h4>
+							<h6 class="text-secondary">August 2023 - Present</h6>
+							<h6 class="text-secondary">
+								<a href="https://ncrhub.org" target="_blank">Web App</a>
+							</h6>
+							<p>
+								I began development on this web application prior to beginning my work at the AAPI Coalition, 
+								and am working on extending and improving the application to better serve the needs of the 
+								CoCo (Contra Costa) AAPI Coalition & an independent community support group that also has need for it. 
+								This application is under development and is not currently accessible. The features planned include 
+								but are not limited to data storage, filtration, parsing, generating analytics on data, and secure 
+								data export features.
+							</p>
+							<h6 class="fw-bolder text-decoration-underline">Tools Used:</h6>
+							<span class="badge text-bg-secondary">Django</span>
+							<span class="badge text-bg-secondary">React</span>
+							<span class="badge text-bg-secondary">Next.js</span>
+							<span class="badge text-bg-secondary">Vercel</span>
+							<span class="badge text-bg-secondary">PostgreSQL</span>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div id="noscript-work-row" class="row mt-5 border border-2 border-light rounded-5 section-row">
+					<div class="col-4 col-md-2">
+						<nav id="navbar-example3" class="h-100 flex-column align-items-stretch pt-3 pe-4 border-end">
+							<nav class="nav nav-pills flex-column">
+								<a class="nav-link text-decoration-underline" href="#item-2-1"></a>
+								<nav class="ms-sm-3 nav nav-pills flex-column">
+								</nav>
+							</nav>
+							<nav class="nav nav-pills flex-column">
+								<a class="nav-link text-decoration-underline" href="#item-2-2">Video Games</a>
+								<nav class="ms-sm-3 nav nav-pills flex-column">
+									<a class="nav-link" href="#item-2-2">Rue</a>
+									<a class="nav-link" href="#item-2-3">Killer Karens</a>
+								</nav>
+							</nav>
+						</nav> 
+					</div>
+					<div class="col-8 col-md-10 section-content overflow-scroll py-3">
+						<div class="text-light" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+							<div id="item-2-2" class="mb-4">
+								<h4 class="fs-2 fw-bolder">Rue</h4>
+								<h6 class="text-secondary">August 2021 - December 2021</h6>
+								<h6 class="text-secondary">
+									<a href="./documents/Final Project Submission (Rue).pdf" target="_blank">Final Progress Report</a> &#x2022; 
+									<a href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c_1OTU7MulPUvfcQnt5t2_" target="_blank">YouTube Playlist</a>
+								</h6>
+								<p>
+									Rue[Acceptance Level] is another team project I worked on in my 
+									second level design class. The premise of this project was that 
+									you, a man whose husband has died have to go through the different 
+									stages of grief while on drugs. I designed my "level" concept with 
+									multiple levels in the Unreal Engine, but they all conveyed my part 
+									of the Acceptance stage in the psychedelic/abstract manner my group 
+									was going for. For this project I was the team's designated mechanics 
+									programmer as well as being assigned part 2 of the Acceptance level 
+									to design and create as I saw fit, I was able to set up the AI, the in-game UI, 
+									the ziplines, the PC's abilities etc. and due to my greater level of experience 
+									this time around, I was able to try to convey a narrative and implement some quality 
+									of life improvements to the game such as multidirectional movement, and dynamic footstep 
+									sounds depending on the surface the player steps on etc.
+								</p>
+								<h6 class="fw-bolder text-decoration-underline">Tools Used:</h6>
+								<span class="badge text-bg-secondary">Unreal Engine</span>
+								<span class="badge text-bg-secondary">Blueprints</span>
+								<span class="badge text-bg-secondary">Blender</span>
+								<span class="badge text-bg-secondary">Perforce</span>
+							</div>
+							<div id="item-2-3">
+								<h4 class="fs-2 fw-bolder">Killer Karens</h4>
+								<h6 class="text-secondary">January 2021 - May 2021</h6>
+								<h6 class="text-secondary">
+									<a href="./documents/Final Project Submission (Killer Karens).pdf" target="_blank">Final Progress Report</a> &#x2022; 
+									<a href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c-FYMRF_XWe9SfEAcyKlCQ" target="_blank">YouTube Playlist</a>
+								</h6>
+								<p>
+									Killer Karens [Storeroom Level] was and is the first video game level I ever 
+									developed. It's functions include but are not limited to, Enemy AI, FPS gameplay 
+									w/ Iron Sights, Ammo Pickups, Health Pickups, Grenades and more and I developed 
+									these during a Game Level Design course on my surface pro laptop. The overall 
+									project was a team effort, there was a Coffee Shop level, an Alleyway level, a 
+									Bathroom level, and a Storeroom level and the overarcing narrative was that you, 
+									a coffee shop worker are defending yourself against "Killer Karens" who are constantly 
+									attacking and harassing you and will not stop until you defeat them all.
+								</p>
+								<h6 class="fw-bolder text-decoration-underline">Tools Used:</h6>
+								<span class="badge text-bg-secondary">Unreal Engine</span>
+								<span class="badge text-bg-secondary">Blueprints</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<style>
+				#scripted-body {display: none;}
+			</style>
+		</noscript>
 	</body>
 </html>

@@ -29,10 +29,16 @@ body {
   max-height: 495px !important;
 }
 
+.badge {
+  max-height: 20px;
+  min-height: 20px;
+}
+
 /*ID-Based Styles*/
 #name-title {
   color: rgb(201, 207, 210);
 }
+
 
 #self-image {
   max-width: 85%;
@@ -60,6 +66,14 @@ body {
   color: white;
 }
 
+#skills-title {
+  max-height: 100px !important;
+}
+
+#skills-badges {
+  max-height: 200px;
+}
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 1500px) {
   #name-title {
@@ -82,8 +96,8 @@ body {
 
 @media screen and (min-width: 1400px) and (max-width: 2200px) {
   #cage {
-    min-height: 200px;
-    max-height: 250px;
+    min-height: 150px;
+    max-height: 100px;
   }
 }
 
