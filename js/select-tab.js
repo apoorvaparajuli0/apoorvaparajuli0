@@ -1,42 +1,21 @@
-let navTabs = document.querySelectorAll("li.nav-item");
-
-async function getProfWork() {
-    let profWork = await fetch("https://apoorvaparajuli.com/sections/professional-work.html", {
-        headers: {
-            Accept: 'text/html'
-        }
-    }).then((res => res.text()))
-
-    return profWork;
-}
-
-async function getProjectWork() {
-    let projects = await fetch("https://apoorvaparajuli.com/sections/projects.html", {
-        headers: {
-            Accept: 'text/html'
-        }
-    }).then((res => res.text()))
-
-    return projects;
-}
+let navTabs = document.querySelectorAll("li.nav-item")
 
 navTabs.forEach(function(navTab, index) {
     navTab.addEventListener("click", async function(e) {
         if(!navTab.classList.contains("dropdown")) {
             navTab.classList.add("clicked-nav");
 
-            let projects = await getProjectWork();
-            let profWork = await getProfWork();
-
-            let rowToAppendTo = document.getElementById("work-row");
-            if(!rowToAppendTo.classList.contains("border")) rowToAppendTo.classList.add("border", "border-2", "border-light");
+            let profWorkRowToAppendTo = document.getElementById("work-row");
+            let projectRowToAppendTo = document.getElementById("project-row");
+            if(!profWorkRowToAppendTo.classList.contains("border")) profWorkRowToAppendTo.classList.add("border", "border-2", "border-light");
+            if(!projectRowToAppendTo.classList.contains("border")) projectRowToAppendTo.classList.add("border", "border-2", "border-light");
             
             if(navTab.id==="professional-work-button") {
-                rowToAppendTo.innerHTML = "<div></div>";
-                rowToAppendTo.innerHTML = profWork;
+                projectRowToAppendTo.classList.add("d-none");
+                profWorkRowToAppendTo.classList.remove("d-none");
             } else if(navTab.id==="projects-button") {
-                rowToAppendTo.innerHTML = "<div></div>";
-                rowToAppendTo.innerHTML = projects;
+                profWorkRowToAppendTo.classList.add("d-none");
+                projectRowToAppendTo.classList.remove("d-none");
             }
         }
         navTabs.forEach(function(innerNavTab, index) {
