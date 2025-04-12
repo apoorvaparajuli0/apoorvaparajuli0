@@ -157,7 +157,7 @@
 					<a class="work-display-link" href="/?showProf=false">Projects</a>
 				</div>
 			</div>
-			<?php if($_GET['showProf'] == "true"): ?>
+			<?php if(array_key_exists('showProf', $_GET) && $_GET['showProf'] == "true"): ?>
 					<div class="row mt-5 text-center text-light">
 						<h3 class="fw-bolder">Professional Work</h3>
 					</div>
@@ -253,7 +253,7 @@
 							</div>
 						</div>
 					</div>
-				<?php elseif($_GET['showProf'] == "false"): ?>
+				<?php elseif(array_key_exists('showProf', $_GET) && $_GET['showProf'] == "false"): ?>
 					<div class="row mt-5 text-center text-light">
 						<h3 class="fw-bolder">Projects</h3>
 					</div>
@@ -287,7 +287,9 @@
 													<span class="badge skill-badge text-bg-secondary">CMake</span>
 													<ul class="work-description-list">
 														<li>
-															
+															A WIP interpreter based on the book "Crafting Interpreters" by Robert Nystrom. Built with
+															C++ instead of C and Java, and contains a bytecode interpreter implementation
+															as well as an AST implementation. Additional features beyond the book spec planned.
 														</li>
 													</ul>
 												</div>
@@ -303,9 +305,12 @@
 													<span class="badge skill-badge text-bg-secondary">socket.io</span>
 													<span class="badge skill-badge text-bg-secondary">AWS</span>
 													<span class="badge skill-badge text-bg-secondary">Vercel</span>
+													<span class="badge skill-badge text-bg-secondary">Docker</span>
 													<ul class="work-description-list">
 														<li>
-															
+															The capstone web application project at my university. Built as a Node.js/Express/Next.js stack
+															with a PostgreSQL database. Contains features such as chat messaging, uploading files to S3, and
+															containerized with Docker
 														</li>
 													</ul>
 												</div>
@@ -320,7 +325,12 @@
 													<span class="badge skill-badge text-bg-secondary">gdb-multiarch</span>
 													<ul class="work-description-list">
 														<li>
-															
+															An academic project focused on allowing for shared memory between processes within
+															the xv6 operating system. Used gdb-multiarch to debug and QEMU to run the OS.
+														</li>
+														<li>
+															Manipulated the virtual memory mapping system in the OS to point a segment of two processes'
+															virtual memory at the same physical memory, allowing for shared data.
 														</li>
 													</ul>
 												</div>
@@ -335,8 +345,13 @@
 													<span class="badge skill-badge text-bg-secondary">gdb</span>
 													<ul class="work-description-list">
 														<li>
-															
+															Another academic project, where we reimplemented malloc() in the xv6 operating system to use a 
+															doubly-linked list implementation of memory rather than a singly-linked list
 														</li>
+														<li>
+															Allowed for conservative memory usage, preventing sbrk() from being called to allocate further 
+															memory if previous memory blocks could fit whatever needs to be allocated
+														</lI>
 													</ul>
 												</div>
 											</div>
