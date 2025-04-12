@@ -1,108 +1,76 @@
-/*APPLIES TO ALL ELEMENTS OF TYPE*/
-
 body::-webkit-scrollbar {
   display: none;
 }
 
-a:any-link {
-  color: rgb(255, 255, 255);
-}
-
 body {
-  background-color: #000 !important;
+  background-color: #000000 !important;
 }
 
-/*CLASS-Based Styles*/
-.clicked-nav {
-  border-bottom: 1px solid rgb(0, 94, 255) !important;
+a {
+  color: rgb(255, 255, 255) !important;
 }
 
-.clicked-nav > a {
-  color: rgb(0, 94, 255);
+ul {
+  margin: 5px !important;
+  padding: 0 !important;
 }
 
-.section-row {
-  max-height: 500px !important;
+.contact-info {
+  font-size: xx-small;
 }
 
-.section-content {
-  max-height: 495px !important;
+.img-container {
+  width: 200px !important;
 }
 
-.badge {
-  max-height: 20px;
-  min-height: 20px;
-}
-
-/*ID-Based Styles*/
-#name-title {
-  color: rgb(201, 207, 210);
-}
-
-#self-image {
-  max-width: 85%;
-}
-
-#bio {
-  color: rgb(201, 207, 210);
-  font-family: "Sedan", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: large;
-}
-
-#profile-links {
-  color: aliceblue;
+.self-bio {
   font-size: small;
+  font-family: serif;
+  width: 350px !important;
 }
 
-#cursor {
-  color: gray;
-  font-weight: lighter;
+.skill-badge {
+  font-size: xx-small !important;
 }
 
-#resume-bio-divider {
+.work-display-link {
   color: white;
 }
 
-#skills-title {
-  max-height: 100px !important;
+.work-display-link:hover {
+  color: blue !important;
+  transition: 0.2s ease-out;
+  -moz-transition: 0.2 ease-out;
+  -webkit-transition: 0.2 ease-out;
+  -o-transition: 0.2 ease-out;
 }
 
-#skills-badges {
-  max-height: 200px;
+.work-time {
+  font-size: small;
 }
 
-/* MEDIA QUERIES */
-@media screen and (min-width: 1500px) {
-  #name-title {
-    font-size: 2vw;
-  }
-  #bio {
-    font-size: 1.5vw;
-  }
-  #profile-links {
-    font-size: 1vw;
-  }
-  #resume-bio-divider {
-    margin-top: 50px;
-    font-size: 1vw;
-  }
-  #cursor {
-    font-size: 2vw;
-  }
+.tools-used-title {
+  font-size: small;
+  margin-top: -10px;
+  margin-bottom: -2px;
 }
 
-@media screen and (min-width: 1400px) and (max-width: 2200px) {
-  #cage {
-    min-height: 150px;
-    max-height: 100px;
-  }
+.work-description-list {
+  font-size: x-small;
 }
 
-@media screen and (min-width: 2200px) {  
-  #cage {
-    min-height: 400px;
-    max-height: 450px;
-  }
+.work-content-section {
+  overflow-y: scroll;
+  max-height: 300px !important;
+}
+
+.work-select-section {
+  border-right: 2px solid white;
+  overflow-x: scroll;
+  font-size: small;
+  max-height: 300px !important;
+}
+
+.work-links {
+  font-size: smaller;
 }
