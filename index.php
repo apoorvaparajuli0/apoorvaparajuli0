@@ -75,6 +75,27 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<!--Bootstrap Scripts-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<!--Rich Results Schema-->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "ProfilePage",
+				"mainEntity": {
+					"@type": "Person",
+					"name": "Apoorva Parajuli",
+					"description": 
+					"I am a Full Stack Software Engineer with experience working with various web frameworks including 
+					Django, Flask, Next.js, and more. I have integrated AI-enabled solutions into web applications using OpenAI's API, Anthropic's
+					Claude, and Groq. I also have academic experience and personal work involving operating systems and interpreter design and 
+					development.",
+					"image": "https://apoorvaparajuli.com/media/me.JPG",
+					"sameAs": [
+					"https://github.com/apoorvaparajuli0",
+					"https://linkedin.com/in/apoorva-parajuli-66b994187"
+					]
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div itemscope itemtype="https://schema.org/Person" class="container-fluid p-0">
@@ -89,10 +110,10 @@
 				</h2>
 				<br/>
 				<p class="contact-info text-light">
-					<a class="text-nowrap" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> |
-					<a class="text-nowrap" target="_blank" itemprop="email" href="mailto:apoorvaparajuli@duck.com">apoorvaparajuli@duck.com</a> 
-					| <a class="text-nowrap" target="_blank" href="https://www.apoorvaparajuli.com/documents/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a>
-					| <span class="text-nowrap" itemprop="telephone">(510) 374-9867</span> |
+					<a class="text-nowrap" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
+					<a class="text-nowrap" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
+					<a class="text-nowrap" target="_blank" href="https://www.apoorvaparajuli.com/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
+					<span class="text-nowrap" itemprop="telephone">(510) 374-9867</span> |
 					<a class="text-nowrap" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
 				</p>
 			</div>
@@ -169,8 +190,8 @@
 										<div class="container-fluid p-0">
 											<div class="row p-0">
 												<div class="col-12 p-0">
-													<a itemprop="worksFor" href="#polypinion">Polypinion</a><br/>&#8226;<br/>
-													<a itemprop="worksFor" href="#community-support-group">Community Support Group</a>
+													<a href="#polypinion">Polypinion</a><br/>&#8226;<br/>
+													<a href="#community-support-group">Community Support Group</a>
 												</div>
 											</div>
 										</div>
@@ -179,7 +200,7 @@
 										<div class="container-fluid">
 											<div class="row p-0">
 												<div class="col-12 p-0">	
-													<h5 id="polypinion" class="fw-bolder">Polypinion</h5>
+													<h5 id="polypinion" itemprop="worksFor" class="fw-bolder">Polypinion</h5>
 													<span class="work-links">
 														<a target="_blank" href="https://polypinion.com">Web App</a>
 													</span>
@@ -275,17 +296,17 @@
 									</div>
 									<div class="col-9 work-content-section">
 										<div class="container-fluid">
-											<div class="row p-0">
+											<div itemscope itemtype="https://schema.org/Project" class="row p-0">
 												<div class="col-12 p-0">	
-													<h5 id="cpplox" class="fw-bolder">cpplox</h5>
+													<h5 itemprop="name" id="cpplox" class="fw-bolder">cpplox</h5>
 													<span class="work-links">
-														<a target="_blank" href="https://github.com/apoorvaparajuli0/cpplox">GitHub</a>
+														<a itemprop="sameAs" target="_blank" href="https://github.com/apoorvaparajuli0/cpplox">GitHub</a>
 													</span>
 													<p class="work-time">Mar. 2024 - PRESENT</p>
 													<p class="tools-used-title text-decoration-underline fw-bolder">Tools Used: </p>
 													<span class="badge skill-badge text-bg-secondary">C++</span>
 													<span class="badge skill-badge text-bg-secondary">CMake</span>
-													<ul class="work-description-list">
+													<ul itemprop="description" class="work-description-list">
 														<li>
 															A WIP interpreter based on the book "Crafting Interpreters" by Robert Nystrom. Built with
 															C++ instead of C and Java, and contains a bytecode interpreter implementation
@@ -294,9 +315,9 @@
 													</ul>
 												</div>
 											</div>
-											<div class="row p-0">
+											<div itemscope itemtype="https://schema.org/Project" class="row p-0">
 												<div class="col-12 p-0">	
-													<h5 id="master-class-project" class="fw-bolder">Master Class Project</h5>
+													<h5 itemprop="name" id="master-class-project" class="fw-bolder">Master Class Project</h5>
 													<p class="work-time">Jan. 2023 - June. 2023</p>
 													<p class="tools-used-title text-decoration-underline fw-bolder">Tools Used: </p>
 													<span class="badge skill-badge text-bg-secondary">Node.js</span>
@@ -306,7 +327,7 @@
 													<span class="badge skill-badge text-bg-secondary">AWS</span>
 													<span class="badge skill-badge text-bg-secondary">Vercel</span>
 													<span class="badge skill-badge text-bg-secondary">Docker</span>
-													<ul class="work-description-list">
+													<ul itemprop="description" class="work-description-list">
 														<li>
 															The capstone web application project at my university. Built as a Node.js/Express/Next.js stack
 															with a PostgreSQL database. Contains features such as chat messaging, uploading files to S3, and
@@ -315,15 +336,15 @@
 													</ul>
 												</div>
 											</div>
-											<div class="row p-0">
+											<div itemscope itemtype="https://schema.org/Project" class="row p-0">
 												<div class="col-12 p-0">	
-													<h5 id="inter-process-shared-memory" class="fw-bolder">Inter-Process Shared Memory</h5>
+													<h5 itemprop="name" id="inter-process-shared-memory" class="fw-bolder">Inter-Process Shared Memory</h5>
 													<p class="work-time">Apr. 2023</p>
 													<p class="tools-used-title text-decoration-underline fw-bolder">Tools Used: </p>
 													<span class="badge skill-badge text-bg-secondary">QEMU</span>
 													<span class="badge skill-badge text-bg-secondary">xv6</span>
 													<span class="badge skill-badge text-bg-secondary">gdb-multiarch</span>
-													<ul class="work-description-list">
+													<ul itemprop="description" class="work-description-list">
 														<li>
 															An academic project focused on allowing for shared memory between processes within
 															the xv6 operating system. Used gdb-multiarch to debug and QEMU to run the OS.
@@ -335,15 +356,15 @@
 													</ul>
 												</div>
 											</div>
-											<div class="row p-0">
+											<div itemscope itemtype="https://schema.org/Project" class="row p-0">
 												<div class="col-12 p-0">	
-													<h5 id="heap-memory-allocator" class="fw-bolder">Heap Memory Allocator</h5>
+													<h5 itemprop="name" id="heap-memory-allocator" class="fw-bolder">Heap Memory Allocator</h5>
 													<p class="work-time">Feb. 2023 - Mar. 2023</p>
 													<p class="tools-used-title text-decoration-underline fw-bolder">Tools Used: </p>
 													<span class="badge skill-badge text-bg-secondary">QEMU</span>
 													<span class="badge skill-badge text-bg-secondary">xv6</span>
 													<span class="badge skill-badge text-bg-secondary">gdb</span>
-													<ul class="work-description-list">
+													<ul itemprop="description" class="work-description-list">
 														<li>
 															Another academic project, where we reimplemented malloc() in the xv6 operating system to use a 
 															doubly-linked list implementation of memory rather than a singly-linked list
