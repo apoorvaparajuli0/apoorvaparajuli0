@@ -99,7 +99,12 @@
 	</head>
 	<body>
 		<div itemscope itemtype="https://schema.org/Person" class="container-fluid p-0">
-			<div class="row text-center">
+			<div class="row d-flex justify-content-center">
+				<div class="col-12 img-container">
+					<img itemprop="image" src="/media/me.JPG" class="img-fluid img-thumbnail" alt="Image of Apoorva Parajuli..."/>
+				</div>
+			</div>
+			<div class="mt-3 row text-center">
 				<h2 class="text-light fw-bolder">
 					<span itemprop="givenName">
 						Apoorva
@@ -112,17 +117,11 @@
 				<p class="contact-info text-light">
 					<a class="text-nowrap" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
 					<a class="text-nowrap" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
-					<a class="text-nowrap" target="_blank" href="https://www.apoorvaparajuli.com/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
 					<span class="text-nowrap" itemprop="telephone">(510) 374-9867</span> |
 					<a class="text-nowrap" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
 				</p>
 			</div>
-			<div class="row d-flex justify-content-center">
-				<div class="col-12 img-container">
-					<img itemprop="image" src="/media/me.JPG" class="img-fluid img-thumbnail" alt="Image of Apoorva Parajuli..."/>
-				</div>
-			</div>
-			<div class="mt-3 row text-center text-light">
+			<div class=" row text-center text-light">
 				<p>_________</p>
 			</div>
 			<div class="row text-light d-flex justify-content-center">
@@ -168,13 +167,16 @@
 				</div>
 			</div>
 			<div class="row mt-5">
-				<div class="d-none col-4 text-center">
+				<div class="d-none col-3 text-center">
 					<a class="work-display-link" href="https://blog.apoorvaparajuli.com/">Blog</a>
 				</div>
-				<div class="col-6 text-center">
+				<div class="col-4 text-center">
+					<a class="work-display-link" href="/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a>
+				</div>
+				<div class="col-4 text-center">
 					<a class="work-display-link" href="/?showProf=true">Professional Work</a>
 				</div>
-				<div class="col-6 text-center">
+				<div class="col-4 text-center">
 					<a class="work-display-link" href="/?showProf=false">Projects</a>
 				</div>
 			</div>
