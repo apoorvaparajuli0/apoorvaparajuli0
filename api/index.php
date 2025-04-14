@@ -29,7 +29,7 @@
 		<meta property="og:site_name" content="Apoorva's Portfolio"/>
 		<meta name="twitter:title" content="Apoorva Parajuli's Portfolio"/>
 		<meta name="twitter:card" content="summary_large_image"/>
-		<meta name="twitter:title" content="Apoorva's Portfolio"/>
+		<meta name="twitter:title" content="Apoorva Parajuli's Portfolio"/>
 		<meta name="twitter:description" 
 		content=
 		"
@@ -40,21 +40,16 @@
 		<meta http-equiv="Content-Security-Policy" 
 		content="
 		default-src 
-		'self' 
-		https://fonts.gstatic.com/; 
+		'self'; 
 		script-src 
 		'self' 
 		'unsafe-inline' 
-		https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/ 
-		https://fonts.googleapis.com/; 
+		https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; 
 		style-src
 		'self' 
 		'unsafe-inline' 
-		https://fonts.googleapis.com/ 
 		https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; 
 		connect-src 
-		https://apoorvaparajuli.com/sections/projects.html 
-		https://apoorvaparajuli.com/sections/professional-work.html 
 		ws://127.0.0.1:5500//ws 
 		ws://localhost:5500//ws;
 		media-src 
@@ -63,8 +58,8 @@
 		data:;
 		"/>
 		
-		<link rel="icon" href="./media/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="icon" href="/media/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="/css/index.css" />
 		<title>
 			Apoorva's Portfolio
 		</title>    
@@ -199,8 +194,8 @@
 										<div class="container-fluid p-0">
 											<div class="row p-0">
 												<div class="col-12 p-0">
-													<a href="#polypinion">Polypinion</a><br/>&#8226;<br/>
-													<a href="#community-support-group">Community Support Group</a>
+													<a class="work-section-title" href="#polypinion">Polypinion</a><br/>&#8226;<br/>
+													<a class="work-section-title" href="#community-support-group">Community Support Group</a>
 												</div>
 											</div>
 										</div>
@@ -293,10 +288,10 @@
 										<div class="container-fluid p-0">
 											<div class="row p-0">
 												<div class="col-12 p-0">
-												<a href="#cpplox">cpplox</a><br/>&#8226;<br/>
-													<a href="#master-class-project">Master Class Project</a><br/>&#8226;<br/>
-													<a href="#inter-process-shared-memory">Inter-Process Shared Memory</a><br/>&#8226;<br/>
-													<a href="#heap-memory-allocator">Heap Memory Allocator</a>
+													<a class="work-section-title" href="#cpplox">cpplox</a><br/>&#8226;<br/>
+													<a class="work-section-title" href="#master-class-project">Master Class Project</a><br/>&#8226;<br/>
+													<a class="work-section-title" href="#inter-process-shared-memory">Inter-Process Shared Memory</a><br/>&#8226;<br/>
+													<a class="work-section-title" href="#heap-memory-allocator">Heap Memory Allocator</a>
 												</div>
 											</div>
 										</div>
@@ -388,7 +383,7 @@
 								</div>
 							</div>
 						</div>
-				<?php endif; ?>
+				<?php endif; ?> 
 			</div>
 		</div>
 	</body>
