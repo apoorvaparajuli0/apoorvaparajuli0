@@ -5,6 +5,10 @@
       }
     },
     "routes": [
-      { "src": "/(.*)",  "dest": "/api/index.php" }
+      { "src": "/(.*)",  "dest": "/api/index.php" },
+      { "src": "/css/index.css", "dest": "/css/index.css"},
+      { "src": "/media/favicon.ico", "dest": "/media/favicon.ico"},
+      { "src": "/media/me.JPG", "dest": "/media/me.JPG"},
+      { "src": "/media/Apoorva_Parajuli_Resumé.pdf", "dest": "/media/Apoorva_Parajuli_Resumé.pdf"}
     ]
 }

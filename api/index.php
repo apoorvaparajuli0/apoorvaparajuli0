@@ -64,7 +64,7 @@
 		"/>
 		
 		<link rel="icon" href="./media/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="stylesheet" type="text/css" href="/css/index.css" />
 		<title>
 			Apoorva's Portfolio
 		</title>    
