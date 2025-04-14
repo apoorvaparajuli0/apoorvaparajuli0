@@ -74,6 +74,10 @@ ul {
   max-width: 350px !important;
 }
 
+.work-title {
+  font-size: x-large !important;
+}
+
 @media screen and (max-width: 767px) {
   .img-container {
     width: 200px !important;
@@ -101,5 +105,17 @@ ul {
   }
   .contact-info {
     font-size: small;
+  }
+  .work-section-title {
+    font-size: larger;
+  }
+  .work-content-section {
+    max-height: 500px !important;
+  }
+  .work-select-section {
+    max-height: 500px !important;
+  }
+  .work-skill-badge {
+    font-size: small !important;
   }
 }

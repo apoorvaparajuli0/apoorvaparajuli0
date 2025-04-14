@@ -194,8 +194,8 @@
 										<div class="container-fluid p-0">
 											<div class="row p-0">
 												<div class="col-12 p-0">
-													<a href="#polypinion">Polypinion</a><br/>&#8226;<br/>
-													<a href="#community-support-group">Community Support Group</a>
+													<a class="work-section-title" href="#polypinion">Polypinion</a><br/>&#8226;<br/>
+													<a class="work-section-title" href="#community-support-group">Community Support Group</a>
 												</div>
 											</div>
 										</div>
@@ -288,10 +288,10 @@
 										<div class="container-fluid p-0">
 											<div class="row p-0">
 												<div class="col-12 p-0">
-												<a href="#cpplox">cpplox</a><br/>&#8226;<br/>
-													<a href="#master-class-project">Master Class Project</a><br/>&#8226;<br/>
-													<a href="#inter-process-shared-memory">Inter-Process Shared Memory</a><br/>&#8226;<br/>
-													<a href="#heap-memory-allocator">Heap Memory Allocator</a>
+													<a class="work-section-title" href="#cpplox">cpplox</a><br/>&#8226;<br/>
+													<a class="work-section-title" href="#master-class-project">Master Class Project</a><br/>&#8226;<br/>
+													<a class="work-section-title" href="#inter-process-shared-memory">Inter-Process Shared Memory</a><br/>&#8226;<br/>
+													<a class="work-section-title" href="#heap-memory-allocator">Heap Memory Allocator</a>
 												</div>
 											</div>
 										</div>
