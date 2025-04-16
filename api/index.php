@@ -47,10 +47,13 @@
 		https://www.googletagmanager.com/gtag/ 
 		'unsafe-inline' 
 		https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; 
-		style-src
+		style-src 
 		'self' 
+		https://fonts.googleapis.com/ 
 		'unsafe-inline' 
 		https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; 
+		font-src 
+		https://fonts.gstatic.com/;
 		connect-src 
 		ws://127.0.0.1:5500//ws 
 		ws://localhost:5500//ws;
@@ -70,6 +73,8 @@
 		<!--Google Fonts Imports-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Suranna&display=swap" rel="stylesheet">
 		<!--Bootstrap Scripts-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 		<!--Rich Results Schema-->
@@ -106,30 +111,30 @@
 		</script>
 	</head>
 	<body>
-		<div itemscope itemtype="https://schema.org/Person" class="container-fluid p-0">
+		<div itemscope itemtype="https://schema.org/Person" class="container-fluid">
 			<div class="row p-0 d-flex justify-content-center">
 				<div class="col-12 col-md-6 img-container d-flex align-items-center justify-content-center px-4">
-					<img itemprop="image" src="/media/me.JPG" class="img-fluid img-thumbnail self-image" alt="Image of Apoorva Parajuli..."/>
+					<img itemprop="image" src="/media/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
 				</div>
 				<div class="col-12 col-md-6 text-center mt-3">
 					<div class="container-fluid p-0">
 						<div class="row">
-							<h2 class="text-light fw-bolder">
-								<span itemprop="givenName">
+							<h2 class="text-light fw-bolder apoorva-name">
+								<span class="name-segment" itemprop="givenName">
 									Apoorva
 								</span> 
-								<span itemprop="familyName">
+								<span class="name-segment" itemprop="familyName">
 									Parajuli
 								</span>
 							</h2>
 						</div>
 						<div class="row">
 							<p class="contact-info text-light">
-								<a class="text-nowrap" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
-								<a class="text-nowrap" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
-								<a class="text-nowrap" target="_blank" href="https://apoorvaparajuli.com/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
-								<span class="text-nowrap" itemprop="telephone">(510) 374-9867</span> |
-								<a class="text-nowrap" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
+								<a class="text-nowrap profile-link" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
+								<a class="text-nowrap profile-link" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
+								<a class="text-nowrap profile-link" target="_blank" href="https://apoorvaparajuli.com/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
+								<span class="text-nowrap profile-link" itemprop="telephone">(510) 374-9867</span> |
+								<a class="text-nowrap profile-link" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
 							</p>
 						</div>
 						<div class="row">
@@ -150,7 +155,7 @@
 						</div>
 						<div class="row">
 							<div class="col-12 text-light text-center mt-3">
-								<h5 class="fw-bolder">Skill(s)</h5>
+								<h5 class="skills-title fs-2">Skills...</h5>
 							</div>
 							<div class="col-12 px-3 text-center">
 								<span itemprop="knowsAbout" class="badge skill-badge">C</span>
@@ -170,196 +175,95 @@
 								<span itemprop="knowsAbout" class="badge skill-badge">OpenAI API</span>
 								<span itemprop="knowsAbout" class="badge skill-badge">Anthropic Claude</span>
 								<span itemprop="knowsAbout" class="badge skill-badge">Groq</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Google Analytics</span>
 								<span itemprop="knowsAbout" class="badge skill-badge">AWS</span>
 								<span itemprop="knowsAbout" class="badge skill-badge">Vercel</span>
 								<span itemprop="knowsAbout" class="badge skill-badge">Heroku</span>
 							</div>
 						</div>
-						<div class="row link-row">
-							<div class="col-12 mt-5">
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="d-none col-4 text-center">
-											<a class="work-display-link" href="https://blog.apoorvaparajuli.com/">Blog</a>
-										</div>
-										<div class="col-6 text-center">
-											<a class="work-display-link" href="/?showProf=true#professional-work">Professional Work</a>
-										</div>
-										<div class="col-6 text-center">
-											<a class="work-display-link" href="/?showProf=false#projects">Projects</a>
-										</div>
-									</div>
-								</div>
+					</div>
+				</div>
+			</div>
+			<div class="row text-center mt-5">
+				<h2 class="text-light work-section-title">
+					Experience...
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-bar-right d-inline d-md-none" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
+					</svg>
+				</h2>
+			</div>
+			<div class="row professional-work-row">
+				<div class="d-flex flex-row align-items-center">
+					<div class="col-12 col-md-6 col-lg-4 p-3">
+						<div class="card work-cards">
+							<div class="card-body">
+								<h5 class="card-title">Polypinion</h5>
+								<ul class="work-description">
+									<li>
+										Developed an AI-enabled fact checker that facilitated the process 
+										of reading through news articles and parsing truth from fiction
+										using <mark>OpenAI&#39;s LLM</mark> and <mark>Anthropic&#39;s ClaudeAPI LLM</mark>
+									</li>
+									<li>
+										Developed a dashboard that took advantage of <mark>Google&#39;s Analytics API</mark>
+										and displayed metrics that allowed admins to view the usage rate of the 
+										site and determine the most popular articles, etc. using <mark>Chart.js</mark>
+									</li>
+									<li>
+										Conducted software maintenance and deployed updates and upgrades to <mark>React.js</mark>, 
+										<mark>Flask</mark>, and <mark>SwiftUI</mark> applications
+									</li>
+									<li>
+										Performed configuration, deployment and maintenance tasks related to the application 
+										as deployed on <mark>Vercel</mark> and <mark>AWS EC2 and RDS</mark>
+									</li>
+								</ul>
+							</div>
+							<div class="card-footer">
+								<a href="#">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-4 p-3">
+						<div class="card work-cards">
+							<div class="card-body">
+								<h5 class="card-title">Community Support Group</h5>
+								<ul class="work-description">
+									<li>
+										Developing an AI-enabled resource matching system, designed 
+										to take requests containing a user&#39;s problem/needs and address
+										them by referring them to resources contained within a database
+									</li>
+									<li>
+										Leverages technologies such as the <mark>Groq LLM, LangChain, pgVector</mark>, and more to implement
+										RAG features
+									</li>
+									<li>
+										Developing a case-tracking system with analytics, view editing, and export features readily
+										available
+									</li>
+								</ul>
+							</div>
+							<div class="card-footer">
+							<a href="#">Go somewhere</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<?php if(array_key_exists('showProf', $_GET) && $_GET['showProf'] == "true"): ?>
-						<div id="professional-work" class="col-12 mt-5 text-center text-light">
-							<h3 class="fw-bolder">Professional Work</h3>
-						</div>
-						<div class="col-12 mt-4">
-							<div class="container-fluid px-3 text-light">
-								<div class="row border border-1 border-light rounded-2 work-container-box">
-									<div class="col-3 col-md-2 work-select-section text-center">
-										<div class="container-fluid p-0">
-											<div class="row p-0">
-												<div class="col-12 p-0">
-													<a class="work-section-title" href="#polypinion">Polypinion</a><br/>&#8226;<br/>
-													<a class="work-section-title" href="#community-support-group">Community Support Group</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-9 col-md-10 work-content-section">
-										<div class="container-fluid">
-											<div class="row p-0 work-row">
-												<div class="col-12 p-0">	
-													<h5 id="polypinion" itemprop="worksFor" class="fw-bolder work-title">Polypinion</h5>
-													<p class="work-time">Apr. 2024 - Oct. 2024</p>
-													<span class="work-links">
-														<a class="work-link" target="_blank" href="https://polypinion.com">Web App</a>
-													</span>
-													<ul class="work-description-list">
-														<li>
-															Developed an AI-enabled fact checker that facilitated the process 
-															of reading through news articles and parsing truth from fiction
-															using <mark>OpenAI&#39;s LLM</mark> and <mark>Anthropic&#39;s ClaudeAPI LLM</mark>
-														</li>
-														<li>
-															Developed a dashboard that took advantage of <mark>Google&#39;s Analytics API</mark>
-															and displayed metrics that allowed admins to view the usage rate of the 
-															site and determine the most popular articles, etc. using <mark>Chart.js</mark>
-														</li>
-														<li>
-															Conducted software maintenance and deployed updates and upgrades to <mark>React.js</mark>, 
-															<mark>Flask</mark>, and <mark>SwiftUI</mark> applications
-														</li>
-														<li>
-															Performed configuration, deployment and maintenance tasks related to the application 
-															as deployed on <mark>Vercel</mark> and <mark>AWS EC2 and RDS</mark>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<div class="row p-0 work-row">
-												<div class="col-12 p-0">
-													<h5 id="community-support-group" itemprop="worksFor" class="fw-bolder work-title">Community Support Group</h5>
-													<p class="work-time">August. 2023 - PRESENT</p>
-													<span class="work-links">
-														<a class="work-link" target="_blank" href="https://ncrhub.org">Web App</a>
-													</span>
-													<ul class="work-description-list">
-														<li>
-															Developing an AI-enabled resource matching system, designed 
-															to take requests containing a user&#39;s problem/needs and address
-															them by referring them to resources contained within a database
-														</li>
-														<li>
-															Leverages technologies such as the <mark>Groq LLM, LangChain, pgVector</mark>, and more to implement
-															RAG features
-														</li>
-														<li>
-															Developing a case-tracking system with analytics, view editing, and export features readily
-															available
-														</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					<?php elseif(array_key_exists('showProf', $_GET) && $_GET['showProf'] == "false"): ?>
-						<div id="projects" class="col-12 mt-5 text-center text-light">
-							<h3 class="fw-bolder">Projects</h3>
-						</div>
-						<div class="col-12 mt-4">
-							<div class="container-fluid px-3 text-light">
-								<div class="row border border-1 border-light rounded-2 work-container-box">
-									<div class="col-3 col-md-2 work-select-section text-center">
-										<div class="container-fluid p-0">
-											<div class="row p-0">
-												<div class="col-12 p-0">
-													<a class="work-section-title" href="#cpplox">cpplox</a><br/>&#8226;<br/>
-													<a class="work-section-title" href="#master-class-project">Master Class Project</a><br/>&#8226;<br/>
-													<a class="work-section-title" href="#inter-process-shared-memory">Inter-Process Shared Memory</a><br/>&#8226;<br/>
-													<a class="work-section-title" href="#heap-memory-allocator">Heap Memory Allocator</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-9 col-md-10 work-content-section">
-										<div class="container-fluid">
-											<div itemscope itemtype="https://schema.org/Project" class="row p-0 work-row">
-												<div class="col-12 p-0">	
-													<h5 itemprop="name" id="cpplox" class="fw-bolder work-title">cpplox</h5>
-													<p class="work-time">Mar. 2024 - PRESENT</p>
-													<span class="work-links">
-														<a class="work-link" itemprop="sameAs" target="_blank" href="https://github.com/apoorvaparajuli0/cpplox">GitHub</a>
-													</span>
-													<ul itemprop="description" class="work-description-list">
-														<li>
-															A WIP interpreter based on the book "Crafting Interpreters" by Robert Nystrom. Built with 
-															<mark>C++</mark> instead of C and Java, and contains a <mark>bytecode interpreter</mark> implementation
-															as well as an AST implementation. Additional features beyond the book spec planned.
-														</li>
-													</ul>
-												</div>
-											</div>
-											<div itemscope itemtype="https://schema.org/Project" class="row p-0 work-row">
-												<div class="col-12 p-0">	
-													<h5 itemprop="name" id="master-class-project" class="fw-bolder work-title">Master Class Project</h5>
-													<p class="work-time">Jan. 2023 - June. 2023</p>
-													<ul itemprop="description" class="work-description-list">
-														<li>
-															The capstone web application project at my university. Built as a <mark>Node.js/Express/Next.js</mark> stack
-															with a <mark>PostgreSQL</mark> database. Contains features such as chat messaging, uploading files to <mark>AWS S3</mark>, and
-															containerized with <mark>Docker</mark>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<div itemscope itemtype="https://schema.org/Project" class="row p-0 work-row">
-												<div class="col-12 p-0">	
-													<h5 itemprop="name" id="inter-process-shared-memory" class="fw-bolder work-title">Inter-Process Shared Memory</h5>
-													<p class="work-time">Apr. 2023</p>
-													<ul itemprop="description" class="work-description-list">
-														<li>
-															An academic project focused on allowing for shared memory between processes within
-															the <mark>xv6</mark> operating system. Used <mark>gdb-multiarch</mark> to debug and <mark>QEMU</mark> to run the OS.
-														</li>
-														<li>
-															Manipulated the virtual memory mapping system in the OS to point a segment of two processes'
-															virtual memory at the same physical memory, allowing for shared data.
-														</li>
-													</ul>
-												</div>
-											</div>
-											<div itemscope itemtype="https://schema.org/Project" class="row p-0 work-row">
-												<div class="col-12 p-0">	
-													<h5 itemprop="name" id="heap-memory-allocator" class="fw-bolder work-title">Heap Memory Allocator</h5>
-													<p class="work-time">Feb. 2023 - Mar. 2023</p>
-													<ul itemprop="description" class="work-description-list">
-														<li>
-															Another academic project, where we reimplemented malloc() in the xv6 operating system to use a 
-															doubly-linked list implementation of memory rather than a singly-linked list
-														</li>
-														<li>
-															Allowed for conservative memory usage, preventing sbrk() from being called to allocate further 
-															memory if previous memory blocks could fit whatever needs to be allocated
-														</lI>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-				<?php endif; ?> 
+			</div>
+			<div class="row text-center mt-5">
+				<h2 class="text-light work-section-title">
+					Projects...
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-bar-right d-inline d-md-none" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
+					</svg>
+				</h2>
+			</div>
+			<div class="row projects-row">
+				<div class="d-flex flex-row">
+					<div class="col-12 col-md-6 col-lg-4 p-3">
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>

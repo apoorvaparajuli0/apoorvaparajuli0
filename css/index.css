@@ -24,6 +24,10 @@ mark {
   font-size: xx-small;
 }
 
+.apoorva-name {
+  font-family: serif;
+}
+
 .self-bio {
   font-size: small;
   font-family: serif;
@@ -33,62 +37,80 @@ mark {
   font-size: xx-small !important;
 }
 
+.apoorva-name {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.skills-title {
+  font-family: "Suranna", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.profile-link {
+  transition: transform 0.5s ease;
+  display: inline-block;
+}
+
+.name-segment {
+  background: linear-gradient(to left, black 50%, white 50%) right;
+  background-size: 200%;
+  transition: .4s ease-out;
+}
+
+.name-segment:hover {
+  background-position: left;
+  color: black;
+}
+
+.profile-link:hover {
+  transform: translateY(3px);
+}
+
 .skill-badge {
-  border: 1px solid white
-}
-
-.work-display-link {
-  color: white;
-}
-
-.work-display-link:hover {
-  color: blue !important;
-  transition: 0.2s ease-out;
-  -moz-transition: 0.2 ease-out;
-  -webkit-transition: 0.2 ease-out;
-  -o-transition: 0.2 ease-out;
-}
-
-.work-time {
-  font-size: small;
-  margin-bottom: 1px !important;
-}
-
-.work-tool-used {
-  font-size: small;
-  margin-bottom: -2px;
-}
-
-.work-description-list {
-  font-size: x-small;
-}
-
-.work-content-section {
-  overflow-y: scroll;
-  max-height: 300px !important;
-}
-
-.work-select-section {
-  border-right: 2px solid white;
-  overflow-x: scroll;
-  font-size: small;
-  max-height: 300px !important;
-}
-
-.work-links {
-  font-size: smaller;
+  border: 0.5px solid white;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-weight: lighter !important;
 }
 
 .self-image {
   max-width: 350px !important;
 }
 
-.work-title {
-  font-size: x-large !important;
+.work-section-title {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-.work-row {
-  margin-bottom: 20px;
+.work-cards {
+  background-color: black !important;
+  border: 1px solid white !important;
+  color: white !important;
+  height: 300px !important;
+}
+
+.work-description {
+  font-size: x-small !important;
+}
+
+.projects-row {
+  width: 100% !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  height: 400px;
+}
+
+.professional-work-row {
+  width: 100% !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  height: 400px;
 }
 
 @media screen and (max-width: 767px) {
@@ -104,34 +126,10 @@ mark {
 }
 
 @media screen and (min-width: 992px) {
-  .work-description-list {
-    font-size: medium;
-  }
-  .work-tool-used {
-    font-size: medium;
-  }
-  .work-link {
-    font-size: medium;
-  }
-  .work-time {
-    font-size: medium;
-  }
   .self-bio {
     font-size: medium;
   }
   .contact-info {
     font-size: small;
-  }
-  .work-section-title {
-    font-size: larger;
-  }
-  .work-content-section {
-    max-height: 500px !important;
-  }
-  .work-select-section {
-    max-height: 500px !important;
-  }
-  .work-skill-badge {
-    font-size: x-small !important;
   }
 }
