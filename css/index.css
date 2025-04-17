@@ -108,13 +108,6 @@ mark {
   height: 500px;
 }
 
-.education-row {
-  width: 100% !important;
-  overflow-x: scroll !important;
-  overflow-y: hidden !important;
-  height: 400px;
-}
-
 .work-row::-webkit-scrollbar {
   display: none;
 }
@@ -124,21 +117,10 @@ mark {
 }
 
 .work-cards {
-  background-color: black !important;
-  border-right: 1px solid white !important;
-  border-left: 1px solid white !important;
+  background-color: black !important; 
   border-radius: 0px !important;
   color: white !important;
   height: 400px !important;
-}
-
-.education-cards {
-  background-color: black !important;
-  border-right: 1px solid white !important;
-  border-left: 1px solid white !important;
-  border-radius: 0px !important;
-  color: white !important;
-  height: 300px !important;
 }
 
 .card-title {
@@ -169,7 +151,6 @@ mark {
   }
 }
 
-
 @media screen and (min-width: 992px) {
   .self-bio {
     font-size: medium;
@@ -179,39 +160,21 @@ mark {
   }
 }
 
-@media screen and (max-width: 576px) {
-  .education-row {
-    height: 600px;
-  }
-  .education-cards {
-    height: 500px;
-  }
-}
-
 /* WORK ROW MEDIA QUERIES */
 @media screen and (min-width: 767px) and (max-width: 1200px) {
   .work-row {
     height: 650px;
   }
-  .work-cards {
-    height: 550px !important;
-  }
 }
 
 @media screen and (min-width: 450px) and (max-width: 576px) {
   .work-row {
-    height: 700px;
-  }
-  .work-cards {
-    height: 600px !important;
+    height: 500px;
   }
 }
 
 @media screen and (min-width: 350px) and (max-width: 449px) {
   .work-row {
-    height: 800px;
-  }
-  .work-cards {
-    height: 700px !important;
+    height: 600px;
   }
 }

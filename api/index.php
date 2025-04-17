@@ -188,19 +188,19 @@
 				<h2 class="text-light work-section-title">
 					View 
 					<?php if(!(array_key_exists("showProj", $_GET) || array_key_exists("showEd", $_GET))): ?>
-					<a class="text-decoration-none" href="/api/?showEd=true#work-row">
+					<a class="text-decoration-none" href="/api/?showEd=true#bottom">
 						<mark class="fw-bold border border-1 border-light swap-work-button">
 							Experience
 						</mark>
 					</a>
 					<?php elseif(array_key_exists("showEd", $_GET) && $_GET['showEd'] == "true"): ?>
-					<a class="text-decoration-none" href="/api/?showProj=true#work-row">
+					<a class="text-decoration-none" href="/api/?showProj=true#bottom">
 						<mark class="fw-bold border border-1 border-light swap-work-button">
 							Education
 						</mark>
 					</a>
 					<?php elseif(array_key_exists("showProj", $_GET) && $_GET['showProj'] == "true"): ?>
-					<a class="text-decoration-none" href="/api/#work-row">
+					<a class="text-decoration-none" href="/api/#bottom">
 						<mark class="fw-bold border border-1 border-light swap-work-button">
 							Projects
 						</mark>
@@ -212,109 +212,107 @@
 				</h2>
 			</div>
 			<?php if(!(array_key_exists("showProj", $_GET) || array_key_exists("showEd", $_GET))): ?>
-			<div class="row work-row d-flex">
-				<div class="d-flex flex-row align-items-center">
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/POLYPINION_LOGO.ico" alt="..."/>
-									Polypinion
-								</h5>
-								<h6 class="work-time">April 2024-October 2024</h6>
-								<ul class="work-description">
-									<li>
-										Developed an AI-enabled fact checker that facilitated the process 
-										of reading through news articles and parsing truth from fiction
-										using OpenAI&#39;s LLM and Anthropic&#39;s ClaudeAPI LLM
-									</li>
-									<li>
-										Conducted software maintenance and deployed updates and upgrades to React.js, 
-										Flask, and SwiftUI applications
-									</li>
-									<li>
-										Performed configuration, deployment and maintenance tasks related to the application 
-										as deployed on Vercel and AWS EC2 and RDS
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">React.js</span>
-											<span class="badge skill-badge">Flask</span>
-											<span class="badge skill-badge">SwiftUI</span>
-											<span class="badge skill-badge">PostgreSQL</span>
-											<span class="badge skill-badge">Python</span>
-											<span class="badge skill-badge">JavaScript</span>
-											<span class="badge skill-badge">Swift</span>
-											<span class="badge skill-badge">nginx</span>
-											<span class="badge skill-badge">AWS</span>
-											<span class="badge skill-badge">Vercel</span>
-											<span class="badge skill-badge">OpenAI</span>
-											<span class="badge skill-badge">ClaudeAPI</span>
-											<span class="badge skill-badge">Google API</span>
+				<div class="row work-row d-flex">
+					<div class="d-flex flex-row align-items-start">
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card work-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										<img class="mb-1" height="24" width="24" src="/media/POLYPINION_LOGO.ico" alt="..."/>
+										Polypinion
+									</h5>
+									<h6 class="work-time">April 2024-October 2024</h6>
+									<ul class="work-description">
+										<li>
+											Developed an AI-enabled fact checker
+											using OpenAI&#39;s LLM and Anthropic&#39;s ClaudeAPI LLM
+										</li>
+										<li>
+											Conducted software maintenance and deployed updates and upgrades to React.js, 
+											Flask, and SwiftUI applications
+										</li>
+										<li>
+											Performed configuration, deployment and maintenance tasks related to the application 
+											as deployed on Vercel and AWS EC2 and RDS
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+												<span class="badge skill-badge">React.js</span>
+												<span class="badge skill-badge">Flask</span>
+												<span class="badge skill-badge">SwiftUI</span>
+												<span class="badge skill-badge">PostgreSQL</span>
+												<span class="badge skill-badge">Python</span>
+												<span class="badge skill-badge">JavaScript</span>
+												<span class="badge skill-badge">Swift</span>
+												<span class="badge skill-badge">nginx</span>
+												<span class="badge skill-badge">AWS</span>
+												<span class="badge skill-badge">Vercel</span>
+												<span class="badge skill-badge">OpenAI</span>
+												<span class="badge skill-badge">ClaudeAPI</span>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://polypinion.com">Web App</a>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://polypinion.com">Web App</a>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6 p-0 p-md-3">
-						<div class="card work-cards">
-							<div class="card-body">
-								<h5 class="card-title">Community Support Group</h5>
-								<h6 class="work-time">August 2023-Present</h6>
-								<ul class="work-description">
-									<li>
-										Developing an AI-enabled resource matching system, designed 
-										to take requests containing a user&#39;s problem/needs and address
-										them by referring them to resources contained within a database
-									</li>
-									<li>
-										Leverages technologies such as the Groq LLM, LangChain, pgVector, and more to implement
-										RAG features
-									</li>
-									<li>
-										Developing a case-tracking system with analytics, view editing, and export features readily
-										available
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0 skills-container">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">Next.js</span>
-											<span class="badge skill-badge">Django</span>
-											<span class="badge skill-badge">PostgreSQL</span>
-											<span class="badge skill-badge">Python</span>
-											<span class="badge skill-badge">JavaScript</span>
-											<span class="badge skill-badge">SQLAlchemy</span>
-											<span class="badge skill-badge">nginx</span>
-											<span class="badge skill-badge">Groq</span>
-											<span class="badge skill-badge">LangChain</span>
-											<span class="badge skill-badge">Pinecone</span>
-											<span class="badge skill-badge">Heroku</span>
-											<span class="badge skill-badge">Vercel</span>
+						<div class="col-12 col-md-6 col-lg-6 p-0 p-md-3">
+							<div class="card work-cards">
+								<div class="card-body">
+									<h5 class="card-title">Community Support Group</h5>
+									<h6 class="work-time">August 2023-Present</h6>
+									<ul class="work-description">
+										<li>
+											Developing an AI-enabled resource matching system, designed 
+											to take requests containing a user&#39;s problem/needs and address
+											them by referring them to resources contained within a database
+										</li>
+										<li>
+											Leverages technologies such as the Groq LLM, LangChain, pgVector, and more to implement
+											RAG features
+										</li>
+										<li>
+											Developing a case-tracking system with analytics, view editing, and export features readily
+											available
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0 skills-container">
+										<div class="row">
+											<div class="col-12">
+												<span class="badge skill-badge">Next.js</span>
+												<span class="badge skill-badge">Django</span>
+												<span class="badge skill-badge">PostgreSQL</span>
+												<span class="badge skill-badge">Python</span>
+												<span class="badge skill-badge">JavaScript</span>
+												<span class="badge skill-badge">SQLAlchemy</span>
+												<span class="badge skill-badge">nginx</span>
+												<span class="badge skill-badge">Groq</span>
+												<span class="badge skill-badge">LangChain</span>
+												<span class="badge skill-badge">Pinecone</span>
+												<span class="badge skill-badge">Heroku</span>
+												<span class="badge skill-badge">Vercel</span>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.ncrhub.org.com">Web App</a>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.ncrhub.org.com">Web App</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			<?php elseif(array_key_exists("showEd", $_GET) && $_GET['showEd'] == "true"): ?>
-				<div class="row education-row d-flex">
-					<div class="d-flex flex-row align-items-center">
+				<div class="row work-row d-flex">
+					<div class="d-flex flex-row align-items-start">
 						<div class="col-12 col-md-6 col-lg-6 p-3">
-							<div class="card education-cards">
+							<div class="card work-cards">
 								<div class="card-body ">
 									<h5 class="card-title">
 										<img class="mb-1" height="24" width="24" src="/media/USFCA_LOGO.ico" alt="..."/>
@@ -343,7 +341,7 @@
 							</div>
 						</div>
 						<div class="col-12 col-md-6 col-lg-6 p-3">
-							<div class="card education-cards">
+							<div class="card work-cards">
 								<div class="card-body ">
 									<h5 class="card-title">
 										<img class="mb-1" height="24" width="24" src="/media/CALTECH_LOGO.ico" alt="..."/>
@@ -375,7 +373,35 @@
 				</div>
 			<?php elseif(array_key_exists("showProj", $_GET) && $_GET['showProj'] == "true"): ?>
 				<div class="row work-row d-flex">
-					<div class="d-flex flex-row align-items-center">
+					<div class="d-flex flex-row align-items-start">
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card work-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										cpplox
+									</h5>
+									<h6 class="work-time">March 2024-Present</h6>
+									<ul class="work-description">
+										<li>
+											A WIP progress interpreter with a bytecode & AST implementation. Robert Nystrom's book, "Crafting Interpreters"
+											used, but implemented in C++. Additional features beyond the book spec planned
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+												<span class="badge skill-badge">C++</span>
+												<span class="badge skill-badge">CMake</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://github.com/apoorvaparajuli0/cpplox">Repository</a>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="col-12 col-md-6 col-lg-6 p-3">
 							<div class="card work-cards">
 								<div class="card-body ">
@@ -484,9 +510,9 @@
 									<h6 class="work-time">August 2021-December 2021</h6>
 									<ul class="work-description">
 										<li>
-											A second game level that leverages the same technologies as the first but with some new additions, such as more
-											advanced enemy AI, ranged enemy attacks with predictive markers, post processing and other visual effects, as well
-											as QOL changes like footsteps that change sounds depending on the floor material
+											Developed advanced enemy AI, ranged enemy attacks with predictive markers, etc. 
+											as well as QOL changes like footsteps that change sounds depending on the floor 
+											material
 										</li>
 										<li>
 											Also added more player agency in how they interact with the game world, including zipling, vaulting, physical attacks,
@@ -545,6 +571,7 @@
 					</div>
 				</div>
 			<?php endif; ?>
+			<div id="bottom" class="row"></div>
 		</div>
 	</body>
 </html>

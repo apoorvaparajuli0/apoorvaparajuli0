@@ -8,6 +8,9 @@
       { "src": "/",  "dest": "/api/index.php" },
       { "src": "/css/index.css", "dest": "/css/index.css"},
       { "src": "/media/favicon.ico", "dest": "/media/favicon.ico"},
+      { "src": "/media/POLYPINION_LOGO.ico", "dest": "/media/POLYPINION_LOGO.ico"},
+      { "src": "/media/CALTECH_LOGO.ico", "dest": "/media/CALTECH_LOGO.ico"},
+      { "src": "/media/USFCA_LOGO.ico", "dest": "/media/USFCA_LOGO.ico"},
       { "src": "/media/me.JPG", "dest": "/media/me.JPG"},
       { "src": "/media/Apoorva_Parajuli_Resumé.pdf", "dest": "/media/Apoorva_Parajuli_Resumé.pdf"},
       { "src": "/sitemap.xml", "dest": "/sitemap.xml"}
