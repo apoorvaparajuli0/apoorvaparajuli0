@@ -15,6 +15,15 @@ ul {
   padding: 0 !important;
 }
 
+li {
+  margin: 10px;
+}
+
+mark {
+  background-color: white !important;
+  color: black !important;
+}
+
 .contact-info {
   font-size: xx-small;
 }
@@ -24,58 +33,113 @@ ul {
   font-family: serif;
 }
 
-.work-skill-badge {
-  font-size: xx-small !important;
+.apoorva-name {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-.work-display-link {
-  color: white;
+.skills-title {
+  font-family: "Suranna", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.work-display-link:hover {
-  color: blue !important;
-  transition: 0.2s ease-out;
-  -moz-transition: 0.2 ease-out;
-  -webkit-transition: 0.2 ease-out;
-  -o-transition: 0.2 ease-out;
+.skill-badge {
+  border: 0.5px solid white;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-weight: lighter !important;
 }
 
-.work-time {
-  font-size: small;
+.profile-link {
+  transition: transform 0.5s ease;
+  display: inline-block;
 }
 
-.work-tool-used {
-  font-size: small;
-  margin-top: -10px;
-  margin-bottom: -2px;
+.name-segment {
+  background: linear-gradient(to left, black 50%, white 50%) right;
+  background-size: 200%;
+  transition: .4s ease-out;
 }
 
-.work-description-list {
-  font-size: x-small;
+.name-segment:hover {
+  background-position: left;
+  color: black;
 }
 
-.work-content-section {
-  overflow-y: scroll;
-  max-height: 300px !important;
+.swap-work-button {
+  background: linear-gradient(to left, white 50%, black 50%) right;
+  background-size: 200%;
+  transition: .4s ease-out;
 }
 
-.work-select-section {
-  border-right: 2px solid white;
-  overflow-x: scroll;
-  font-size: small;
-  max-height: 300px !important;
+.swap-work-button:hover {
+  background-position: left;
+  color: white !important;
 }
 
-.work-links {
-  font-size: smaller;
+.profile-link:hover {
+  transform: translateY(3px);
 }
 
 .self-image {
   max-width: 350px !important;
 }
 
-.work-title {
-  font-size: x-large !important;
+.work-section-title {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.work-description {
+  font-size: small !important;
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+}
+
+.work-row {
+  width: 100% !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  height: 500px;
+}
+
+.work-row::-webkit-scrollbar {
+  display: none;
+}
+
+.education-row::-webkit-scrollbar {
+  display: none;
+}
+
+.work-cards {
+  background-color: black !important; 
+  border-radius: 0px !important;
+  color: white !important;
+  height: 400px !important;
+}
+
+.card-title {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: lighter;
+  font-style: normal;
+}
+
+.work-time {
+  font-weight: 300;
+}
+
+.work-skills-title {
+  margin-top: 20px;
+}
+
+.course-work-title {
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 767px) {
@@ -88,34 +152,29 @@ ul {
 }
 
 @media screen and (min-width: 992px) {
-  .work-description-list {
-    font-size: medium;
-  }
-  .work-tool-used {
-    font-size: medium;
-  }
-  .work-link {
-    font-size: medium;
-  }
-  .work-time {
-    font-size: medium;
-  }
   .self-bio {
     font-size: medium;
   }
   .contact-info {
     font-size: small;
   }
-  .work-section-title {
-    font-size: larger;
+}
+
+/* WORK ROW MEDIA QUERIES */
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  .work-row {
+    height: 650px;
   }
-  .work-content-section {
-    max-height: 500px !important;
+}
+
+@media screen and (min-width: 450px) and (max-width: 576px) {
+  .work-row {
+    height: 500px;
   }
-  .work-select-section {
-    max-height: 500px !important;
-  }
-  .work-skill-badge {
-    font-size: small !important;
+}
+
+@media screen and (min-width: 350px) and (max-width: 449px) {
+  .work-row {
+    height: 600px;
   }
 }
