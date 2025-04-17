@@ -15,6 +15,10 @@ ul {
   padding: 0 !important;
 }
 
+li {
+  margin: 10px;
+}
+
 mark {
   background-color: white !important;
   color: black !important;
@@ -24,17 +28,9 @@ mark {
   font-size: xx-small;
 }
 
-.apoorva-name {
-  font-family: serif;
-}
-
 .self-bio {
   font-size: small;
   font-family: serif;
-}
-
-.work-skill-badge {
-  font-size: xx-small !important;
 }
 
 .apoorva-name {
@@ -47,6 +43,15 @@ mark {
   font-family: "Suranna", serif;
   font-weight: 400;
   font-style: normal;
+}
+
+.skill-badge {
+  border: 0.5px solid white;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-weight: lighter !important;
 }
 
 .profile-link {
@@ -65,17 +70,19 @@ mark {
   color: black;
 }
 
-.profile-link:hover {
-  transform: translateY(3px);
+.swap-work-button {
+  background: linear-gradient(to left, white 50%, black 50%) right;
+  background-size: 200%;
+  transition: .4s ease-out;
 }
 
-.skill-badge {
-  border: 0.5px solid white;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  font-weight: lighter !important;
+.swap-work-button:hover {
+  background-position: left;
+  color: white !important;
+}
+
+.profile-link:hover {
+  transform: translateY(3px);
 }
 
 .self-image {
@@ -88,29 +95,69 @@ mark {
   font-style: normal;
 }
 
+.work-description {
+  font-size: small !important;
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+}
+
+.work-row {
+  width: 100% !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  height: 500px;
+}
+
+.education-row {
+  width: 100% !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  height: 400px;
+}
+
+.work-row::-webkit-scrollbar {
+  display: none;
+}
+
+.education-row::-webkit-scrollbar {
+  display: none;
+}
+
 .work-cards {
   background-color: black !important;
-  border: 1px solid white !important;
+  border-right: 1px solid white !important;
+  border-left: 1px solid white !important;
+  border-radius: 0px !important;
+  color: white !important;
+  height: 400px !important;
+}
+
+.education-cards {
+  background-color: black !important;
+  border-right: 1px solid white !important;
+  border-left: 1px solid white !important;
+  border-radius: 0px !important;
   color: white !important;
   height: 300px !important;
 }
 
-.work-description {
-  font-size: x-small !important;
+.card-title {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: lighter;
+  font-style: normal;
 }
 
-.projects-row {
-  width: 100% !important;
-  overflow-x: scroll !important;
-  overflow-y: hidden !important;
-  height: 400px;
+.work-time {
+  font-weight: 300;
 }
 
-.professional-work-row {
-  width: 100% !important;
-  overflow-x: scroll !important;
-  overflow-y: hidden !important;
-  height: 400px;
+.work-skills-title {
+  margin-top: 20px;
+}
+
+.course-work-title {
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 767px) {
@@ -120,10 +167,8 @@ mark {
   .self-bio {
     width: 400px !important;
   }
-  .link-row {
-    margin-bottom: 20px !important;
-  }
 }
+
 
 @media screen and (min-width: 992px) {
   .self-bio {
@@ -131,5 +176,42 @@ mark {
   }
   .contact-info {
     font-size: small;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .education-row {
+    height: 600px;
+  }
+  .education-cards {
+    height: 500px;
+  }
+}
+
+/* WORK ROW MEDIA QUERIES */
+@media screen and (min-width: 767px) and (max-width: 1200px) {
+  .work-row {
+    height: 650px;
+  }
+  .work-cards {
+    height: 550px !important;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 576px) {
+  .work-row {
+    height: 700px;
+  }
+  .work-cards {
+    height: 600px !important;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 449px) {
+  .work-row {
+    height: 800px;
+  }
+  .work-cards {
+    height: 700px !important;
   }
 }

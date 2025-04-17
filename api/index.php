@@ -75,6 +75,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Suranna&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 		<!--Bootstrap Scripts-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 		<!--Rich Results Schema-->
@@ -121,10 +122,10 @@
 						<div class="row">
 							<h2 class="text-light fw-bolder apoorva-name">
 								<span class="name-segment" itemprop="givenName">
-									Apoorva
+									<span class="first-name-eng">Apoorva</span>
 								</span> 
-								<span class="name-segment" itemprop="familyName">
-									Parajuli
+								<span class="name-segment last-name" itemprop="familyName">
+									<span class="last-name-eng">Parajuli</span>
 								</span>
 							</h2>
 						</div>
@@ -185,48 +186,88 @@
 			</div>
 			<div class="row text-center mt-5">
 				<h2 class="text-light work-section-title">
-					Experience...
-					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-bar-right d-inline d-md-none" viewBox="0 0 16 16">
+					View 
+					<?php if(!(array_key_exists("showProj", $_GET) || array_key_exists("showEd", $_GET))): ?>
+					<a class="text-decoration-none" href="/api/?showEd=true#work-row">
+						<mark class="fw-bold border border-1 border-light swap-work-button">
+							Experience
+						</mark>
+					</a>
+					<?php elseif(array_key_exists("showEd", $_GET) && $_GET['showEd'] == "true"): ?>
+					<a class="text-decoration-none" href="/api/?showProj=true#work-row">
+						<mark class="fw-bold border border-1 border-light swap-work-button">
+							Education
+						</mark>
+					</a>
+					<?php elseif(array_key_exists("showProj", $_GET) && $_GET['showProj'] == "true"): ?>
+					<a class="text-decoration-none" href="/api/#work-row">
+						<mark class="fw-bold border border-1 border-light swap-work-button">
+							Projects
+						</mark>
+					</a>
+					<?php endif; ?>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline" viewBox="0 0 16 16">
 						<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
 					</svg>
 				</h2>
 			</div>
-			<div class="row professional-work-row">
+			<?php if(!(array_key_exists("showProj", $_GET) || array_key_exists("showEd", $_GET))): ?>
+			<div class="row work-row d-flex">
 				<div class="d-flex flex-row align-items-center">
-					<div class="col-12 col-md-6 col-lg-4 p-3">
+					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body">
-								<h5 class="card-title">Polypinion</h5>
+							<div class="card-body ">
+								<h5 class="card-title">
+									<img class="mb-1" height="24" width="24" src="/media/POLYPINION_LOGO.ico" alt="..."/>
+									Polypinion
+								</h5>
+								<h6 class="work-time">April 2024-October 2024</h6>
 								<ul class="work-description">
 									<li>
 										Developed an AI-enabled fact checker that facilitated the process 
 										of reading through news articles and parsing truth from fiction
-										using <mark>OpenAI&#39;s LLM</mark> and <mark>Anthropic&#39;s ClaudeAPI LLM</mark>
+										using OpenAI&#39;s LLM and Anthropic&#39;s ClaudeAPI LLM
 									</li>
 									<li>
-										Developed a dashboard that took advantage of <mark>Google&#39;s Analytics API</mark>
-										and displayed metrics that allowed admins to view the usage rate of the 
-										site and determine the most popular articles, etc. using <mark>Chart.js</mark>
-									</li>
-									<li>
-										Conducted software maintenance and deployed updates and upgrades to <mark>React.js</mark>, 
-										<mark>Flask</mark>, and <mark>SwiftUI</mark> applications
+										Conducted software maintenance and deployed updates and upgrades to React.js, 
+										Flask, and SwiftUI applications
 									</li>
 									<li>
 										Performed configuration, deployment and maintenance tasks related to the application 
-										as deployed on <mark>Vercel</mark> and <mark>AWS EC2 and RDS</mark>
+										as deployed on Vercel and AWS EC2 and RDS
 									</li>
 								</ul>
-							</div>
-							<div class="card-footer">
-								<a href="#">Go somewhere</a>
+								<h6 class="work-skills-title">Skills Used...</h6>
+								<div class="container-fluid p-0">
+									<div class="row">
+										<div class="col-12">
+											<span class="badge skill-badge">React.js</span>
+											<span class="badge skill-badge">Flask</span>
+											<span class="badge skill-badge">SwiftUI</span>
+											<span class="badge skill-badge">PostgreSQL</span>
+											<span class="badge skill-badge">Python</span>
+											<span class="badge skill-badge">JavaScript</span>
+											<span class="badge skill-badge">Swift</span>
+											<span class="badge skill-badge">nginx</span>
+											<span class="badge skill-badge">AWS</span>
+											<span class="badge skill-badge">Vercel</span>
+											<span class="badge skill-badge">OpenAI</span>
+											<span class="badge skill-badge">ClaudeAPI</span>
+											<span class="badge skill-badge">Google API</span>
+										</div>
+									</div>
+								</div>
+								<div class="relevant-links mt-5">
+									<a target="_blank" href="https://polypinion.com">Web App</a>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-4 p-3">
+					<div class="col-12 col-md-6 col-lg-6 p-0 p-md-3">
 						<div class="card work-cards">
 							<div class="card-body">
 								<h5 class="card-title">Community Support Group</h5>
+								<h6 class="work-time">August 2023-Present</h6>
 								<ul class="work-description">
 									<li>
 										Developing an AI-enabled resource matching system, designed 
@@ -234,7 +275,7 @@
 										them by referring them to resources contained within a database
 									</li>
 									<li>
-										Leverages technologies such as the <mark>Groq LLM, LangChain, pgVector</mark>, and more to implement
+										Leverages technologies such as the Groq LLM, LangChain, pgVector, and more to implement
 										RAG features
 									</li>
 									<li>
@@ -242,29 +283,268 @@
 										available
 									</li>
 								</ul>
-							</div>
-							<div class="card-footer">
-							<a href="#">Go somewhere</a>
+								<h6 class="work-skills-title">Skills Used...</h6>
+								<div class="container-fluid p-0 skills-container">
+									<div class="row">
+										<div class="col-12">
+											<span class="badge skill-badge">Next.js</span>
+											<span class="badge skill-badge">Django</span>
+											<span class="badge skill-badge">PostgreSQL</span>
+											<span class="badge skill-badge">Python</span>
+											<span class="badge skill-badge">JavaScript</span>
+											<span class="badge skill-badge">SQLAlchemy</span>
+											<span class="badge skill-badge">nginx</span>
+											<span class="badge skill-badge">Groq</span>
+											<span class="badge skill-badge">LangChain</span>
+											<span class="badge skill-badge">Pinecone</span>
+											<span class="badge skill-badge">Heroku</span>
+											<span class="badge skill-badge">Vercel</span>
+										</div>
+									</div>
+								</div>
+								<div class="relevant-links mt-5">
+									<a target="_blank" href="https://www.ncrhub.org.com">Web App</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row text-center mt-5">
-				<h2 class="text-light work-section-title">
-					Projects...
-					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-bar-right d-inline d-md-none" viewBox="0 0 16 16">
-						<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
-					</svg>
-				</h2>
-			</div>
-			<div class="row projects-row">
-				<div class="d-flex flex-row">
-					<div class="col-12 col-md-6 col-lg-4 p-3">
-
+			<?php elseif(array_key_exists("showEd", $_GET) && $_GET['showEd'] == "true"): ?>
+				<div class="row education-row d-flex">
+					<div class="d-flex flex-row align-items-center">
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card education-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										<img class="mb-1" height="24" width="24" src="/media/USFCA_LOGO.ico" alt="..."/>
+										University of San Francisco
+									</h5>
+									<h6 class="degree-type fw-lighter">B.S. in Computer Science</h6>
+									<h6 class="work-time">August 2021-August 2023</h6>
+									<h6 class="course-work-title">Relevant Coursework...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+												<span class="badge skill-badge">Computer Architecture</span>
+												<span class="badge skill-badge">Operating Systems</span>
+												<span class="badge skill-badge">Programming Languages</span>
+												<span class="badge skill-badge">Machine Learning</span>
+												<span class="badge skill-badge">C & Systems Programming</span>
+												<span class="badge skill-badge">Data Structures & Algorithms</span>
+												<span class="badge skill-badge">Multivariable Calculus</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.usfca.edu/">Website</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card education-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										<img class="mb-1" height="24" width="24" src="/media/CALTECH_LOGO.ico" alt="..."/>
+										CalTech
+									</h5>
+									<h6 class="degree-type fw-lighter">AI & Machine Learning Bootcamp</h6>
+									<h6 class="work-time">April 2025-Present</h6>
+									<h6 class="course-work-title">Relevant Coursework...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+												</span>
+												<span class="badge skill-badge">Deep Learning W/ Keras & Tensorflow</span>
+												<span class="badge skill-badge">Machine Learning</span>
+												<span class="badge skill-badge">Reinforcement Learning</span>
+												<span class="badge skill-badge">Advanced Generative AI</span>
+												<span class="badge skill-badge">NLP & Speech Recognition</span>
+												<span class="badge skill-badge">ADL & Computer Vision</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.caltech.edu/">Website</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			<?php elseif(array_key_exists("showProj", $_GET) && $_GET['showProj'] == "true"): ?>
+				<div class="row work-row d-flex">
+					<div class="d-flex flex-row align-items-center">
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card work-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										Heap Memory Allocator
+									</h5>
+									<h6 class="work-time">April 2023</h6>
+									<ul class="work-description">
+										<li>
+											An academic project focused on allowing for shared memory between processes within
+											the xv6 operating system. Used gdb-multiarch to debug and QEMU to run the OS.
+										</li>
+										<li>
+											Manipulated the virtual memory mapping system in the OS to point a segment of two processes'
+											virtual memory at the same physical memory, allowing for shared data.
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+												<span class="badge skill-badge">C</span>
+												<span class="badge skill-badge">QEMU</span>
+												<span class="badge skill-badge">xv6</span>
+												<span class="badge skill-badge">Makefile</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card work-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										Inter-Process Shared Memory
+									</h5>
+									<h6 class="work-time">February 2023-March 2023</h6>
+									<ul class="work-description">
+										<li>
+											Another academic project, where we reimplemented malloc() in the xv6 operating system to use a 
+											doubly-linked list implementation of memory rather than a singly-linked list
+										</li>
+										<li>
+											Allowed for conservative memory usage, preventing sbrk() from being called to allocate further 
+											memory if previous memory blocks could fit whatever needs to be allocated
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+												<span class="badge skill-badge">C</span>
+												<span class="badge skill-badge">QEMU</span>
+												<span class="badge skill-badge">xv6</span>
+												<span class="badge skill-badge">Makefile</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card work-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										Master Class Project
+									</h5>
+									<h6 class="work-time">January 2023-June 2023</h6>
+									<ul class="work-description">
+										<li>
+											The capstone web application project at my university. Built as a Node.js/Express/Next.js stack
+											with a PostgreSQL database. Contains features such as chat messaging, uploading files to AWS S3, more.
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+											<span class="badge skill-badge">Node.js</span>
+											<span class="badge skill-badge">Express.js</span>
+											<span class="badge skill-badge">Next.js</span>
+											<span class="badge skill-badge">JavaScript</span>
+											<span class="badge skill-badge">PostgreSQL</span>
+											<span class="badge skill-badge">Vercel</span>
+											<span class="badge skill-badge">AWS</span>
+											<span class="badge skill-badge">socket.io</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card work-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										Rue
+									</h5>
+									<h6 class="work-time">August 2021-December 2021</h6>
+									<ul class="work-description">
+										<li>
+											A second game level that leverages the same technologies as the first but with some new additions, such as more
+											advanced enemy AI, ranged enemy attacks with predictive markers, post processing and other visual effects, as well
+											as QOL changes like footsteps that change sounds depending on the floor material
+										</li>
+										<li>
+											Also added more player agency in how they interact with the game world, including zipling, vaulting, physical attacks,
+											sliding, etc.
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+												<span class="badge skill-badge">Unreal Engine</span>
+												<span class="badge skill-badge">Blender</span>
+												<span class="badge skill-badge">Blueprints</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c_1OTU7MulPUvfcQnt5t2_">Progress Videos</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-6 p-3">
+							<div class="card work-cards">
+								<div class="card-body ">
+									<h5 class="card-title">
+										Killer Karens
+									</h5>
+									<h6 class="work-time">January 2021-June 2021</h6>
+									<ul class="work-description">
+										<li>
+											Developed a first-person shooter game level in Unreal Engine, that took advantage of the blueprint scripting
+											system, ray tracing, behavior trees, and more to create a compelling game environment
+										</li>
+										<li>
+											Features enemies that track and attack the player with physical attacks, shooting mechanics, pickups, dialogue,
+											etc.
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12">
+												<span class="badge skill-badge">Unreal Engine</span>
+												<span class="badge skill-badge">Blender</span>
+												<span class="badge skill-badge">Blueprints</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c-FYMRF_XWe9SfEAcyKlCQ">Progress Videos</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
 		</div>
 	</body>
 </html>
