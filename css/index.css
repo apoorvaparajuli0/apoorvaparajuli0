@@ -56,6 +56,9 @@ mark {
 
 .profile-link {
   transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  -webkit-transition: transform 0.5s ease;
   display: inline-block;
 }
 
@@ -63,6 +66,9 @@ mark {
   background: linear-gradient(to left, black 50%, white 50%) right;
   background-size: 200%;
   transition: .4s ease-out;
+  -moz-transition: .4s ease-out;
+  -o-transition: .4s ease-out;
+  -webkit-transition: .4s ease-out;
 }
 
 .name-segment:hover {
@@ -72,8 +78,12 @@ mark {
 
 .swap-work-button {
   background: linear-gradient(to left, white 50%, black 50%) right;
+  color: black;
   background-size: 200%;
   transition: .4s ease-out;
+  -moz-transition: .4s ease-out;
+  -o-transition: .4s ease-out;
+  -webkit-transition: .4s ease-out;
 }
 
 .swap-work-button:hover {
