@@ -13,6 +13,7 @@
       { "src": "/media/USFCA_LOGO.ico", "dest": "/media/USFCA_LOGO.ico"},
       { "src": "/media/me.JPG", "dest": "/media/me.JPG"},
       { "src": "/media/Apoorva_Parajuli_Resumé.pdf", "dest": "/media/Apoorva_Parajuli_Resumé.pdf"},
-      { "src": "/sitemap.xml", "dest": "/sitemap.xml"}
+      { "src": "/sitemap.xml", "dest": "/sitemap.xml"},
+      { "src": "/robots.txt", "dest": "/robots.txt"}
     ]
 }

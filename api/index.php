@@ -54,13 +54,8 @@
 		https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; 
 		font-src 
 		https://fonts.gstatic.com/;
-		connect-src 
-		ws://127.0.0.1:5500//ws 
-		ws://localhost:5500//ws;
 		media-src 
-		https: 
-		file: 
-		data:;
+		https:;
 		"/>
 		
 		<link rel="icon" href="/media/favicon.ico">
@@ -190,7 +185,7 @@
 					<p class="fw-bold d-inline">
 						Experience
 					</p>
-					<a class="text-decoration-none" href="/api/?showEd=true#bottom">
+					<a class="text-decoration-none" href="?showEd=true#bottom">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
 						</svg>
@@ -199,7 +194,7 @@
 					<p class="fw-bold d-inline">
 						Education
 					</p>
-					<a class="text-decoration-none" href="/api/?showProj=true#bottom">
+					<a class="text-decoration-none" href="?showProj=true#bottom">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
 						</svg>
@@ -208,7 +203,7 @@
 					<p class="fw-bold d-inline">
 						Projects
 					</p>
-					<a class="text-decoration-none" href="/api/#bottom">
+					<a class="text-decoration-none" href="/#bottom">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
 						</svg>
