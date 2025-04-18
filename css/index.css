@@ -77,14 +77,11 @@ mark {
 }
 
 .swap-work-button {
-  background: linear-gradient(to left, white 50%, black 50%) right;
-  color: black;
   background-size: 200%;
   transition: .4s ease-out;
   -moz-transition: .4s ease-out;
   -o-transition: .4s ease-out;
   -webkit-transition: .4s ease-out;
-  border: 2px solid white;
 }
 
 .swap-work-button:hover {

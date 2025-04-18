@@ -181,37 +181,113 @@
 			</div>
 			<div id="bottom" class="row text-center mt-5">
 				<h2 class="text-light work-section-title">
-					<?php if(!(array_key_exists("showProj", $_GET) || array_key_exists("showEd", $_GET))): ?>
-					<p class="fw-bold d-inline">
-						Experience
-					</p>
-					<a class="text-decoration-none" href="?showEd=true#bottom">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
-							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
-						</svg>
-					</a>
-					<?php elseif(array_key_exists("showEd", $_GET) && $_GET['showEd'] == "true"): ?>
-					<p class="fw-bold d-inline">
-						Education
-					</p>
-					<a class="text-decoration-none" href="?showProj=true#bottom">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
-							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
-						</svg>
-					</a>
+					<?php if(array_key_exists("showEd", $_GET) && $_GET['showEd'] == "true"): ?>
+						<a class="text-decoration-none icon-link-hover" style="--bs-icon-link-transform: translate3d(-.375rem, 0, 0);" href="/api/?showProj=true#bottom">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-left d-inline swap-work-button" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
+							</svg>
+						</a>
+						<p class="fw-bold d-inline">
+							Education
+						</p>
+						<a class="text-decoration-none icon-link-hover" href="/api/#bottom">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
+							</svg>
+						</a>
+					<?php elseif(!(array_key_exists("showProj", $_GET) || array_key_exists("showEd", $_GET))): ?>
+						<a class="text-decoration-none icon-link-hover" style="--bs-icon-link-transform: translate3d(-.375rem, 0, 0);" href="/api/?showEd=true#bottom">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-left d-inline swap-work-button" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
+							</svg>
+						</a>
+						<p class="fw-bold d-inline">
+							Experience
+						</p>
+						<a class="text-decoration-none icon-link-hover" href="/api/?showProj=true#bottom">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
+							</svg>
+						</a>
 					<?php elseif(array_key_exists("showProj", $_GET) && $_GET['showProj'] == "true"): ?>
-					<p class="fw-bold d-inline">
-						Projects
-					</p>
-					<a class="text-decoration-none" href="/#bottom">
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
-							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
-						</svg>
-					</a>
+						<a class="text-decoration-none icon-link-hover" style="--bs-icon-link-transform: translate3d(-.375rem, 0, 0);" href="/api/#bottom">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-left d-inline swap-work-button" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
+							</svg>
+						</a>
+						<p class="fw-bold d-inline">
+							Projects
+						</p>
+						<a class="text-decoration-none icon-link-hover" href="/api/?showEd=true#bottom">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
+							</svg>
+						</a>
 					<?php endif; ?>
 				</h2>
 			</div>
-			<?php if(!(array_key_exists("showProj", $_GET) || array_key_exists("showEd", $_GET))): ?>
+			<?php if(array_key_exists("showEd", $_GET) && $_GET['showEd'] == "true"): ?>
+				<div class="row work-row d-flex">
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<div class="card work-cards">
+							<div class="card-body ">
+								<h5 class="card-title">
+									<img class="mb-1" height="24" width="24" src="/media/CALTECH_LOGO.ico" alt="..."/>
+									CalTech
+								</h5>
+								<h6 class="degree-type fw-lighter">AI & Machine Learning Bootcamp</h6>
+								<h6 class="work-time">April 2025-Present</h6>
+								<h6 class="course-work-title">Relevant Coursework...</h6>
+								<div class="container-fluid p-0">
+									<div class="row">
+										<div class="col-12">
+											</span>
+											<span class="badge skill-badge">Deep Learning W/ Keras & Tensorflow</span>
+											<span class="badge skill-badge">Machine Learning</span>
+											<span class="badge skill-badge">Reinforcement Learning</span>
+											<span class="badge skill-badge">Advanced Generative AI</span>
+											<span class="badge skill-badge">NLP & Speech Recognition</span>
+											<span class="badge skill-badge">ADL & Computer Vision</span>
+										</div>
+									</div>
+								</div>
+								<div class="relevant-links mt-5">
+									<a target="_blank" href="https://www.caltech.edu/">Website</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<div class="card work-cards">
+							<div class="card-body ">
+								<h5 class="card-title">
+									<img class="mb-1" height="24" width="24" src="/media/USFCA_LOGO.ico" alt="..."/>
+									University of San Francisco
+								</h5>
+								<h6 class="degree-type fw-lighter">B.S. in Computer Science</h6>
+								<h6 class="work-time">August 2021-August 2023</h6>
+								<h6 class="course-work-title">Relevant Coursework...</h6>
+								<div class="container-fluid p-0">
+									<div class="row">
+										<div class="col-12">
+											<span class="badge skill-badge">Computer Architecture</span>
+											<span class="badge skill-badge">Operating Systems</span>
+											<span class="badge skill-badge">Programming Languages</span>
+											<span class="badge skill-badge">Machine Learning</span>
+											<span class="badge skill-badge">C & Systems Programming</span>
+											<span class="badge skill-badge">Data Structures & Algorithms</span>
+											<span class="badge skill-badge">Multivariable Calculus</span>
+										</div>
+									</div>
+								</div>
+								<div class="relevant-links mt-5">
+									<a target="_blank" href="https://www.usfca.edu/">Website</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php elseif(!(array_key_exists("showProj", $_GET) || array_key_exists("showEd", $_GET))): ?>		
 				<div class="row work-row d-flex">
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
@@ -301,67 +377,6 @@
 								</div>
 								<div class="relevant-links mt-5">
 									<a target="_blank" href="https://www.ncrhub.org.com">Web App</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			<?php elseif(array_key_exists("showEd", $_GET) && $_GET['showEd'] == "true"): ?>
-				<div class="row work-row d-flex">
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/CALTECH_LOGO.ico" alt="..."/>
-									CalTech
-								</h5>
-								<h6 class="degree-type fw-lighter">AI & Machine Learning Bootcamp</h6>
-								<h6 class="work-time">April 2025-Present</h6>
-								<h6 class="course-work-title">Relevant Coursework...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											</span>
-											<span class="badge skill-badge">Deep Learning W/ Keras & Tensorflow</span>
-											<span class="badge skill-badge">Machine Learning</span>
-											<span class="badge skill-badge">Reinforcement Learning</span>
-											<span class="badge skill-badge">Advanced Generative AI</span>
-											<span class="badge skill-badge">NLP & Speech Recognition</span>
-											<span class="badge skill-badge">ADL & Computer Vision</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.caltech.edu/">Website</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/USFCA_LOGO.ico" alt="..."/>
-									University of San Francisco
-								</h5>
-								<h6 class="degree-type fw-lighter">B.S. in Computer Science</h6>
-								<h6 class="work-time">August 2021-August 2023</h6>
-								<h6 class="course-work-title">Relevant Coursework...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">Computer Architecture</span>
-											<span class="badge skill-badge">Operating Systems</span>
-											<span class="badge skill-badge">Programming Languages</span>
-											<span class="badge skill-badge">Machine Learning</span>
-											<span class="badge skill-badge">C & Systems Programming</span>
-											<span class="badge skill-badge">Data Structures & Algorithms</span>
-											<span class="badge skill-badge">Multivariable Calculus</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.usfca.edu/">Website</a>
 								</div>
 							</div>
 						</div>
