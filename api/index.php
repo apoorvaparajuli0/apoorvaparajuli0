@@ -3,7 +3,7 @@
 
 	header("X-Frame-Options: SAMEORIGIN");
 	header("Cross-Origin-Opener-Policy: same-origin");
-	header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-$google_script_nonce' https://www.googletagmanager.com/gtag/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; style-src 'self' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; font-src https://fonts.gstatic.com/; media-src 'self'");
+	header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-$google_script_nonce' https://www.googletagmanager.com/gtag/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; style-src 'self' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; font-src https://fonts.gstatic.com/; media-src 'self'; base-uri 'self'");
 	header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload")
 ?>
 
@@ -101,7 +101,7 @@
 		<div itemscope itemtype="https://schema.org/Person" class="container-fluid">
 			<div class="row p-0 d-flex justify-content-center">
 				<div class="col-12 col-md-6 img-container d-flex align-items-center justify-content-center px-4">
-					<img itemprop="image" src="/media/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
+					<img width="350px" height="350px" itemprop="image" src="/media/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
 				</div>
 				<div class="col-12 col-md-6 text-center mt-3">
 					<div class="container-fluid p-0">
@@ -117,11 +117,11 @@
 						</div>
 						<div class="row">
 							<p class="contact-info text-light">
-								<a class="text-nowrap profile-link" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
-								<a class="text-nowrap profile-link" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
-								<a class="text-nowrap profile-link" target="_blank" href="https://apoorvaparajuli.com/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
-								<span class="text-nowrap profile-link" itemprop="telephone">(510) 374-9867</span> |
-								<a class="text-nowrap profile-link" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
+								<a class="text-nowrap profile-link me-1" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
+								<a class="text-nowrap profile-link ms-1 me-1" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
+								<a class="text-nowrap profile-link ms-1 me-1" target="_blank" href="https://apoorvaparajuli.com/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
+								<span class="text-nowrap profile-link ms-1 me-1" itemprop="telephone">(510) 374-9867</span> |
+								<a class="text-nowrap profile-link ms-1" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
 							</p>
 						</div>
 						<div class="row">
@@ -172,7 +172,7 @@
 			</div>
 			<div id="bottom" class="row text-center mt-5">
 				<h2 class="text-light work-section-title">
-					<a class="text-decoration-none icon-link-hover" 
+					<a class="text-decoration-none" 
 					<?php if (array_key_exists('show', $_GET) && $_GET['show'] == "education") { 
 						echo "href=\"/api/#bottom\"";
 					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "projects") {
@@ -180,7 +180,7 @@
 					} else {
 						echo "href=\"/api/?show=projects#bottom\"";
 					}?>>
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-left d-inline swap-work-button" viewBox="0 0 16 16">
+						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-left d-inline icon-left-arrow" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
 						</svg>
 					</a>
@@ -197,7 +197,7 @@
 							Experience
 						</p>
 					<?php endif; ?>
-					<a class="text-decoration-none icon-link-hover" 
+					<a class="text-decoration-none" 
 					<?php if (array_key_exists('show', $_GET) && $_GET['show'] == "education") { 
 						echo "href=\"/api/?show=projects#bottom\"";
 					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "projects") {
@@ -205,7 +205,7 @@
 					} else {
 						echo "href=\"/api/?show=education#bottom\"";
 					}?>>
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline swap-work-button" viewBox="0 0 16 16">
+						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline icon-right-arrow" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
 						</svg>
 					</a>
