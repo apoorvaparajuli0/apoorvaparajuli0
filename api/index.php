@@ -558,7 +558,7 @@
 									</div>
 								</div>
 								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.ncrhub.org.com">Web App</a>
+									<a target="_blank" href="https://www.ncrhub.org">Web App</a>
 								</div>
 							</div>
 						</div>
