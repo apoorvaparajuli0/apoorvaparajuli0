@@ -19,11 +19,6 @@ li {
   margin: 10px;
 }
 
-mark {
-  background-color: white !important;
-  color: black !important;
-}
-
 .contact-info {
   font-size: xx-small;
 }
@@ -62,6 +57,10 @@ mark {
   display: inline-block;
 }
 
+.profile-link:hover {
+  transform: translateY(3px);
+}
+
 .name-segment {
   background: linear-gradient(to left, black 50%, white 50%) right;
   background-size: 200%;
@@ -76,21 +75,28 @@ mark {
   color: black;
 }
 
-.swap-work-button {
-  background-size: 200%;
+.icon-left-arrow {
+  transform: translateX(.25rem) !important;
   transition: .4s ease-out;
   -moz-transition: .4s ease-out;
   -o-transition: .4s ease-out;
   -webkit-transition: .4s ease-out;
 }
 
-.swap-work-button:hover {
-  background-position: left;
-  color: white !important;
+.icon-left-arrow:hover {
+  transform: translateX(-.25rem) !important;
 }
 
-.profile-link:hover {
-  transform: translateY(3px);
+.icon-right-arrow {
+  transform: translateX(-.25rem) !important;
+  transition: .4s ease-out;
+  -moz-transition: .4s ease-out;
+  -o-transition: .4s ease-out;
+  -webkit-transition: .4s ease-out;
+}
+
+.icon-right-arrow:hover {
+  transform: translateX(.25rem) !important;
 }
 
 .self-image {
@@ -116,10 +122,6 @@ mark {
 }
 
 .work-row::-webkit-scrollbar {
-  display: none;
-}
-
-.education-row::-webkit-scrollbar {
   display: none;
 }
 
