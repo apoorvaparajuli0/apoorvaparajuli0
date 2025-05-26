@@ -1,9 +1,11 @@
 <?php 
 	$google_script_nonce = base64_encode(random_bytes(64));
+	$google_tag_nonce = base64_encode(random_bytes(64));
+	$bootstrap_nonce = base64_encode(random_bytes(64));
 
 	header("X-Frame-Options: SAMEORIGIN");
 	header("Cross-Origin-Opener-Policy: same-origin");
-	header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-$google_script_nonce' https://www.googletagmanager.com/gtag/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; style-src 'self' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; font-src https://fonts.gstatic.com/; media-src 'self'; base-uri 'self'");
+	header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-$google_script_nonce' 'nonce-$google_tag_nonce' 'nonce-$bootstrap_nonce' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; font-src https://fonts.gstatic.com/; media-src 'self'; base-uri 'self'");
 	header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload")
 ?>
 
@@ -33,7 +35,7 @@
 		"/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:url" content="https://apoorvaparajuli.com"/>
-		<meta property="og:image" content="https://apoorvaparajuli.com/media/me.JPG"/>
+		<meta property="og:image" content="https://apoorvaparajuli.com/assets/me.JPG"/>
 		<meta property="og:image:type" content="image/jpg"/>
 		<meta property="og:image:alt" content="Apoorva Parajuli..."/>
 		<meta property="og:site_name" content="Apoorva's Portfolio"/>
@@ -45,9 +47,9 @@
 		"
 		The portfolio website of Apoorva Parajuli, Full-Stack Web Developer.
 		"/>
-		<meta name="twitter:image" content="https://apoorvaparajuli.com/media/me.JPG"/>
+		<meta name="twitter:image" content="https://apoorvaparajuli.com/assets/me.JPG"/>
 		<meta name="twitter:url" content="https://apoorvaparajuli.com"/>
-		<link rel="icon" href="/media/favicon.ico">
+		<link rel="icon" href="/assets/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="/css/index.css" />
 		<title>
 			Apoorva Parajuli's Portfolio
@@ -61,7 +63,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Suranna&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 		<!--Bootstrap Scripts-->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<script <?php echo "nonce=\"$bootstrap_nonce\""; ?> src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 		<!--Rich Results Schema-->
 		<script type="application/ld+json">
 			{
@@ -75,7 +77,7 @@
 					Django, Flask, Next.js, and more. I have integrated AI-enabled solutions into web applications using OpenAI's API, Anthropic's
 					Claude, and Groq. I also have academic experience and personal work involving operating systems and interpreter design and 
 					development.",
-					"image": "https://apoorvaparajuli.com/media/me.JPG",
+					"image": "https://apoorvaparajuli.com/assets/me.JPG",
 					"sameAs": [
 					"https://github.com/apoorvaparajuli0",
 					"https://linkedin.com/in/apoorva-parajuli-66b994187"
@@ -84,7 +86,7 @@
 			}
 		</script>
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCX1SZSLJ4"></script>
+		<script <?php echo "nonce=\"$google_tag_nonce\""; ?> async src="https://www.googletagmanager.com/gtag/js?id=G-TCX1SZSLJ4"></script>
 		<?php 
 		echo "<script nonce=\"$google_script_nonce\">
 			window.dataLayer = window.dataLayer || [];
@@ -98,15 +100,16 @@
 		?>
 	</head>
 	<body>
+		<noscript><div class="container text-center color-mode-dep-text">Disabling JavaScript can lead to a shaky experience, for a more user-friendly experience, please enable JavaScript on your web browser.</div></noscript>
 		<div itemscope itemtype="https://schema.org/Person" class="container-fluid">
-			<div class="row p-0 d-flex justify-content-center">
+			<div id="top" class="row p-0 d-flex justify-content-center">
 				<div class="col-12 col-md-6 img-container d-flex align-items-center justify-content-center px-4">
-					<img width="350px" height="350px" itemprop="image" src="/media/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
+					<img width="350px" height="350px" itemprop="image" src="/assets/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
 				</div>
 				<div class="col-12 col-md-6 text-center mt-3">
 					<div class="container-fluid p-0">
 						<div class="row">
-							<h2 class="text-light fw-bolder apoorva-name">
+							<h2 class="color-mode-dep-text fw-bolder apoorva-name">
 								<span class="name-segment" itemprop="givenName">
 									<span class="first-name-eng">Apoorva</span>
 								</span> 
@@ -116,19 +119,19 @@
 							</h2>
 						</div>
 						<div class="row">
-							<p class="contact-info text-light">
-								<a class="text-nowrap profile-link me-1" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
-								<a class="text-nowrap profile-link ms-1 me-1" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
-								<a class="text-nowrap profile-link ms-1 me-1" target="_blank" href="https://apoorvaparajuli.com/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
-								<span class="text-nowrap profile-link ms-1 me-1" itemprop="telephone">(510) 374-9867</span> |
-								<a class="text-nowrap profile-link ms-1" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
+							<p class="contact-info color-mode-dep-text">
+								<a class="text-nowrap profile-link me-1 mb-2" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
+								<a class="text-nowrap profile-link ms-1 me-1 mb-2" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
+								<a class="text-nowrap profile-link ms-1 me-1 mb-2" target="_blank" href="https://apoorvaparajuli.com/assets/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
+								<span class="text-nowrap profile-link ms-1 me-1 mb-2" itemprop="telephone">(510) 374-9867</span> |
+								<a class="text-nowrap profile-link ms-1 mb-2" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
 							</p>
 						</div>
 						<div class="row">
-							<div class=" col-12 text-center text-light">
+							<div class=" col-12 text-center color-mode-dep-text">
 								<p>_________</p>
 							</div>
-							<div class="col-12 text-light d-flex justify-content-center">
+							<div class="col-12 color-mode-dep-text d-flex justify-content-center">
 								<p class="self-bio" itemprop="description">
 									I am a <span itemprop="jobTitle">Full Stack Software Engineer</span> with experience working with various web frameworks including 
 									Django, Flask, Next.js, and more. I have integrated AI-enabled solutions into web applications using OpenAI's API, Anthropic's
@@ -136,12 +139,12 @@
 									development.
 								</p>
 							</div>
-							<div class="col-12 text-center text-light">
+							<div class="col-12 text-center color-mode-dep-text">
 								<p>_________</p>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-12 text-light text-center mt-3">
+							<div class="col-12 color-mode-dep-text text-center mt-3">
 								<h5 class="skills-title fs-2">Skills...</h5>
 							</div>
 							<div class="col-12 px-3 text-center">
@@ -171,14 +174,14 @@
 				</div>
 			</div>
 			<div id="bottom" class="row text-center mt-5">
-				<h2 class="text-light work-section-title">
+				<h2 class="color-mode-dep-text work-section-title">
 					<a class="text-decoration-none" 
 					<?php if (array_key_exists('show', $_GET) && $_GET['show'] == "education") { 
-						echo "href=\"/#bottom\"";
+						echo "href=\"/api/#bottom\"";
 					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "projects") {
-						echo "href=\"/?show=education#bottom\"";
+						echo "href=\"/api/?show=education#bottom\"";
 					} else {
-						echo "href=\"/?show=projects#bottom\"";
+						echo "href=\"/api/?show=projects#bottom\"";
 					}?>>
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-left d-inline icon-left-arrow" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
@@ -199,11 +202,11 @@
 					<?php endif; ?>
 					<a class="text-decoration-none" 
 					<?php if (array_key_exists('show', $_GET) && $_GET['show'] == "education") { 
-						echo "href=\"/?show=projects#bottom\"";
+						echo "href=\"/api/?show=projects#bottom\"";
 					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "projects") {
-						echo "href=\"/#bottom\"";
+						echo "href=\"/api/#bottom\"";
 					} else {
-						echo "href=\"/?show=education#bottom\"";
+						echo "href=\"/api/?show=education#bottom\"";
 					}?>>
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline icon-right-arrow" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
@@ -215,9 +218,9 @@
 				<div class="row work-row d-flex">
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/CALTECH_LOGO.ico" alt="..."/>
+									<img class="mb-1" height="24" width="24" src="/assets/CALTECH_LOGO.ico" alt="..."/>
 									CalTech
 								</h5>
 								<h6 class="degree-type fw-lighter">AI & Machine Learning Bootcamp</h6>
@@ -244,9 +247,9 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/USFCA_LOGO.ico" alt="..."/>
+									<img class="mb-1" height="24" width="24" src="/assets/USFCA_LOGO.ico" alt="..."/>
 									University of San Francisco
 								</h5>
 								<h6 class="degree-type fw-lighter">B.S. in Computer Science</h6>
@@ -276,7 +279,7 @@
 				<div class="row work-row d-flex">
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
 									cpplox
 								</h5>
@@ -304,7 +307,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
 									Heap Memory Allocator
 								</h5>
@@ -337,7 +340,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
 									Inter-Process Shared Memory
 								</h5>
@@ -370,7 +373,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
 									Master Class Project
 								</h5>
@@ -403,7 +406,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
 									Rue
 								</h5>
@@ -437,7 +440,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
 									Killer Karens
 								</h5>
@@ -473,9 +476,9 @@
 				<div class="row work-row d-flex">
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
-							<div class="card-body ">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/POLYPINION_LOGO.ico" alt="..."/>
+									<img class="mb-1" height="24" width="24" src="/assets/POLYPINION_LOGO.ico" alt="..."/>
 									Polypinion
 								</h5>
 								<h6 class="work-time">April 2024-October 2024</h6>
@@ -520,7 +523,7 @@
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-0 p-md-3">
 						<div class="card work-cards">
-							<div class="card-body">
+							<div class="card-body color-mode-dep-text">
 								<h5 class="card-title">Community Support Group</h5>
 								<h6 class="work-time">August 2023-Present</h6>
 								<ul class="work-description">
@@ -565,6 +568,26 @@
 					</div>
 				</div>
 			<?php endif; ?>
+			<div class="bottom-nav-container position-absolute bottom-0 end-0 me-4 mb-4 position-fixed d-flex align-items-end justify-content-center">
+				<div class="border border-1 color-mode-dep-border bottom-nav color-mode-dep-text p-0 d-flex align-items-center justify-content-center rounded-circle bg-dark">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="" viewBox="0 0 16 16">
+						<path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+					</svg>
+				</div>
+				<div class="overflow-hidden color-mode-nav-button border border-1 color-mode-dep-border color-mode-dep-text p-0 d-flex align-items-center justify-content-center rounded-circle position-fixed bg-dark position-absolute bottom-0 end-0 me-4 mb-4">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="h-100 w-50 light-mode-button border-end border-1 color-mode-dep-border" viewBox="0 0 16 16">
+						<path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class=" h-100 w-50 dark-mode-button" viewBox="0 0 16 16">
+						<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+					</svg>
+				</div>
+				<div class="scroll-up-nav-button border border-1 color-mode-dep-border color-mode-dep-text p-0 d-flex align-items-center justify-content-center rounded-circle position-fixed bg-dark position-absolute bottom-0 end-0 me-4 mb-4">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="" viewBox="0 0 16 16">
+						<path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+					</svg>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
