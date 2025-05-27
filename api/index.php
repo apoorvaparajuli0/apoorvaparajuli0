@@ -175,13 +175,16 @@
 			</div>
 			<div id="bottom" class="row text-center mt-5">
 				<h2 class="color-mode-dep-text work-section-title">
+					<p class="fw-bold text-secondary d-inline">
+						Projects
+					</p>
 					<a class="text-decoration-none" 
 					<?php if (array_key_exists('show', $_GET) && $_GET['show'] == "education") { 
 						echo "href=\"/api/#bottom\"";
-					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "projects") {
+					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "experience") {
 						echo "href=\"/api/?show=education#bottom\"";
 					} else {
-						echo "href=\"/api/?show=projects#bottom\"";
+						echo "href=\"/api/?show=experience#bottom\"";
 					}?>>
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-left d-inline icon-left-arrow" viewBox="0 0 16 16">
 							<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
@@ -191,19 +194,19 @@
 						<p class="fw-bold d-inline">
 							Education
 						</p>
-					<?php elseif(array_key_exists("show", $_GET) && $_GET['show'] == "projects"): ?>
+					<?php elseif(array_key_exists("show", $_GET) && $_GET['show'] == "experience"): ?>
 						<p class="fw-bold d-inline">
-							Projects
+							Experience
 						</p>
 					<?php else:?>
 						<p class="fw-bold d-inline">
-							Experience
+							Projects
 						</p>
 					<?php endif; ?>
 					<a class="text-decoration-none" 
 					<?php if (array_key_exists('show', $_GET) && $_GET['show'] == "education") { 
-						echo "href=\"/api/?show=projects#bottom\"";
-					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "projects") {
+						echo "href=\"/api/?show=experience#bottom\"";
+					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "experience") {
 						echo "href=\"/api/#bottom\"";
 					} else {
 						echo "href=\"/api/?show=education#bottom\"";
@@ -212,6 +215,9 @@
 							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
 						</svg>
 					</a>
+					<p class="fw-bold text-secondary d-inline">
+						Experience
+					</p>
 				</h2>
 			</div>
 			<?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education"): ?>
@@ -275,7 +281,102 @@
 						</div>
 					</div>
 				</div>
-			<?php elseif(array_key_exists("show", $_GET) && $_GET['show'] == "projects"): ?>
+			<?php elseif(array_key_exists("show", $_GET) && $_GET['show'] == "experience"): ?>
+				<div class="row work-row d-flex">
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<div class="card work-cards">
+							<div class="card-body color-mode-dep-text">
+								<h5 class="card-title">
+									<img class="mb-1" height="24" width="24" src="/assets/POLYPINION_LOGO.ico" alt="..."/>
+									Polypinion
+								</h5>
+								<h6 class="work-time">April 2024-October 2024</h6>
+								<ul class="work-description">
+									<li>
+										Developed an AI-enabled fact checker
+										using OpenAI&#39;s LLM and Anthropic&#39;s ClaudeAPI LLM
+									</li>
+									<li>
+										Conducted software maintenance and deployed updates and upgrades to React.js, 
+										Flask, and SwiftUI applications
+									</li>
+									<li>
+										Performed configuration, deployment and maintenance tasks related to the application 
+										as deployed on Vercel and AWS EC2 and RDS
+									</li>
+								</ul>
+								<h6 class="work-skills-title">Skills Used...</h6>
+								<div class="container-fluid p-0">
+									<div class="row">
+										<div class="col-12">
+											<span class="badge skill-badge">React.js</span>
+											<span class="badge skill-badge">Flask</span>
+											<span class="badge skill-badge">SwiftUI</span>
+											<span class="badge skill-badge">PostgreSQL</span>
+											<span class="badge skill-badge">Python</span>
+											<span class="badge skill-badge">JavaScript</span>
+											<span class="badge skill-badge">Swift</span>
+											<span class="badge skill-badge">nginx</span>
+											<span class="badge skill-badge">AWS</span>
+											<span class="badge skill-badge">Vercel</span>
+											<span class="badge skill-badge">OpenAI</span>
+											<span class="badge skill-badge">ClaudeAPI</span>
+										</div>
+									</div>
+								</div>
+								<div class="relevant-links mt-5">
+									<a target="_blank" href="https://polypinion.com">Web App</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 p-0 p-md-3">
+						<div class="card work-cards">
+							<div class="card-body color-mode-dep-text">
+								<h5 class="card-title">Community Support Group</h5>
+								<h6 class="work-time">August 2023-Present</h6>
+								<ul class="work-description">
+									<li>
+										Developing an AI-enabled resource matching system, designed 
+										to take requests containing a user&#39;s problem/needs and address
+										them by referring them to resources contained within a database
+									</li>
+									<li>
+										Leverages technologies such as the Groq LLM, LangChain, pgVector, and more to implement
+										RAG features
+									</li>
+									<li>
+										Developing a case-tracking system with analytics, view editing, and export features readily
+										available
+									</li>
+								</ul>
+								<h6 class="work-skills-title">Skills Used...</h6>
+								<div class="container-fluid p-0 skills-container">
+									<div class="row">
+										<div class="col-12">
+											<span class="badge skill-badge">Next.js</span>
+											<span class="badge skill-badge">Django</span>
+											<span class="badge skill-badge">PostgreSQL</span>
+											<span class="badge skill-badge">Python</span>
+											<span class="badge skill-badge">JavaScript</span>
+											<span class="badge skill-badge">SQLAlchemy</span>
+											<span class="badge skill-badge">nginx</span>
+											<span class="badge skill-badge">Groq</span>
+											<span class="badge skill-badge">LangChain</span>
+											<span class="badge skill-badge">Pinecone</span>
+											<span class="badge skill-badge">Heroku</span>
+											<span class="badge skill-badge">Vercel</span>
+										</div>
+									</div>
+								</div>
+								<div class="relevant-links mt-5">
+									<a target="_blank" href="https://www.ncrhub.org.com">Web App</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php else: ?>
 				<div class="row work-row d-flex">
 					<div class="col-12 col-md-6 col-lg-6 p-3">
 						<div class="card work-cards">
@@ -467,101 +568,6 @@
 								</div>
 								<div class="relevant-links mt-5">
 									<a target="_blank" href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c-FYMRF_XWe9SfEAcyKlCQ">Progress Videos</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			<?php else: ?>		
-				<div class="row work-row d-flex">
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body color-mode-dep-text">
-								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/assets/POLYPINION_LOGO.ico" alt="..."/>
-									Polypinion
-								</h5>
-								<h6 class="work-time">April 2024-October 2024</h6>
-								<ul class="work-description">
-									<li>
-										Developed an AI-enabled fact checker
-										using OpenAI&#39;s LLM and Anthropic&#39;s ClaudeAPI LLM
-									</li>
-									<li>
-										Conducted software maintenance and deployed updates and upgrades to React.js, 
-										Flask, and SwiftUI applications
-									</li>
-									<li>
-										Performed configuration, deployment and maintenance tasks related to the application 
-										as deployed on Vercel and AWS EC2 and RDS
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">React.js</span>
-											<span class="badge skill-badge">Flask</span>
-											<span class="badge skill-badge">SwiftUI</span>
-											<span class="badge skill-badge">PostgreSQL</span>
-											<span class="badge skill-badge">Python</span>
-											<span class="badge skill-badge">JavaScript</span>
-											<span class="badge skill-badge">Swift</span>
-											<span class="badge skill-badge">nginx</span>
-											<span class="badge skill-badge">AWS</span>
-											<span class="badge skill-badge">Vercel</span>
-											<span class="badge skill-badge">OpenAI</span>
-											<span class="badge skill-badge">ClaudeAPI</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://polypinion.com">Web App</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6 p-0 p-md-3">
-						<div class="card work-cards">
-							<div class="card-body color-mode-dep-text">
-								<h5 class="card-title">Community Support Group</h5>
-								<h6 class="work-time">August 2023-Present</h6>
-								<ul class="work-description">
-									<li>
-										Developing an AI-enabled resource matching system, designed 
-										to take requests containing a user&#39;s problem/needs and address
-										them by referring them to resources contained within a database
-									</li>
-									<li>
-										Leverages technologies such as the Groq LLM, LangChain, pgVector, and more to implement
-										RAG features
-									</li>
-									<li>
-										Developing a case-tracking system with analytics, view editing, and export features readily
-										available
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0 skills-container">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">Next.js</span>
-											<span class="badge skill-badge">Django</span>
-											<span class="badge skill-badge">PostgreSQL</span>
-											<span class="badge skill-badge">Python</span>
-											<span class="badge skill-badge">JavaScript</span>
-											<span class="badge skill-badge">SQLAlchemy</span>
-											<span class="badge skill-badge">nginx</span>
-											<span class="badge skill-badge">Groq</span>
-											<span class="badge skill-badge">LangChain</span>
-											<span class="badge skill-badge">Pinecone</span>
-											<span class="badge skill-badge">Heroku</span>
-											<span class="badge skill-badge">Vercel</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.ncrhub.org.com">Web App</a>
 								</div>
 							</div>
 						</div>

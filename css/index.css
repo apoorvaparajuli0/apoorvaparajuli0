@@ -212,8 +212,10 @@ a {
 }
 
 @media (prefers-color-scheme: light) {
+
 	body {
 		background-color: #ffffff !important;
+		
 	}
 
 	a {
