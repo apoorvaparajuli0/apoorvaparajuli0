@@ -109,8 +109,8 @@
 	<body>
 		<noscript><div class="mb-5 container text-center set-text-color">Disabling JavaScript can lead to a shaky experience, with fewer features. For a more user-friendly experience, please enable JavaScript on your web browser.</div></noscript>
 		<div itemscope itemtype="https://schema.org/Person" class="container-fluid">
-			<div id="top" class="row p-0 d-flex justify-content-center">
-				<div class="col-12 col-md-6 img-container d-flex align-items-center justify-content-center px-4">
+			<div id="top" class="row d-flex justify-content-center ">
+				<div class="col-12 col-md-6 img-container d-flex align-items-center justify-content-center">
 					<img width="350px" height="350px" itemprop="image" src="/assets/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
 				</div>
 				<div class="col-12 col-md-6 text-center mt-3 d-flex align-items-center">
@@ -269,16 +269,23 @@
 									<h6 class="work-time">April 2024-October 2024</h6>
 									<ul class="work-description">
 										<li>
-											Developed an AI-enabled fact checker
-											using OpenAI&#39;s LLM and Anthropic&#39;s ClaudeAPI LLM
+											Developed an AI-enabled fact checker that facilitated the process of reading 
+											through news articles and parsing truth from fiction using OpenAI’s LLM and 
+											Anthropic’s ClaudeAPI LLM
 										</li>
 										<li>
-											Conducted software maintenance and deployed updates and upgrades to React.js, 
-											Flask, and SwiftUI applications
+											Developed a dashboard that utilized  Google’s Analytics API and displayed metrics 
+											that allowed admins to view consumer insights including the usage rate of the site 
+											and determine the most popular articles, etc. using Chart.js
 										</li>
 										<li>
-											Performed configuration, deployment and maintenance tasks related to the application 
-											as deployed on Vercel and AWS EC2 and RDS
+											Deployed application and resolved various deployment issues caused by web server 
+											and application server configuration
+										</li>
+										<li>
+											Leveraged SEO optimization tools such as schema.org, google lighthouse, search 
+											console, as well as react-helmet to designate unique meta tags for each individual 
+											page in the form of a helmet component
 										</li>
 									</ul>
 									<h6 class="work-skills-title">Skills Used...</h6>
@@ -314,17 +321,31 @@
 								<h6 class="work-time">August 2023-Present</h6>
 								<ul class="work-description">
 									<li>
-										Developing an AI-enabled resource matching system, designed 
-										to take requests containing a user&#39;s problem/needs and address
-										them by referring them to resources contained within a database
+										AI-enabled case tracking and resource management application 
+										for non-profit community support groups to use as an index of 
+										resources for prospective clients, and as a CRM to manage data 
+										and generate reports
 									</li>
 									<li>
-										Leverages technologies such as the Groq LLM, LangChain, pgVector, and more to implement
-										RAG features
+										Utilized LangChain and LangGraph to orchestrate text embeddings of 
+										database records using Pinecone and storing of the embedded data in 
+										a PineCone vector store, and using the stored context to generate 
+										responses given specific queries
 									</li>
 									<li>
-										Developing a case-tracking system with analytics, view editing, and export features readily
-										available
+										Leveraged Next.js’ sophisticated SSR features to develop secure, and 
+										efficient CRM application, including taking advantage of ISR to decrease 
+										server load, the extended fetch API for caching, data fetching, and data 
+										revalidation
+									</li>
+									<li>
+										Used Django and Integrated django-admin, rest framework and authentication 
+										with permission classes, middleware, throttling, and more to secure API routes 
+										and to manage site content efficiently
+									</li>
+									<li>
+										Improved application SEO, using tools such as sitemaps, schema.org, search 
+										console, robots.txt, and Next.js’ built-in metadata feature
 									</li>
 								</ul>
 								<h6 class="work-skills-title">Skills Used...</h6>
