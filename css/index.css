@@ -10,6 +10,10 @@
 	--border-color: black !important;
 }
 
+.cursor-pointer {
+	cursor: pointer !important;
+}
+
 .set-text-color {
 	color: var(--font-color) !important;
 
@@ -19,8 +23,16 @@
 	}
 }
 
+.text-invert {
+	color: var(--bg-color) !important;
+}
+
 .set-bg-color {
 	background-color: var(--bg-color) !important;
+}
+
+.bg-invert {
+	background-color: var(--font-color) !important;
 }
 
 .set-border-color {
@@ -197,18 +209,16 @@ a {
 
 		& > .color-mode-nav-button {
 			transform: translateY(-60px) !important;
-			background-color: var(--font-color) !important;
 		}
 		& > .accessibility-nav-button {
 			transform: translateY(-120px) !important;
-			background-color: var(--font-color) !important;
 		}
 	}
 }
 
 .hover-flash {
-	background-color: var(--bg-color) !important;
-	color: var(--font-color) !important;
+	background-color: var(--bg-color);
+	color: var(--font-color);
 
 	&:hover {
 		background-color: var(--font-color) !important;

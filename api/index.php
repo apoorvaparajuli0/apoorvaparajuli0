@@ -3,10 +3,12 @@
 	$google_tag_nonce = base64_encode(random_bytes(64));
 	$bootstrap_nonce = base64_encode(random_bytes(64));
 	$color_theme_nonce = base64_encode(random_bytes(64));
+	$clipboard_nonce = base64_encode(random_bytes(64));
+	$skill_filter_nonce = base64_encode(random_bytes(64));
 
 	header("X-Frame-Options: SAMEORIGIN");
 	header("Cross-Origin-Opener-Policy: same-origin");
-	header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-$color_theme_nonce' 'nonce-$google_script_nonce' 'nonce-$google_tag_nonce' 'nonce-$bootstrap_nonce' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; font-src https://fonts.gstatic.com/; media-src 'self'; base-uri 'self'");
+	header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-$skill_filter_nonce' 'nonce-$clipboard_nonce' 'nonce-$color_theme_nonce' 'nonce-$google_script_nonce' 'nonce-$google_tag_nonce' 'nonce-$bootstrap_nonce' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; font-src https://fonts.gstatic.com/; media-src 'self'; base-uri 'self'");
 	header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload")
 ?>
 
@@ -88,6 +90,8 @@
 		</script>
 		<!-- My Scripts -->
 		 <script <?php echo "nonce=\"$color_theme_nonce\""; ?> async type="module" src="/js/set-preferred-color.js"></script>
+		 <script <?php echo "nonce=\"$skill_filter_nonce\""; ?> async type="module" src="/js/set-skill-filter.js"></script>
+		 <script <?php echo "nonce=\"$clipboard_nonce\""; ?> async type="module" src="/js/set-clipboard.js"></script>
 		<!-- Google tag (gtag.js) -->
 		<script <?php echo "nonce=\"$google_tag_nonce\""; ?> async src="https://www.googletagmanager.com/gtag/js?id=G-TCX1SZSLJ4"></script>
 		<?php 
@@ -103,13 +107,13 @@
 		?>
 	</head>
 	<body>
-		<noscript><div class="container text-center set-text-color">Disabling JavaScript can lead to a shaky experience, with fewer features. For a more user-friendly experience, please enable JavaScript on your web browser.</div></noscript>
+		<noscript><div class="mb-5 container text-center set-text-color">Disabling JavaScript can lead to a shaky experience, with fewer features. For a more user-friendly experience, please enable JavaScript on your web browser.</div></noscript>
 		<div itemscope itemtype="https://schema.org/Person" class="container-fluid">
 			<div id="top" class="row p-0 d-flex justify-content-center">
 				<div class="col-12 col-md-6 img-container d-flex align-items-center justify-content-center px-4">
 					<img width="350px" height="350px" itemprop="image" src="/assets/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
 				</div>
-				<div class="col-12 col-md-6 text-center mt-3">
+				<div class="col-12 col-md-6 text-center mt-3 d-flex align-items-center">
 					<main>
 						<div class="container-fluid p-0">
 							<div class="row">
@@ -124,11 +128,9 @@
 							</div>
 							<div class="row">
 								<p class="set-text-color contact-info">
-									<a class="text-nowrap profile-link me-1 mb-2" rel="noreferrer noopener" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
-									<a class="text-nowrap profile-link ms-1 me-1 mb-2" rel="noreferrer noopener" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
+									<span class="cursor-pointer text-decoration-underline text-nowrap profile-link ms-1 me-1 mb-2" id="email-link" itemprop="email">apoorvaparajuli@duck.com</span> | 
 									<a class="text-nowrap profile-link ms-1 me-1 mb-2" rel="noreferrer noopener" target="_blank" href="https://apoorvaparajuli.com/assets/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
-									<span class="text-nowrap profile-link ms-1 me-1 mb-2" rel="noreferrer noopener" itemprop="telephone">(510) 374-9867</span> |
-									<a class="text-nowrap profile-link ms-1 mb-2" target="_blank" rel="noreferrer noopener" href="https://github.com/apoorvaparajuli0">My GitHub</a>
+									<span class="cursor-pointer text-decoration-underline text-nowrap profile-link ms-1 me-1 mb-2" id="phone-link" itemprop="telephone">(510) 374-9867</span>
 								</p>
 							</div>
 							<div class="row">
@@ -147,6 +149,22 @@
 									<p>_________</p>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-12">
+									<a target="_blank" rel="noreferrer noopener" class="text-decoration-none" href="https://www.linkedin.com/in/apoorva-parajuli-66b994187/">
+									<svg aria-label="LinkedIn Profile Icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="me-1 cursor-pointer bi bi-linkedin set-text-color" viewBox="0 0 16 16">
+										<title>LinkedIn Profile</title>
+										<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+									</svg>
+									</a>
+									<a target="_blank" rel="noreferrer noopener" class="text-decoration-none" href="https://github.com/apoorvaparajuli0">
+									<svg aria-label="GitHub Profile Icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="ms-1 cursor-pointer bi bi-github set-text-color" viewBox="0 0 16 16">
+										<title>GitHub Profile</title>
+										<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+									</svg>
+									</a>
+								</div>
+							</div>
 						</div>
 					</main>
 				</div>
@@ -154,9 +172,23 @@
 			<div id="bottom" class="row text-center mt-5">
 				<nav>
 					<div class="btn-group btn-group-lg" role="group">
-						<button type="button" class=" btn btn-outline-light border-0 border-start border-top border-1 rounded-0 work-section-title set-text-color set-border-color set-bg-color">Experience</button>
-						<button type="button" class=" btn btn-outline-light border-0 rounded-0 work-section-title set-text-color set-border-color set-bg-color">Projects</button>
-						<button type="button" class=" btn btn-outline-light border-0 border-end border-bottom border-1 rounded-0 work-section-title set-text-color set-border-color set-bg-color">Education</button>
+						<a type="button" href="/api/?show=experience#bottom" class="hover-flash btn 
+						<?php if(array_key_exists("show", $_GET) && $_GET['show'] == "experience") { 
+							echo "bg-invert text-invert"; 
+						} else { 
+							echo "set-text-color set-bg-color"; 
+						} ?> border-0 border-start border-top border-1 rounded-0 work-section-title">Experience</a>
+
+						<a type="button" href="/api/#bottom" class="hover-flash btn <?php if(!array_key_exists("show", $_GET)) { 
+							echo "bg-invert text-invert"; 
+						} else { 
+							echo "set-text-color set-bg-color"; 
+						} ?> border-0 rounded-0 work-section-title">Projects</a>
+						<a type="button" href="/api/?show=education#bottom" class="hover-flash btn <?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education") { 
+							echo "bg-invert text-invert"; 
+						} else { 
+							echo "set-text-color set-bg-color"; 
+						} ?> border-0 border-end border-bottom border-1 rounded-0 work-section-title">Education</a>
 					</div>
 				</nav>
 			</div>
@@ -278,7 +310,7 @@
 					<div class="col-12 col-md-6 col-lg-6 p-0 p-md-3">
 						<div class="card work-cards">
 							<div class="card-body set-text-color">
-								<h5 class="card-title">Community Support Group</h5>
+								<h5 class="card-title">NCRHUB</h5>
 								<h6 class="work-time">August 2023-Present</h6>
 								<ul class="work-description">
 									<li>
@@ -547,15 +579,12 @@
 						<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
 					</svg>
 				</div>
-				<div class="border border-1 p-1 accessibility-nav-button set-text-color d-flex align-items-center overflow-hidden justify-content-center rounded-circle position-fixed bg-dark position-absolute bottom-0 end-0 me-4 mb-4">
-					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="hover-flash h-100 w-100 rounded-circle" viewBox="0 0 16 16">
-						<path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0M6 5.5l-4.535-.442A.531.531 0 0 1 1.531 4H14.47a.531.531 0 0 1 .066 1.058L10 5.5V9l.452 6.42a.535.535 0 0 1-1.053.174L8.243 9.97c-.064-.252-.422-.252-.486 0l-1.156 5.624a.535.535 0 0 1-1.053-.174L6 9z"/>
+				<!-- <div class="hover-flash border set-border-color border-1 p-0 accessibility-nav-button set-text-color d-flex align-items-center overflow-hidden justify-content-center rounded-circle position-fixed position-absolute bottom-0 end-0 me-4 mb-4">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+						<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
 					</svg>
-				</div>
+				</div> -->
 			</div>
 		</div>
-		<footer>
-
-		</footer>
 	</body>
 </html>
