@@ -1,9 +1,14 @@
 <?php 
 	$google_script_nonce = base64_encode(random_bytes(64));
+	$google_tag_nonce = base64_encode(random_bytes(64));
+	$bootstrap_nonce = base64_encode(random_bytes(64));
+	$color_theme_nonce = base64_encode(random_bytes(64));
+	$clipboard_nonce = base64_encode(random_bytes(64));
+	$skill_filter_nonce = base64_encode(random_bytes(64));
 
 	header("X-Frame-Options: SAMEORIGIN");
 	header("Cross-Origin-Opener-Policy: same-origin");
-	header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-$google_script_nonce' https://www.googletagmanager.com/gtag/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; style-src 'self' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; font-src https://fonts.gstatic.com/; media-src 'self'; base-uri 'self'");
+	header("Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-$skill_filter_nonce' 'nonce-$clipboard_nonce' 'nonce-$color_theme_nonce' 'nonce-$google_script_nonce' 'nonce-$google_tag_nonce' 'nonce-$bootstrap_nonce' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/; font-src https://fonts.gstatic.com/; media-src 'self'; base-uri 'self'");
 	header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload")
 ?>
 
@@ -33,7 +38,7 @@
 		"/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:url" content="https://apoorvaparajuli.com"/>
-		<meta property="og:image" content="https://apoorvaparajuli.com/media/me.JPG"/>
+		<meta property="og:image" content="https://apoorvaparajuli.com/assets/me.JPG"/>
 		<meta property="og:image:type" content="image/jpg"/>
 		<meta property="og:image:alt" content="Apoorva Parajuli..."/>
 		<meta property="og:site_name" content="Apoorva's Portfolio"/>
@@ -45,9 +50,9 @@
 		"
 		The portfolio website of Apoorva Parajuli, Full-Stack Web Developer.
 		"/>
-		<meta name="twitter:image" content="https://apoorvaparajuli.com/media/me.JPG"/>
+		<meta name="twitter:image" content="https://apoorvaparajuli.com/assets/me.JPG"/>
 		<meta name="twitter:url" content="https://apoorvaparajuli.com"/>
-		<link rel="icon" href="/media/favicon.ico">
+		<link rel="icon" href="/assets/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="/css/index.css" />
 		<title>
 			Apoorva Parajuli's Portfolio
@@ -61,7 +66,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Suranna&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 		<!--Bootstrap Scripts-->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<script <?php echo "nonce=\"$bootstrap_nonce\""; ?> src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 		<!--Rich Results Schema-->
 		<script type="application/ld+json">
 			{
@@ -75,7 +80,7 @@
 					Django, Flask, Next.js, and more. I have integrated AI-enabled solutions into web applications using OpenAI's API, Anthropic's
 					Claude, and Groq. I also have academic experience and personal work involving operating systems and interpreter design and 
 					development.",
-					"image": "https://apoorvaparajuli.com/media/me.JPG",
+					"image": "https://apoorvaparajuli.com/assets/me.JPG",
 					"sameAs": [
 					"https://github.com/apoorvaparajuli0",
 					"https://linkedin.com/in/apoorva-parajuli-66b994187"
@@ -83,8 +88,12 @@
 				}
 			}
 		</script>
+		<!-- My Scripts -->
+		 <script <?php echo "nonce=\"$color_theme_nonce\""; ?> async type="module" src="/js/set-preferred-color.js"></script>
+		 <script <?php echo "nonce=\"$skill_filter_nonce\""; ?> async type="module" src="/js/set-skill-filter.js"></script>
+		 <script <?php echo "nonce=\"$clipboard_nonce\""; ?> async type="module" src="/js/set-clipboard.js"></script>
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCX1SZSLJ4"></script>
+		<script <?php echo "nonce=\"$google_tag_nonce\""; ?> async src="https://www.googletagmanager.com/gtag/js?id=G-TCX1SZSLJ4"></script>
 		<?php 
 		echo "<script nonce=\"$google_script_nonce\">
 			window.dataLayer = window.dataLayer || [];
@@ -98,462 +107,263 @@
 		?>
 	</head>
 	<body>
+		<noscript><div class="mb-5 container text-center set-text-color">Disabling JavaScript can lead to a shaky experience, with fewer features. For a more user-friendly experience, please enable JavaScript on your web browser.</div></noscript>
 		<div itemscope itemtype="https://schema.org/Person" class="container-fluid">
-			<div class="row p-0 d-flex justify-content-center">
-				<div class="col-12 col-md-6 img-container d-flex align-items-center justify-content-center px-4">
-					<img width="350px" height="350px" itemprop="image" src="/media/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
+			<div id="top" class="row d-flex justify-content-center ">
+				<div class="col-12 col-md-6 img-container d-flex align-items-center justify-content-center">
+					<img width="350px" height="350px" itemprop="image" src="/assets/me.JPG" class="img-fluid img-thumbnail rounded-0 self-image" alt="Image of Apoorva Parajuli..."/>
 				</div>
-				<div class="col-12 col-md-6 text-center mt-3">
-					<div class="container-fluid p-0">
-						<div class="row">
-							<h2 class="text-light fw-bolder apoorva-name">
-								<span class="name-segment" itemprop="givenName">
-									<span class="first-name-eng">Apoorva</span>
-								</span> 
-								<span class="name-segment last-name" itemprop="familyName">
-									<span class="last-name-eng">Parajuli</span>
-								</span>
-							</h2>
-						</div>
-						<div class="row">
-							<p class="contact-info text-light">
-								<a class="text-nowrap profile-link me-1" target="_blank" href="https://linkedin.com/in/apoorva-parajuli-66b994187/">My LinkedIn</a> | 
-								<a class="text-nowrap profile-link ms-1 me-1" target="_blank" href="mailto:apoorvaparajuli@duck.com"><span itemprop="email">apoorvaparajuli@duck.com</span></a> | 
-								<a class="text-nowrap profile-link ms-1 me-1" target="_blank" href="https://apoorvaparajuli.com/media/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
-								<span class="text-nowrap profile-link ms-1 me-1" itemprop="telephone">(510) 374-9867</span> |
-								<a class="text-nowrap profile-link ms-1" target="_blank" href="https://github.com/apoorvaparajuli0">My GitHub</a>
-							</p>
-						</div>
-						<div class="row">
-							<div class=" col-12 text-center text-light">
-								<p>_________</p>
+				<div class="col-12 col-md-6 text-center mt-3 d-flex align-items-center">
+					<main>
+						<div class="container-fluid p-0">
+							<div class="row">
+								<h2 class="fw-bolder apoorva-name set-text-color">
+									<span class="name-segment" itemprop="givenName">
+										<span class="first-name-eng">Apoorva</span>
+									</span> 
+									<span class="name-segment last-name" itemprop="familyName">
+										<span class="last-name-eng">Parajuli</span>
+									</span>
+								</h2>
 							</div>
-							<div class="col-12 text-light d-flex justify-content-center">
-								<p class="self-bio" itemprop="description">
-									I am a <span itemprop="jobTitle">Full Stack Software Engineer</span> with experience working with various web frameworks including 
-									Django, Flask, Next.js, and more. I have integrated AI-enabled solutions into web applications using OpenAI's API, Anthropic's
-									Claude, and Groq. I also have academic experience and personal work involving operating systems and interpreter design and 
-									development.
+							<div class="row">
+								<p class="set-text-color contact-info">
+									<span class="cursor-pointer text-decoration-underline text-nowrap profile-link ms-1 me-1 mb-2" id="email-link" itemprop="email">apoorvaparajuli@duck.com</span> | 
+									<a class="text-nowrap profile-link ms-1 me-1 mb-2" rel="noreferrer noopener" target="_blank" href="https://apoorvaparajuli.com/assets/Apoorva_Parajuli_Resum%C3%A9.pdf">My Resumé</a> |
+									<span class="cursor-pointer text-decoration-underline text-nowrap profile-link ms-1 me-1 mb-2" id="phone-link" itemprop="telephone">(510) 374-9867</span>
 								</p>
 							</div>
-							<div class="col-12 text-center text-light">
-								<p>_________</p>
+							<div class="row">
+								<div class="col-12 text-center set-text-color">
+									<p>_________</p>
+								</div>
+								<div class="col-12 d-flex justify-content-center">
+									<p class="self-bio set-text-color" itemprop="description">
+										I am a <span itemprop="jobTitle">Full Stack Software Engineer</span> with experience working with various web frameworks including 
+										Django, Flask, Next.js, and more. I have integrated AI-enabled solutions into web applications using OpenAI's API, Anthropic's
+										Claude, and Groq. I also have academic experience and personal work involving operating systems and interpreter design and 
+										development.
+									</p>
+								</div>
+								<div class="col-12 text-center set-text-color">
+									<p>_________</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<a target="_blank" rel="noreferrer noopener" class="text-decoration-none" href="https://www.linkedin.com/in/apoorva-parajuli-66b994187/">
+									<svg aria-label="LinkedIn Profile Icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="me-1 cursor-pointer bi bi-linkedin set-text-color" viewBox="0 0 16 16">
+										<title>LinkedIn Profile</title>
+										<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+									</svg>
+									</a>
+									<a target="_blank" rel="noreferrer noopener" class="text-decoration-none" href="https://github.com/apoorvaparajuli0">
+									<svg aria-label="GitHub Profile Icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="ms-1 cursor-pointer bi bi-github set-text-color" viewBox="0 0 16 16">
+										<title>GitHub Profile</title>
+										<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+									</svg>
+									</a>
+								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-12 text-light text-center mt-3">
-								<h5 class="skills-title fs-2">Skills...</h5>
-							</div>
-							<div class="col-12 px-3 text-center">
-								<span itemprop="knowsAbout" class="badge skill-badge">C</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">C++</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Python</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Java</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">JavaScript</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Vue.js</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Next.js</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">React.js</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Flask</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Django</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Chart.js</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">CMake</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Auth0</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">PostgreSQL</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">OpenAI API</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Anthropic Claude</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Groq</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">AWS</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Vercel</span>
-								<span itemprop="knowsAbout" class="badge skill-badge">Heroku</span>
-							</div>
-						</div>
-					</div>
+					</main>
 				</div>
 			</div>
 			<div id="bottom" class="row text-center mt-5">
-				<h2 class="text-light work-section-title">
-					<a class="text-decoration-none" 
-					<?php if (array_key_exists('show', $_GET) && $_GET['show'] == "education") { 
-						echo "href=\"/#bottom\"";
-					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "projects") {
-						echo "href=\"/?show=education#bottom\"";
-					} else {
-						echo "href=\"/?show=projects#bottom\"";
-					}?>>
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-left d-inline icon-left-arrow" viewBox="0 0 16 16">
-							<path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
-						</svg>
-					</a>
-					<?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education"): ?>
-						<p class="fw-bold d-inline">
-							Education
-						</p>
-					<?php elseif(array_key_exists("show", $_GET) && $_GET['show'] == "projects"): ?>
-						<p class="fw-bold d-inline">
-							Projects
-						</p>
-					<?php else:?>
-						<p class="fw-bold d-inline">
-							Experience
-						</p>
-					<?php endif; ?>
-					<a class="text-decoration-none" 
-					<?php if (array_key_exists('show', $_GET) && $_GET['show'] == "education") { 
-						echo "href=\"/?show=projects#bottom\"";
-					} elseif (array_key_exists('show', $_GET) && $_GET['show'] == "projects") {
-						echo "href=\"/#bottom\"";
-					} else {
-						echo "href=\"/?show=education#bottom\"";
-					}?>>
-						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-arrow-bar-right d-inline icon-right-arrow" viewBox="0 0 16 16">
-							<path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
-						</svg>
-					</a>
-				</h2>
+				<nav>
+					<div class="btn-group btn-group-lg" role="group">
+						<a type="button" href="/api/?show=experience#bottom" class="hover-flash btn 
+						<?php if(array_key_exists("show", $_GET) && $_GET['show'] == "experience") { 
+							echo "bg-invert text-invert"; 
+						} else { 
+							echo "set-text-color set-bg-color"; 
+						} ?> border-0 border-start border-top border-1 rounded-0 work-section-title">Experience</a>
+
+						<a type="button" href="/api/#bottom" class="hover-flash btn <?php if(!array_key_exists("show", $_GET)) { 
+							echo "bg-invert text-invert"; 
+						} else { 
+							echo "set-text-color set-bg-color"; 
+						} ?> border-0 rounded-0 work-section-title">Projects</a>
+						<a type="button" href="/api/?show=education#bottom" class="hover-flash btn <?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education") { 
+							echo "bg-invert text-invert"; 
+						} else { 
+							echo "set-text-color set-bg-color"; 
+						} ?> border-0 border-end border-bottom border-1 rounded-0 work-section-title">Education</a>
+					</div>
+				</nav>
 			</div>
 			<?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education"): ?>
 				<div class="row work-row d-flex">
 					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/CALTECH_LOGO.ico" alt="..."/>
-									CalTech
-								</h5>
-								<h6 class="degree-type fw-lighter">AI & Machine Learning Bootcamp</h6>
-								<h6 class="work-time">April 2025-Present</h6>
-								<h6 class="course-work-title">Relevant Coursework...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											</span>
-											<span class="badge skill-badge">Deep Learning W/ Keras & Tensorflow</span>
-											<span class="badge skill-badge">Machine Learning</span>
-											<span class="badge skill-badge">Reinforcement Learning</span>
-											<span class="badge skill-badge">Advanced Generative AI</span>
-											<span class="badge skill-badge">NLP & Speech Recognition</span>
-											<span class="badge skill-badge">ADL & Computer Vision</span>
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										<img class="mb-1" height="24" width="24" src="/assets/CALTECH_LOGO.ico" alt="..."/>
+										Caltech
+									</h5>
+									<h6 class="degree-type fw-lighter">AI & Machine Learning Bootcamp</h6>
+									<h6 class="work-time">April 2025-Present</h6>
+									<h6 class="course-work-title">Relevant Coursework...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+												<span class="badge skill-badge set-border-color">Deep Learning W/ Keras & Tensorflow</span>
+												<span class="badge skill-badge set-border-color">Machine Learning</span>
+												<span class="badge skill-badge set-border-color">Reinforcement Learning</span>
+												<span class="badge skill-badge set-border-color">Advanced Generative AI</span>
+												<span class="badge skill-badge set-border-color">NLP & Speech Recognition</span>
+												<span class="badge skill-badge set-border-color">ADL & Computer Vision</span>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.caltech.edu/">Website</a>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.caltech.edu/">Website</a>
+									</div>
 								</div>
 							</div>
-						</div>
+						</section>
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/USFCA_LOGO.ico" alt="..."/>
-									University of San Francisco
-								</h5>
-								<h6 class="degree-type fw-lighter">B.S. in Computer Science</h6>
-								<h6 class="work-time">August 2021-August 2023</h6>
-								<h6 class="course-work-title">Relevant Coursework...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">Computer Architecture</span>
-											<span class="badge skill-badge">Operating Systems</span>
-											<span class="badge skill-badge">Programming Languages</span>
-											<span class="badge skill-badge">Machine Learning</span>
-											<span class="badge skill-badge">C & Systems Programming</span>
-											<span class="badge skill-badge">Data Structures & Algorithms</span>
-											<span class="badge skill-badge">Multivariable Calculus</span>
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										<img class="mb-1" height="24" width="24" src="/assets/USFCA_LOGO.ico" alt="..."/>
+										University of San Francisco
+									</h5>
+									<h6 class="degree-type fw-lighter">B.S. in Computer Science</h6>
+									<h6 class="work-time">August 2021-August 2023</h6>
+									<h6 class="course-work-title">Relevant Coursework...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+												<span class="badge skill-badge set-border-color">Computer Architecture</span>
+												<span class="badge skill-badge set-border-color">Operating Systems</span>
+												<span class="badge skill-badge set-border-color">Programming Languages</span>
+												<span class="badge skill-badge set-border-color">Machine Learning</span>
+												<span class="badge skill-badge set-border-color">C & Systems Programming</span>
+												<span class="badge skill-badge set-border-color">Data Structures & Algorithms</span>
+												<span class="badge skill-badge set-border-color">Multivariable Calculus</span>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.usfca.edu/">Website</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			<?php elseif(array_key_exists("show", $_GET) && $_GET['show'] == "projects"): ?>
-				<div class="row work-row d-flex">
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									cpplox
-								</h5>
-								<h6 class="work-time">March 2024-Present</h6>
-								<ul class="work-description">
-									<li>
-										A WIP progress interpreter with a bytecode & AST implementation. Robert Nystrom's book, "Crafting Interpreters"
-										used, but implemented in C++. Additional features beyond the book spec planned
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">C++</span>
-											<span class="badge skill-badge">CMake</span>
-										</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.usfca.edu/">Website</a>
 									</div>
 								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://github.com/apoorvaparajuli0/cpplox">Repository</a>
-								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									Heap Memory Allocator
-								</h5>
-								<h6 class="work-time">April 2023</h6>
-								<ul class="work-description">
-									<li>
-										An academic project focused on allowing for shared memory between processes within
-										the xv6 operating system. Used gdb-multiarch to debug and QEMU to run the OS.
-									</li>
-									<li>
-										Manipulated the virtual memory mapping system in the OS to point a segment of two processes'
-										virtual memory at the same physical memory, allowing for shared data.
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">C</span>
-											<span class="badge skill-badge">QEMU</span>
-											<span class="badge skill-badge">xv6</span>
-											<span class="badge skill-badge">Makefile</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									Inter-Process Shared Memory
-								</h5>
-								<h6 class="work-time">February 2023-March 2023</h6>
-								<ul class="work-description">
-									<li>
-										Another academic project, where we reimplemented malloc() in the xv6 operating system to use a 
-										doubly-linked list implementation of memory rather than a singly-linked list
-									</li>
-									<li>
-										Allowed for conservative memory usage, preventing sbrk() from being called to allocate further 
-										memory if previous memory blocks could fit whatever needs to be allocated
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">C</span>
-											<span class="badge skill-badge">QEMU</span>
-											<span class="badge skill-badge">xv6</span>
-											<span class="badge skill-badge">Makefile</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									Master Class Project
-								</h5>
-								<h6 class="work-time">January 2023-June 2023</h6>
-								<ul class="work-description">
-									<li>
-										The capstone web application project at my university. Built as a Node.js/Express/Next.js stack
-										with a PostgreSQL database. Contains features such as chat messaging, uploading files to AWS S3, more.
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-										<span class="badge skill-badge">Node.js</span>
-										<span class="badge skill-badge">Express.js</span>
-										<span class="badge skill-badge">Next.js</span>
-										<span class="badge skill-badge">JavaScript</span>
-										<span class="badge skill-badge">PostgreSQL</span>
-										<span class="badge skill-badge">Vercel</span>
-										<span class="badge skill-badge">AWS</span>
-										<span class="badge skill-badge">socket.io</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									Rue
-								</h5>
-								<h6 class="work-time">August 2021-December 2021</h6>
-								<ul class="work-description">
-									<li>
-										Developed advanced enemy AI, ranged enemy attacks with predictive markers, etc. 
-										as well as QOL changes like footsteps that change sounds depending on the floor 
-										material
-									</li>
-									<li>
-										Also added more player agency in how they interact with the game world, including zipling, vaulting, physical attacks,
-										sliding, etc.
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">Unreal Engine</span>
-											<span class="badge skill-badge">Blender</span>
-											<span class="badge skill-badge">Blueprints</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c_1OTU7MulPUvfcQnt5t2_">Progress Videos</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									Killer Karens
-								</h5>
-								<h6 class="work-time">January 2021-June 2021</h6>
-								<ul class="work-description">
-									<li>
-										Developed a first-person shooter game level in Unreal Engine, that took advantage of the blueprint scripting
-										system, ray tracing, behavior trees, and more to create a compelling game environment
-									</li>
-									<li>
-										Features enemies that track and attack the player with physical attacks, shooting mechanics, pickups, dialogue,
-										etc.
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">Unreal Engine</span>
-											<span class="badge skill-badge">Blender</span>
-											<span class="badge skill-badge">Blueprints</span>
-										</div>
-									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c-FYMRF_XWe9SfEAcyKlCQ">Progress Videos</a>
-								</div>
-							</div>
-						</div>
+						</section>
 					</div>
 				</div>
-			<?php else: ?>		
+			<?php elseif(array_key_exists("show", $_GET) && $_GET['show'] == "experience"): ?>
 				<div class="row work-row d-flex">
 					<div class="col-12 col-md-6 col-lg-6 p-3">
-						<div class="card work-cards">
-							<div class="card-body ">
-								<h5 class="card-title">
-									<img class="mb-1" height="24" width="24" src="/media/POLYPINION_LOGO.ico" alt="..."/>
-									Polypinion
-								</h5>
-								<h6 class="work-time">April 2024-October 2024</h6>
-								<ul class="work-description">
-									<li>
-										Developed an AI-enabled fact checker
-										using OpenAI&#39;s LLM and Anthropic&#39;s ClaudeAPI LLM
-									</li>
-									<li>
-										Conducted software maintenance and deployed updates and upgrades to React.js, 
-										Flask, and SwiftUI applications
-									</li>
-									<li>
-										Performed configuration, deployment and maintenance tasks related to the application 
-										as deployed on Vercel and AWS EC2 and RDS
-									</li>
-								</ul>
-								<h6 class="work-skills-title">Skills Used...</h6>
-								<div class="container-fluid p-0">
-									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">React.js</span>
-											<span class="badge skill-badge">Flask</span>
-											<span class="badge skill-badge">SwiftUI</span>
-											<span class="badge skill-badge">PostgreSQL</span>
-											<span class="badge skill-badge">Python</span>
-											<span class="badge skill-badge">JavaScript</span>
-											<span class="badge skill-badge">Swift</span>
-											<span class="badge skill-badge">nginx</span>
-											<span class="badge skill-badge">AWS</span>
-											<span class="badge skill-badge">Vercel</span>
-											<span class="badge skill-badge">OpenAI</span>
-											<span class="badge skill-badge">ClaudeAPI</span>
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										<img class="mb-1" height="24" width="24" src="/assets/POLYPINION_LOGO.ico" alt="..."/>
+										Polypinion
+									</h5>
+									<h6 class="work-time">April 2024-October 2024</h6>
+									<ul class="work-description">
+										<li>
+											Developed an AI-enabled fact checker that facilitated the process of reading 
+											through news articles and parsing truth from fiction using OpenAI’s LLM and 
+											Anthropic’s ClaudeAPI LLM
+										</li>
+										<li>
+											Developed a dashboard that utilized  Google’s Analytics API and displayed metrics 
+											that allowed admins to view consumer insights including the usage rate of the site 
+											and determine the most popular articles, etc. using Chart.js
+										</li>
+										<li>
+											Deployed application and resolved various deployment issues caused by web server 
+											and application server configuration
+										</li>
+										<li>
+											Leveraged SEO optimization tools such as schema.org, google lighthouse, search 
+											console, as well as react-helmet to designate unique meta tags for each individual 
+											page in the form of a helmet component
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+												<span class="badge skill-badge set-border-color">React.js</span>
+												<span class="badge skill-badge set-border-color">Flask</span>
+												<span class="badge skill-badge set-border-color">SwiftUI</span>
+												<span class="badge skill-badge set-border-color">PostgreSQL</span>
+												<span class="badge skill-badge set-border-color">Python</span>
+												<span class="badge skill-badge set-border-color">JavaScript</span>
+												<span class="badge skill-badge set-border-color">Swift</span>
+												<span class="badge skill-badge set-border-color">nginx</span>
+												<span class="badge skill-badge set-border-color">AWS</span>
+												<span class="badge skill-badge set-border-color">Vercel</span>
+												<span class="badge skill-badge set-border-color">OpenAI</span>
+												<span class="badge skill-badge set-border-color">ClaudeAPI</span>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="relevant-links mt-5">
-									<a target="_blank" href="https://polypinion.com">Web App</a>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://polypinion.com">Web App</a>
+									</div>
 								</div>
 							</div>
-						</div>
+						</section>
 					</div>
 					<div class="col-12 col-md-6 col-lg-6 p-0 p-md-3">
 						<div class="card work-cards">
-							<div class="card-body">
-								<h5 class="card-title">Community Support Group</h5>
+							<div class="card-body set-text-color">
+								<h5 class="card-title">NCRHUB</h5>
 								<h6 class="work-time">August 2023-Present</h6>
 								<ul class="work-description">
 									<li>
-										Developing an AI-enabled resource matching system, designed 
-										to take requests containing a user&#39;s problem/needs and address
-										them by referring them to resources contained within a database
+										AI-enabled case tracking and resource management application 
+										for non-profit community support groups to use as an index of 
+										resources for prospective clients, and as a CRM to manage data 
+										and generate reports
 									</li>
 									<li>
-										Leverages technologies such as the Groq LLM, LangChain, pgVector, and more to implement
-										RAG features
+										Utilized LangChain and LangGraph to orchestrate text embeddings of 
+										database records using Pinecone and storing of the embedded data in 
+										a PineCone vector store, and using the stored context to generate 
+										responses given specific queries
 									</li>
 									<li>
-										Developing a case-tracking system with analytics, view editing, and export features readily
-										available
+										Leveraged Next.js’ sophisticated SSR features to develop secure, and 
+										efficient CRM application, including taking advantage of ISR to decrease 
+										server load, the extended fetch API for caching, data fetching, and data 
+										revalidation
+									</li>
+									<li>
+										Used Django and Integrated django-admin, rest framework and authentication 
+										with permission classes, middleware, throttling, and more to secure API routes 
+										and to manage site content efficiently
+									</li>
+									<li>
+										Improved application SEO, using tools such as sitemaps, schema.org, search 
+										console, robots.txt, and Next.js’ built-in metadata feature
 									</li>
 								</ul>
 								<h6 class="work-skills-title">Skills Used...</h6>
 								<div class="container-fluid p-0 skills-container">
 									<div class="row">
-										<div class="col-12">
-											<span class="badge skill-badge">Next.js</span>
-											<span class="badge skill-badge">Django</span>
-											<span class="badge skill-badge">PostgreSQL</span>
-											<span class="badge skill-badge">Python</span>
-											<span class="badge skill-badge">JavaScript</span>
-											<span class="badge skill-badge">SQLAlchemy</span>
-											<span class="badge skill-badge">nginx</span>
-											<span class="badge skill-badge">Groq</span>
-											<span class="badge skill-badge">LangChain</span>
-											<span class="badge skill-badge">Pinecone</span>
-											<span class="badge skill-badge">Heroku</span>
-											<span class="badge skill-badge">Vercel</span>
+										<div class="col-12 set-text-color">
+											<span class="badge skill-badge set-border-color">Next.js</span>
+											<span class="badge skill-badge set-border-color">Django</span>
+											<span class="badge skill-badge set-border-color">PostgreSQL</span>
+											<span class="badge skill-badge set-border-color">Python</span>
+											<span class="badge skill-badge set-border-color">JavaScript</span>
+											<span class="badge skill-badge set-border-color">SQLAlchemy</span>
+											<span class="badge skill-badge set-border-color">nginx</span>
+											<span class="badge skill-badge set-border-color">Groq</span>
+											<span class="badge skill-badge set-border-color">LangChain</span>
+											<span class="badge skill-badge set-border-color">Pinecone</span>
+											<span class="badge skill-badge set-border-color">Heroku</span>
+											<span class="badge skill-badge set-border-color">Vercel</span>
 										</div>
 									</div>
 								</div>
@@ -564,7 +374,238 @@
 						</div>
 					</div>
 				</div>
+			<?php else: ?>
+				<div class="row work-row d-flex">
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										cpplox
+									</h5>
+									<h6 class="work-time">March 2024-Present</h6>
+									<ul class="work-description">
+										<li>
+											A WIP progress interpreter with a bytecode & AST implementation. Robert Nystrom's book, "Crafting Interpreters"
+											used, but implemented in C++. Additional features beyond the book spec planned
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+												<span class="badge skill-badge set-border-color">C++</span>
+												<span class="badge skill-badge set-border-color">CMake</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://github.com/apoorvaparajuli0/cpplox">Repository</a>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										Heap Memory Allocator
+									</h5>
+									<h6 class="work-time">April 2023</h6>
+									<ul class="work-description">
+										<li>
+											An academic project focused on allowing for shared memory between processes within
+											the xv6 operating system. Used gdb-multiarch to debug and QEMU to run the OS.
+										</li>
+										<li>
+											Manipulated the virtual memory mapping system in the OS to point a segment of two processes'
+											virtual memory at the same physical memory, allowing for shared data.
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+												<span class="badge skill-badge set-border-color">C</span>
+												<span class="badge skill-badge set-border-color">QEMU</span>
+												<span class="badge skill-badge set-border-color">xv6</span>
+												<span class="badge skill-badge set-border-color">Makefile</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										Inter-Process Shared Memory
+									</h5>
+									<h6 class="work-time">February 2023-March 2023</h6>
+									<ul class="work-description">
+										<li>
+											Another academic project, where we reimplemented malloc() in the xv6 operating system to use a 
+											doubly-linked list implementation of memory rather than a singly-linked list
+										</li>
+										<li>
+											Allowed for conservative memory usage, preventing sbrk() from being called to allocate further 
+											memory if previous memory blocks could fit whatever needs to be allocated
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+												<span class="badge skill-badge set-border-color">C</span>
+												<span class="badge skill-badge set-border-color">QEMU</span>
+												<span class="badge skill-badge set-border-color">xv6</span>
+												<span class="badge skill-badge set-border-color">Makefile</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										Master Class Project
+									</h5>
+									<h6 class="work-time">January 2023-June 2023</h6>
+									<ul class="work-description">
+										<li>
+											The capstone web application project at my university. Built as a Node.js/Express/Next.js stack
+											with a PostgreSQL database. Contains features such as chat messaging, uploading files to AWS S3, more.
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+											<span class="badge skill-badge set-border-color">Node.js</span>
+											<span class="badge skill-badge set-border-color">Express.js</span>
+											<span class="badge skill-badge set-border-color">Next.js</span>
+											<span class="badge skill-badge set-border-color">JavaScript</span>
+											<span class="badge skill-badge set-border-color">PostgreSQL</span>
+											<span class="badge skill-badge set-border-color">Vercel</span>
+											<span class="badge skill-badge set-border-color">AWS</span>
+											<span class="badge skill-badge set-border-color">socket.io</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										Rue
+									</h5>
+									<h6 class="work-time">August 2021-December 2021</h6>
+									<ul class="work-description">
+										<li>
+											Developed advanced enemy AI, ranged enemy attacks with predictive markers, etc. 
+											as well as QOL changes like footsteps that change sounds depending on the floor 
+											material
+										</li>
+										<li>
+											Also added more player agency in how they interact with the game world, including zipling, vaulting, physical attacks,
+											sliding, etc.
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+												<span class="badge skill-badge set-border-color">Unreal Engine</span>
+												<span class="badge skill-badge set-border-color">Blender</span>
+												<span class="badge skill-badge set-border-color">Blueprints</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c_1OTU7MulPUvfcQnt5t2_">Progress Videos</a>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-12 col-md-6 col-lg-6 p-3">
+						<section>
+							<div class="card work-cards">
+								<div class="card-body set-text-color">
+									<h5 class="card-title">
+										Killer Karens
+									</h5>
+									<h6 class="work-time">January 2021-June 2021</h6>
+									<ul class="work-description">
+										<li>
+											Developed a first-person shooter game level in Unreal Engine, that took advantage of the blueprint scripting
+											system, ray tracing, behavior trees, and more to create a compelling game environment
+										</li>
+										<li>
+											Features enemies that track and attack the player with physical attacks, shooting mechanics, pickups, dialogue,
+											etc.
+										</li>
+									</ul>
+									<h6 class="work-skills-title">Skills Used...</h6>
+									<div class="container-fluid p-0">
+										<div class="row">
+											<div class="col-12 set-text-color">
+												<span class="badge skill-badge set-border-color">Unreal Engine</span>
+												<span class="badge skill-badge set-border-color">Blender</span>
+												<span class="badge skill-badge set-border-color">Blueprints</span>
+											</div>
+										</div>
+									</div>
+									<div class="relevant-links mt-5">
+										<a target="_blank" href="https://www.youtube.com/playlist?list=PL9AaHbp8CL9c-FYMRF_XWe9SfEAcyKlCQ">Progress Videos</a>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
 			<?php endif; ?>
+			<div class="bottom-nav-container position-absolute bottom-0 end-0 me-4 mb-4 position-fixed d-flex align-items-end justify-content-center">
+				<div class="border border-1 set-border-color bottom-nav set-text-color p-2 d-flex align-items-center justify-content-center rounded-circle bg-dark">
+					<a href="#top">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+						</svg>
+					</a>
+				</div>
+				<div class="overflow-hidden color-mode-nav-button border border-1 set-border-color set-text-color p-0 d-flex align-items-center justify-content-center rounded-circle position-fixed bg-dark position-absolute bottom-0 end-0 me-4 mb-4">
+					<svg id="light-mode" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="h-100 w-50 hover-flash border-end border-1 set-border-color" viewBox="0 0 16 16">
+						<path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+					</svg>
+					<svg id="dark-mode" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class=" h-100 w-50 hover-flash" viewBox="0 0 16 16">
+						<path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+					</svg>
+				</div>
+				<!-- <div class="hover-flash border set-border-color border-1 p-0 accessibility-nav-button set-text-color d-flex align-items-center overflow-hidden justify-content-center rounded-circle position-fixed position-absolute bottom-0 end-0 me-4 mb-4">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+						<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+					</svg>
+				</div> -->
+			</div>
 		</div>
 	</body>
 </html>

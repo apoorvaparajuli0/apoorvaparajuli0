@@ -1,169 +1,252 @@
+:root {
+	--font-color: white !important;
+	--bg-color: black !important;
+	--border-color: white !important;
+}
+
+[data-theme="light"] {
+	--font-color: black !important;
+	--bg-color: white !important;
+	--border-color: black !important;
+}
+
+.cursor-pointer {
+	cursor: pointer !important;
+}
+
+.set-text-color {
+	color: var(--font-color) !important;
+
+	& > .skill-badge {
+		color: var(--font-color);
+		background-color: var(--bg-color);
+	}
+}
+
+.text-invert {
+	color: var(--bg-color) !important;
+}
+
+.set-bg-color {
+	background-color: var(--bg-color) !important;
+}
+
+.bg-invert {
+	background-color: var(--font-color) !important;
+}
+
+.set-border-color {
+	border-color: var(--border-color) !important;
+}
+
 body::-webkit-scrollbar {
-  display: none;
-}
-
-body {
-  background-color: #000000 !important;
-}
-
-a {
-  color: rgb(255, 255, 255) !important;
-}
-
-ul {
-  margin: 5px !important;
-  padding: 0 !important;
-}
-
-li {
-  margin: 10px;
-}
-
-.contact-info {
-  font-size: xx-small;
-}
-
-.self-bio {
-  font-size: small;
-  font-family: serif;
-}
-
-.apoorva-name {
-  font-family: "Bodoni Moda", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.skills-title {
-  font-family: "Suranna", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.skill-badge {
-  border: 0.5px solid white;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  font-weight: lighter !important;
-}
-
-.profile-link {
-  transition: transform 0.5s ease;
-  -moz-transition: transform 0.5s ease;
-  -o-transition: transform 0.5s ease;
-  -webkit-transition: transform 0.5s ease;
-  display: inline-block;
-}
-
-.profile-link:hover {
-  transform: translateY(3px);
-}
-
-.name-segment {
-  background: linear-gradient(to left, black 50%, white 50%) right;
-  background-size: 200%;
-  transition: .4s ease-out;
-  -moz-transition: .4s ease-out;
-  -o-transition: .4s ease-out;
-  -webkit-transition: .4s ease-out;
-}
-
-.name-segment:hover {
-  background-position: left;
-  color: black;
-}
-
-.icon-left-arrow {
-  transform: translateX(.25rem) !important;
-  transition: .4s ease-out;
-  -moz-transition: .4s ease-out;
-  -o-transition: .4s ease-out;
-  -webkit-transition: .4s ease-out;
-}
-
-.icon-left-arrow:hover {
-  transform: translateX(-.25rem) !important;
-}
-
-.icon-right-arrow {
-  transform: translateX(-.25rem) !important;
-  transition: .4s ease-out;
-  -moz-transition: .4s ease-out;
-  -o-transition: .4s ease-out;
-  -webkit-transition: .4s ease-out;
-}
-
-.icon-right-arrow:hover {
-  transform: translateX(.25rem) !important;
-}
-
-.self-image {
-  max-width: 350px !important;
-}
-
-.work-section-title {
-  font-family: "Bodoni Moda", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.work-description {
-  font-size: small !important;
-  font-family: "Outfit", sans-serif;
-  font-style: normal;
-}
-
-.work-row {
-  width: 100% !important;
-  overflow-x: scroll !important;
-  overflow-y: hidden !important;
+	display: none;
 }
 
 .work-row::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
+ul {
+	margin: 5px !important;
+	padding: 0 !important;
+}
+
+li {
+	margin: 10px;
+}
+
+body {
+	background-color: var(--bg-color) !important;
+}
+
+a {
+	color: var(--font-color) !important;
+}
 .work-cards {
-  background-color: black !important; 
-  border-radius: 0px !important;
-  color: white !important;
+	background-color: var(--bg-color) !important; 
+	border-radius: 0px !important;
+	color: var(--font-color);
+}
+
+.contact-info {
+	font-size: xx-small;
+}
+
+.self-bio {
+	font-size: small;
+	font-family: serif;
+}
+
+.apoorva-name {
+	font-family: "Bodoni Moda", serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+.skills-title {
+	font-family: "Suranna", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.skill-badge {
+	border: 0.5px solid;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	font-weight: lighter !important;
+}
+
+.profile-link {
+	transition: transform 0.5s ease;
+	-moz-transition: transform 0.5s ease;
+	-o-transition: transform 0.5s ease;
+	-webkit-transition: transform 0.5s ease;
+	display: inline-block;
+
+	&:hover {
+		transform: translateY(3px);
+	}
+}
+
+.icon-left-arrow {
+	transform: translateX(.25rem) !important;
+	transition: .4s ease-out;
+	-moz-transition: .4s ease-out;
+	-o-transition: .4s ease-out;
+	-webkit-transition: .4s ease-out;
+}
+
+.icon-left-arrow:hover {
+	transform: translateX(-.25rem) !important;
+}
+
+.icon-right-arrow {
+	transform: translateX(-.25rem) !important;
+	transition: .4s ease-out;
+	-moz-transition: .4s ease-out;
+	-o-transition: .4s ease-out;
+	-webkit-transition: .4s ease-out;
+}
+
+.icon-right-arrow:hover {
+	transform: translateX(.25rem) !important;
+}
+
+.self-image {
+	max-width: 350px !important;
+}
+
+.work-section-title {
+	font-family: "Bodoni Moda", serif !important;
+	font-optical-sizing: auto !important;
+	font-style: normal !important;
+	font-size: x-large !important;
+}
+
+.work-description {
+	font-size: small !important;
+	font-family: "Outfit", sans-serif;
+	font-style: normal;
+}
+
+.work-row {
+	width: 100% !important;
+	overflow-x: scroll !important;
+	overflow-y: hidden !important;
 }
 
 .card-title {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: lighter;
-  font-style: normal;
+	font-family: "Outfit", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: lighter;
+	font-style: normal;
 }
 
 .work-time {
-  font-weight: 300;
+	font-weight: 300;
 }
 
-.work-skills-title {
-  margin-top: 20px;
+.work-skills-title, .course-work-title {
+	margin-top: 20px;
 }
 
-.course-work-title {
-  margin-top: 20px;
+.bottom-nav {
+	width: 50px !important;
+	height: 50px !important;  
+	background: linear-gradient(to left, var(--bg-color) 50%, var(--font-color) 50%) right;
+	background-size: 250%;
+	transition: .4s ease-out;
+	-moz-transition: .4s ease-out;
+	-o-transition: .4s ease-out;
+	-webkit-transition: .4s ease-out;
+	z-index: 3;
+
+	&:hover {
+		background-position: left;
+		cursor: pointer;
+	}
+
+	&:hover > a {
+		color: var(--bg-color) !important;
+	}
+}
+
+.color-mode-nav-button, .accessibility-nav-button {
+	color: var(--font-color) !important;
+	width: 50px !important;
+	height: 50px !important;  
+}
+
+.bottom-nav-container {
+	height: 50px !important;
+	align-items: end !important;
+
+	&:hover {
+		height: 170px !important;
+
+		& > .color-mode-nav-button {
+			transform: translateY(-60px) !important;
+		}
+		& > .accessibility-nav-button {
+			transform: translateY(-120px) !important;
+		}
+	}
+}
+
+.hover-flash {
+	background-color: var(--bg-color);
+	color: var(--font-color);
+
+	&:hover {
+		background-color: var(--font-color) !important;
+		color: var(--bg-color) !important;
+	}
+}
+
+.color-mode-nav-button, .accessibility-nav-button {
+	transition: transform 0.5s ease;
+	-webkit-transition: transform 0.5s ease;
+	-o-transition: transform 0.5s ease;
+	-moz-transition: transform 0.5s ease;
 }
 
 @media screen and (max-width: 767px) {
-  .img-container {
-    width: 200px !important;
-  }
-  .self-bio {
-    width: 400px !important;
-  }
+	.img-container {
+		width: 200px !important;
+	}
+	.self-bio {
+		width: 400px !important;
+	}
 }
 
 @media screen and (min-width: 992px) {
-  .self-bio {
-    font-size: medium;
-  }
-  .contact-info {
-    font-size: small;
-  }
+	.self-bio {
+		font-size: medium;
+	}
+	.contact-info {
+		font-size: small;
+	}
 }
