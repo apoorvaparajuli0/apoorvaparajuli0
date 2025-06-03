@@ -139,10 +139,11 @@
 								</div>
 								<div class="col-12 d-flex justify-content-center">
 									<p class="self-bio set-text-color" itemprop="description">
-										I am a <span itemprop="jobTitle">Full Stack Software Engineer</span> with experience working with various web frameworks including 
-										Django, Flask, Next.js, and more. I have integrated AI-enabled solutions into web applications using OpenAI's API, Anthropic's
-										Claude, and Groq. I also have academic experience and personal work involving operating systems and interpreter design and 
-										development.
+										I am a <span itemprop="jobTitle">Full Stack Software Engineer</span> with a strong foundation 
+										in computer science and full stack engineering, including optimizing user readability, 
+										experience, and accessibility. I am passionate about leveraging AI-enabled technologies 
+										and exploring opportunities in modern application development, including machine learning 
+										and prompt engineering, to drive innovative solutions.
 									</p>
 								</div>
 								<div class="col-12 text-center set-text-color">
