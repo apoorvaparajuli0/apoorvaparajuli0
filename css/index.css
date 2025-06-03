@@ -1,4 +1,37 @@
+:root {
+	--font-color: white !important;
+	--bg-color: black !important;
+	--border-color: white !important;
+}
+
+[data-theme="light"] {
+	--font-color: black !important;
+	--bg-color: white !important;
+	--border-color: black !important;
+}
+
+.set-text-color {
+	color: var(--font-color) !important;
+
+	& > .skill-badge {
+		color: var(--font-color);
+		background-color: var(--bg-color);
+	}
+}
+
+.set-bg-color {
+	background-color: var(--bg-color) !important;
+}
+
+.set-border-color {
+	border-color: var(--border-color) !important;
+}
+
 body::-webkit-scrollbar {
+	display: none;
+}
+
+.work-row::-webkit-scrollbar {
 	display: none;
 }
 
@@ -12,25 +45,16 @@ li {
 }
 
 body {
-	background-color: black !important;
+	background-color: var(--bg-color) !important;
 }
 
 a {
-	color: white !important;
+	color: var(--font-color) !important;
 }
 .work-cards {
-	background-color: black !important; 
+	background-color: var(--bg-color) !important; 
 	border-radius: 0px !important;
-	color: white;
-}
-.color-mode-dep-text {
-	color: white !important;
-}
-.color-mode-dep-border {
-	border-color: white !important;
-}
-.skill-badge {
-	border-color: white !important;
+	color: var(--font-color);
 }
 
 .contact-info {
@@ -104,9 +128,10 @@ a {
 }
 
 .work-section-title {
-	font-family: "Bodoni Moda", serif;
-	font-optical-sizing: auto;
-	font-style: normal;
+	font-family: "Bodoni Moda", serif !important;
+	font-optical-sizing: auto !important;
+	font-style: normal !important;
+	font-size: x-large !important;
 }
 
 .work-description {
@@ -119,10 +144,6 @@ a {
 	width: 100% !important;
 	overflow-x: scroll !important;
 	overflow-y: hidden !important;
-}
-
-.work-row::-webkit-scrollbar {
-	display: none;
 }
 
 .card-title {
@@ -143,7 +164,7 @@ a {
 .bottom-nav {
 	width: 50px !important;
 	height: 50px !important;  
-	background: linear-gradient(to left, black 50%, white 50%) right;
+	background: linear-gradient(to left, var(--bg-color) 50%, var(--font-color) 50%) right;
 	background-size: 250%;
 	transition: .4s ease-out;
 	-moz-transition: .4s ease-out;
@@ -153,13 +174,16 @@ a {
 
 	&:hover {
 		background-position: left;
-		color: black !important;
 		cursor: pointer;
+	}
+
+	&:hover > a {
+		color: var(--bg-color) !important;
 	}
 }
 
-.color-mode-nav-button, .scroll-up-nav-button {
-	color: white !important;
+.color-mode-nav-button, .accessibility-nav-button {
+	color: var(--font-color) !important;
 	width: 50px !important;
 	height: 50px !important;  
 }
@@ -173,24 +197,30 @@ a {
 
 		& > .color-mode-nav-button {
 			transform: translateY(-60px) !important;
-			background-color: black !important;
+			background-color: var(--font-color) !important;
 		}
-		& > .scroll-up-nav-button {
+		& > .accessibility-nav-button {
 			transform: translateY(-120px) !important;
-			background-color: black !important;
+			background-color: var(--font-color) !important;
 		}
 	}
 }
 
-.light-mode-button, .dark-mode-button {
+.hover-flash {
+	background-color: var(--bg-color) !important;
+	color: var(--font-color) !important;
+
 	&:hover {
-		background-color: white;
-		color: black;
+		background-color: var(--font-color) !important;
+		color: var(--bg-color) !important;
 	}
 }
 
-.color-mode-nav-button, .scroll-up-nav-button {
+.color-mode-nav-button, .accessibility-nav-button {
 	transition: transform 0.5s ease;
+	-webkit-transition: transform 0.5s ease;
+	-o-transition: transform 0.5s ease;
+	-moz-transition: transform 0.5s ease;
 }
 
 @media screen and (max-width: 767px) {
@@ -208,32 +238,5 @@ a {
 	}
 	.contact-info {
 		font-size: small;
-	}
-}
-
-@media (prefers-color-scheme: light) {
-
-	body {
-		background-color: #ffffff !important;
-		
-	}
-
-	a {
-		color: rgb(0, 0, 0) !important;
-	}
-	.work-cards {
-		background-color: white !important; 
-		border-radius: 0px !important;
-		color: black !important;
-	}
-	.color-mode-dep-text {
-		color: black !important;
-	}
-	.color-mode-dep-border {
-		border-color: black !important;
-	}
-	.skill-badge {
-		border-color: black !important;
-		color: black !important;
 	}
 }
