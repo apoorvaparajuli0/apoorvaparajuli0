@@ -1,5 +1,5 @@
 document.getElementById("email-link").addEventListener("click", function(ev) {
-    navigator.clipboard.writeText("apoorvaparajuli@duck.com")
+    navigator.clipboard.writeText("apoorvaparajuli0@gmail.com")
 })
 
 document.getElementById("phone-link").addEventListener("click", function(ev) {
