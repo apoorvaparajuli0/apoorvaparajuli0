@@ -173,19 +173,19 @@
 			<div id="bottom" class="row text-center mt-5">
 				<nav>
 					<div class="btn-group btn-group-lg" role="group">
-						<a type="button" href="/api/?show=experience#bottom" class="hover-flash btn 
+						<a type="button" href="/?show=experience#bottom" class="hover-flash btn 
 						<?php if(array_key_exists("show", $_GET) && $_GET['show'] == "experience") { 
 							echo "bg-invert text-invert"; 
 						} else { 
 							echo "set-text-color set-bg-color"; 
 						} ?> border-0 border-start border-top border-1 rounded-0 work-section-title">Experience</a>
 
-						<a type="button" href="/api/#bottom" class="hover-flash btn <?php if(!array_key_exists("show", $_GET)) { 
+						<a type="button" href="/#bottom" class="hover-flash btn <?php if(!array_key_exists("show", $_GET)) { 
 							echo "bg-invert text-invert"; 
 						} else { 
 							echo "set-text-color set-bg-color"; 
 						} ?> border-0 rounded-0 work-section-title">Projects</a>
-						<a type="button" href="/api/?show=education#bottom" class="hover-flash btn <?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education") { 
+						<a type="button" href="/?show=education#bottom" class="hover-flash btn <?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education") { 
 							echo "bg-invert text-invert"; 
 						} else { 
 							echo "set-text-color set-bg-color"; 
@@ -322,31 +322,30 @@
 								<h6 class="work-time">August 2023-Present</h6>
 								<ul class="work-description">
 									<li>
-										AI-enabled case tracking and resource management application 
-										for non-profit community support groups to use as an index of 
-										resources for prospective clients, and as a CRM to manage data 
-										and generate reports
+										Integrated third party Map and Geocoding API’s such as Leaflet and OpenStreetMap to provide a map interface for users looking
+										for resources, as well as a real-time filter and search feature
 									</li>
 									<li>
-										Utilized LangChain and LangGraph to orchestrate text embeddings of 
-										database records using Pinecone and storing of the embedded data in 
-										a PineCone vector store, and using the stored context to generate 
-										responses given specific queries
+										Used LangChain/LangGraph for LLM/Embedding Model orchestration to allow users to query the resource database via a RAGpowered 
+									chat bot, and used LangSmith for debugging and tracing
 									</li>
 									<li>
-										Leveraged Next.js’ sophisticated SSR features to develop secure, and 
-										efficient CRM application, including taking advantage of ISR to decrease 
-										server load, the extended fetch API for caching, data fetching, and data 
-										revalidation
+										Leveraged many different security strategies, such as COOP, CSP, and HSTS to improve application resilience to XSS attacks. As
+										well as rate-limiting API requests and HTML sanitization when rendering
 									</li>
 									<li>
-										Used Django and Integrated django-admin, rest framework and authentication 
-										with permission classes, middleware, throttling, and more to secure API routes 
-										and to manage site content efficiently
+										Took advantage of SEO optimization tools such as Next.js’ Metadata feature which programmatically generates meta tags for
+										pages, including open graph tags, twitter tags, page titles, etc. As well as robots.txt and sitemaps. Also used Google Search
+										Console and Vercel for analytics and Lighthouse for web optimization
 									</li>
 									<li>
-										Improved application SEO, using tools such as sitemaps, schema.org, search 
-										console, robots.txt, and Next.js’ built-in metadata feature
+										Used devtools such as the axe devtools extension to improve site accessibility as per WCAG and ADA standards
+									</li>
+									<li>
+										Used authentication flows such OIDC for client app authentication and regular JWT authentication for user authentication
+									</li>
+									<li>
+										Leveraged Next.js’ and Django’s built-in tools to support caching, memoization, data serialization and more.
 									</li>
 								</ul>
 								<h6 class="work-skills-title">Skills Used...</h6>
