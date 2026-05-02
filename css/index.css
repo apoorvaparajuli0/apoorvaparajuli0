@@ -10,6 +10,49 @@
 	--border-color: black !important;
 }
 
+ul {
+	margin: 5px !important;
+	padding: 0 !important;
+}
+
+li {
+	margin: 10px;
+}
+
+body {
+	background-color: var(--bg-color) !important;
+}
+
+a {
+	color: var(--font-color) !important;
+
+	& > .bi-link-45deg {
+		transition: opacity 0.3s ease;
+		-moz-transition: opacity 0.3s ease;
+		-o-transition: opacity 0.3s ease;
+		-webkit-transition: opacity 0.3s ease;
+		transition: width 0.3s ease;
+		-moz-transition: width 0.3s ease;
+		-o-transition: width 0.3s ease;
+		-webkit-transition: width 0.3s ease;
+		opacity: 0;
+		width: 0;
+	}
+
+	&:hover > .bi-link-45deg {
+		transition: opacity 0.3s ease;
+		-moz-transition: opacity 0.3s ease;
+		-o-transition: opacity 0.3s ease;
+		-webkit-transition: opacity 0.3s ease;
+		transition: width 0.3s ease;
+		-moz-transition: width 0.3s ease;
+		-o-transition: width 0.3s ease;
+		-webkit-transition: width 0.3s ease;
+		opacity: 1;
+		width: 16px;
+	}
+}
+
 .cursor-pointer {
 	cursor: pointer !important;
 }
@@ -47,22 +90,6 @@ body::-webkit-scrollbar {
 	display: none;
 }
 
-ul {
-	margin: 5px !important;
-	padding: 0 !important;
-}
-
-li {
-	margin: 10px;
-}
-
-body {
-	background-color: var(--bg-color) !important;
-}
-
-a {
-	color: var(--font-color) !important;
-}
 .work-cards {
 	background-color: var(--bg-color) !important; 
 	border-radius: 0px !important;
@@ -100,15 +127,34 @@ a {
 }
 
 .profile-link {
-	transition: transform 0.5s ease;
-	-moz-transition: transform 0.5s ease;
-	-o-transition: transform 0.5s ease;
-	-webkit-transition: transform 0.5s ease;
 	display: inline-block;
 
-	&:hover {
-		transform: translateY(3px);
+	& > .bi-clipboard {
+		transition: opacity 0.3s ease;
+		-moz-transition: opacity 0.3s ease;
+		-o-transition: opacity 0.3s ease;
+		-webkit-transition: opacity 0.3s ease;
+		transition: width 0.3s ease;
+		-moz-transition: width 0.3s ease;
+		-o-transition: width 0.3s ease;
+		-webkit-transition: width 0.3s ease;
+		width: 0;
+		opacity: 0;
 	}
+	
+	&:hover > .bi-clipboard.js-enabled {
+		transition: opacity 0.3s ease;
+		-moz-transition: opacity 0.3s ease;
+		-o-transition: opacity 0.3s ease;
+		-webkit-transition: opacity 0.3s ease;
+		transition: width 0.3s ease;
+		-moz-transition: width 0.3s ease;
+		-o-transition: width 0.3s ease;
+		-webkit-transition: width 0.3s ease;
+		opacity: 1;
+		width: 16px;
+	}
+
 }
 
 .icon-left-arrow {
@@ -201,8 +247,13 @@ a {
 }
 
 .bottom-nav-container {
+	display: none;
+}
+
+.bottom-nav-container.js-enabled {
 	height: 50px !important;
 	align-items: end !important;
+	display: flex;
 
 	&:hover {
 		height: 170px !important;
