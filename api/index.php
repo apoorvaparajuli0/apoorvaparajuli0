@@ -194,19 +194,19 @@
 			<div id="bottom" class="row text-center mt-5">
 				<nav>
 					<div class="btn-group btn-group-lg" role="group">
-						<a type="button" href="/api/?show=experience#bottom" class="hover-flash btn 
+						<a type="button" href="/?show=experience#bottom" class="hover-flash btn 
 						<?php if(array_key_exists("show", $_GET) && $_GET['show'] == "experience") { 
 							echo "bg-invert text-invert"; 
 						} else { 
 							echo "set-text-color set-bg-color"; 
 						} ?> border-0 border-start border-top border-1 rounded-0 work-section-title">Experience</a>
 
-						<a type="button" href="/api/#bottom" class="hover-flash btn <?php if(!array_key_exists("show", $_GET)) { 
+						<a type="button" href="/#bottom" class="hover-flash btn <?php if(!array_key_exists("show", $_GET)) { 
 							echo "bg-invert text-invert"; 
 						} else { 
 							echo "set-text-color set-bg-color"; 
 						} ?> border-0 rounded-0 work-section-title">Projects</a>
-						<a type="button" href="/api/?show=education#bottom" class="hover-flash btn <?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education") { 
+						<a type="button" href="/?show=education#bottom" class="hover-flash btn <?php if(array_key_exists("show", $_GET) && $_GET['show'] == "education") { 
 							echo "bg-invert text-invert"; 
 						} else { 
 							echo "set-text-color set-bg-color"; 
